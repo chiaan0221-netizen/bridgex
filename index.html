@@ -52,6 +52,172 @@ footer{background:#081526;color:#aebdce;padding:42px 0}.footergrid{display:grid;
 .callout strong{display:block;font-size:18px;margin-bottom:5px}
 @media(max-width:900px){#business .grid{grid-template-columns:1fr 1fr}.qlead .hero-lead{grid-template-columns:1fr}.qleadflow{grid-template-columns:1fr 1fr}.money{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.qleadflow,.money{grid-template-columns:1fr}}
+
+/* ===== BridgeX V11 — Full Responsive / RWD Layer ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { width: 100%; min-width: 0; overflow-x: hidden; }
+img, svg, video, canvas { max-width: 100%; height: auto; }
+button, input, select, textarea { max-width: 100%; font: inherit; }
+a, button { -webkit-tap-highlight-color: transparent; }
+
+.container, .wrap, .section-inner, .content, .hero-inner {
+  width: min(100% - 40px, 1200px);
+  margin-inline: auto;
+}
+
+header, nav, .navbar, .topbar {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container, .wrap, .section-inner, .content, .hero-inner {
+    width: min(100% - 32px, 960px);
+  }
+  .grid, .cards, .card-grid, .product-grid, .solution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .hero, .hero-content, .hero-inner {
+    gap: 28px;
+  }
+  table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+@media (max-width: 768px) {
+  .container, .wrap, .section-inner, .content, .hero-inner {
+    width: min(100% - 28px, 680px);
+  }
+
+  /* Header / navigation */
+  header, .navbar, .topbar {
+    position: relative;
+  }
+  nav ul, .nav, .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 14px !important;
+  }
+  nav a, .nav a, .nav-links a {
+    white-space: normal;
+  }
+
+  /* Common two-column layouts collapse to one column */
+  .hero, .hero-inner,
+  .two-col, .split, .solution-layout, .gateway-layout,
+  .deal-layout, .hub-layout, .business-layout,
+  .cooperation-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid, .cards, .card-grid, .product-grid, .solution-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Flex rows become stacked where needed */
+  .row, .actions, .hero-actions, .cta-row, .stats, .filters {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-block: 56px 44px !important;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+    line-height: 1.12 !important;
+  }
+  h2 {
+    font-size: clamp(26px, 6vw, 36px) !important;
+  }
+  h3 {
+    font-size: clamp(20px, 5vw, 28px) !important;
+  }
+
+  .btn, button, .cta, .button {
+    min-height: 44px;
+  }
+
+  /* Cards */
+  .card, .panel, .feature-card, .product-card, .solution-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Modals */
+  .modal, .modal-overlay, .dialog {
+    padding: 14px !important;
+  }
+  .modal-content, .modal-box, .dialog-content {
+    width: min(100%, 680px) !important;
+    max-height: calc(100dvh - 28px) !important;
+    overflow-y: auto;
+  }
+
+  /* Business / demand tables */
+  .table-wrap, .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    min-width: 680px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container, .wrap, .section-inner, .content, .hero-inner {
+    width: calc(100% - 24px);
+  }
+
+  nav ul, .nav, .nav-links {
+    gap: 6px 10px !important;
+  }
+
+  .hero {
+    padding-block: 42px 34px !important;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 10vw, 40px) !important;
+  }
+
+  .section, section {
+    padding-block: 42px !important;
+  }
+
+  .btn, button, .cta, .button {
+    width: 100%;
+  }
+
+  .actions, .hero-actions, .cta-row {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  input, select, textarea {
+    width: 100% !important;
+    min-height: 44px;
+  }
+
+  .modal-content, .modal-box, .dialog-content {
+    border-radius: 16px !important;
+  }
+
+  /* Avoid fixed-width decorative/demo blocks overflowing */
+  [style*="width: 1000px"],
+  [style*="width:1000px"],
+  [style*="min-width: 1000px"],
+  [style*="min-width:1000px"] {
+    max-width: 100% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -336,5 +502,20 @@ function doSearch(){let q=document.getElementById('searchInput').value.trim();al
 function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()})
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Keep modal/dialog content usable on small screens.
+  document.querySelectorAll('table').forEach(function (table) {
+    if (!table.parentElement.classList.contains('table-wrap')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    }
+  });
+});
+</script>
+
 </body>
 </html>
