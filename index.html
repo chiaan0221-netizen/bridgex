@@ -1,154 +1,245 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BridgeX｜V14 全平台商業作業系統</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BridgeX V10｜大中華 × 台灣 × 東協商業平台</title>
 <style>
-:root{--bg:#f4f6f9;--card:#fff;--ink:#18202f;--muted:#667085;--line:#e5e7eb;--dark:#111827;--soft:#f8fafc;--ok:#087f5b;--warn:#9a6700}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,"Noto Sans TC",Arial,sans-serif;background:var(--bg);color:var(--ink)}
-.app{display:flex;min-height:100vh}.side{width:235px;background:var(--dark);color:#fff;position:fixed;inset:0 auto 0 0;padding:22px 14px}.logo{font-size:21px;font-weight:800;padding:0 10px 22px}.logo small{display:block;color:#98a2b3;font-size:10px;margin-top:5px;font-weight:500}
-.nav h5{color:#667085;font-size:9px;letter-spacing:1.4px;margin:18px 10px 6px}.nav button{width:100%;border:0;background:none;color:#cbd5e1;padding:10px;border-radius:9px;text-align:left;font-size:13px;cursor:pointer}.nav button:hover,.nav button.active{background:#293241;color:#fff}
-.main{margin-left:235px;width:calc(100% - 235px);padding:25px 30px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.crumb{font-size:12px;color:var(--muted)}.demo{font-size:10px;background:#fff8e7;border:1px solid #ead39b;color:#8a6417;border-radius:7px;padding:6px 9px}
-h1{margin:0;font-size:29px;letter-spacing:-.7px}.sub{margin:7px 0 22px;color:var(--muted);font-size:13px}.page{display:none}.page.active{display:block}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.grid2{display:grid;grid-template-columns:1.3fr .7fr;gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px;box-shadow:0 1px 2px #10182808}.kpi label{display:block;font-size:11px;color:var(--muted)}.num{font-size:25px;font-weight:800;margin:7px 0}.delta{font-size:10px;color:var(--ok)}
-.section{margin-top:16px}.card h2{font-size:15px;margin:0 0 12px}.mini{font-size:11px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:10px 7px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);font-weight:600;background:#fafafa}.tag{padding:4px 7px;border-radius:99px;background:#f1f3f5;font-size:10px}.tag.ok{background:#e9f8f2;color:var(--ok)}.tag.warn{background:#fff4d6;color:var(--warn)}
-.row{display:flex;justify-content:space-between;align-items:center;margin:10px 0;font-size:11px}.bar{height:8px;background:#edf0f3;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:#374151;border-radius:99px}
-.flow{display:flex;gap:5px;align-items:center;overflow:auto;padding:8px 0}.flow b{white-space:nowrap;font-size:10px;background:#f1f3f5;padding:9px;border-radius:7px}.arrow{color:#98a2b3}
-.list{display:grid;gap:8px}.item{border:1px solid var(--line);border-radius:9px;padding:10px}.item strong{font-size:11px}.item p{margin:4px 0 0;color:var(--muted);font-size:10px}
-.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;font-size:11px;cursor:pointer}.btn.primary{background:#111827;color:#fff;border-color:#111827}
-.notice{border:1px dashed #d7dce3;background:#fafbfc;padding:10px;border-radius:9px;color:#596273;font-size:10px}
-@media(max-width:1000px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3,.grid2{grid-template-columns:1fr}}@media(max-width:700px){.side{position:static;width:100%;min-height:auto}.app{display:block}.main{margin:0;width:100%;padding:18px}.grid4{grid-template-columns:1fr 1fr}}
+:root{--ink:#10233f;--muted:#607089;--line:#dfe6ef;--bg:#f6f8fb;--card:#fff;--accent:#175cd3;--accent2:#0b8f71;--gold:#b7791f;--danger:#b42318;--dark:#071426}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:900;letter-spacing:.5px}.brand span{color:var(--accent)}
+nav{display:flex;gap:22px;font-size:14px;color:#42526a}nav a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-weight:800;border:1px solid var(--line);background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+.hero{background:linear-gradient(135deg,#eef5ff 0%,#fff 54%,#eefbf7 100%);padding:76px 0 62px;border-bottom:1px solid var(--line)}
+.kicker{color:var(--accent);font-size:13px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
+h1{font-size:50px;line-height:1.12;margin:14px 0 18px;max-width:820px;letter-spacing:-1.5px}
+.lead{font-size:20px;color:#4c5d73;max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.search{display:flex;background:#fff;border:1px solid #cfd8e5;border-radius:14px;padding:8px;max-width:850px;box-shadow:0 12px 32px rgba(30,55,90,.08)}
+.search input{flex:1;border:0;outline:0;padding:12px 14px;font-size:16px;min-width:220px}.search button{border:0;border-radius:10px;background:var(--dark);color:#fff;padding:0 22px;font-weight:800}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font-size:13px;color:#516176}
+section{padding:66px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.section-head h2{margin:0;font-size:32px}.section-head p{margin:0;color:var(--muted);max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(20,40,70,.035)}
+.card h3{margin:8px 0 8px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.num{font-size:12px;font-weight:900;color:var(--accent);letter-spacing:1px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.badge{font-size:11px;border-radius:999px;padding:4px 8px;background:#edf4ff;color:#175cd3;font-weight:800}.badge.green{background:#e9f8f2;color:#087a61}.badge.gold{background:#fff6df;color:#9b650f}.badge.red{background:#fff0ee;color:#b42318}
+.audience{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.aud{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.aud strong{display:block;font-size:17px;margin-bottom:7px}.aud span{font-size:13px;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{background:#fff;border:1px solid var(--line);padding:16px 10px;border-radius:12px;text-align:center;font-size:13px;font-weight:800}.step b{display:block;font-size:11px;color:var(--accent);margin-bottom:5px}
+.product{position:relative}.price{display:flex;justify-content:space-between;align-items:end;margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}.market{text-decoration:line-through;color:#8995a7;font-size:13px}.bxprice{font-size:20px;font-weight:900}.save{color:var(--accent2);font-size:12px;font-weight:800}
+.darkband{background:var(--dark);color:#fff}.darkband .section-head p{color:#b7c4d5}.darkband .card{background:#0d2038;border-color:#233852}.darkband .card p{color:#b7c4d5}.darkband .num{color:#78a7ff}
+.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:13px}.table th{background:#f0f4f9}
+.timeline{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}.timeline div{background:#fff;border:1px solid var(--line);padding:12px 8px;border-radius:10px;text-align:center;font-size:12px;font-weight:800}
+.notice{border-left:4px solid var(--gold);background:#fffaf0;padding:16px 18px;border-radius:8px;color:#6d521b;font-size:13px}
+footer{background:#081526;color:#aebdce;padding:42px 0}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footerbrand{font-size:22px;color:#fff;font-weight:900}
+.modal{display:none;position:fixed;inset:0;background:rgba(4,13,26,.58);z-index:50;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#fff;max-width:720px;width:100%;border-radius:18px;padding:28px;max-height:88vh;overflow:auto}.close{float:right;border:0;background:#eef2f7;border-radius:8px;padding:6px 10px;cursor:pointer}.field{margin:12px 0}.field label{font-size:13px;font-weight:800;display:block;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cfd8e5;border-radius:9px;font:inherit}
+@media(max-width:900px){nav{display:none}.grid,.grid4{grid-template-columns:1fr 1fr}.audience{grid-template-columns:1fr 1fr}.flow,.timeline{grid-template-columns:repeat(3,1fr)}h1{font-size:40px}}
+@media(max-width:620px){.grid,.grid4,.audience{grid-template-columns:1fr}.flow,.timeline{grid-template-columns:1fr 1fr}.hero{padding-top:48px}h1{font-size:34px}.search{flex-direction:column}.search button{height:44px}}
 </style>
 </head>
 <body>
-<div class="app">
-<aside class="side">
-<div class="logo">BridgeX<small>全平台商業作業系統｜V14</small></div>
-<div class="nav">
-<h5>COMMAND</h5>
-<button class="active" onclick="go('home',this)">總覽</button>
-<button onclick="go('funnel',this)">商業漏斗</button>
-<button onclick="go('revenue',this)">營收／GMV</button>
-<h5>MARKETPLACE</h5>
-<button onclick="go('products',this)">產品中心</button>
-<button onclick="go('demands',this)">需求市場</button>
-<button onclick="go('matching',this)">AI 媒合</button>
-<h5>TRANSACTION</h5>
-<button onclick="go('deals',this)">Deal Room</button>
-<button onclick="go('contracts',this)">契約／服務</button>
-<button onclick="go('delivery',this)">交付／分潤</button>
-<h5>RISK & GROWTH</h5>
-<button onclick="go('security',this)">資料安全</button>
-<button onclick="go('growth',this)">市場成長</button>
-<button onclick="go('report',this)">董事會／投資人</button>
-</div>
-</aside>
+<header><div class="wrap nav">
+<div class="brand">Bridge<span>X</span> <small style="font-size:11px;color:#75839a">V10</small></div>
+<nav>
+<a href="#market">產品 Marketplace</a><a href="#solution">解決方案</a><a href="#export">遊戲出海</a><a href="#asean">東協 Gateway</a><a href="#demand">商務媒合</a><a href="#deal">Deal</a><a href="#hub">Business Hub</a>
+</nav><button class="btn primary" onclick="openModal('member')">加入會員</button>
+</div></header>
 
-<main class="main">
-<div class="top"><div class="crumb">BridgeX / <b id="crumb">總覽</b></div><div class="demo">Prototype｜全部數據為 Demo 示意</div></div>
+<main>
+<section class="hero">
+<div class="wrap">
+<div class="kicker">大中華 × 台灣 × 東協</div>
+<h1>你要找的產品、解決方案與合作機會，從一個平台開始。</h1>
+<p class="lead">BridgeX 把 AI、遊戲、數位產品、企業需求與東協市場連成一條可交易的商業鏈：先找到產品，再完成驗證、媒合、落地與跨境交易。</p>
+<div class="actions"><button class="btn primary" onclick="scrollToId('market')">我要找 AI／工具／產品</button><button class="btn dark" onclick="scrollToId('export')">我要讓產品出海</button><button class="btn" onclick="openModal('demand')">建立商務需求</button></div>
+<div class="search"><input placeholder="試試：我要做短影音廣告、找 AI Agent、找馬來西亞 Publisher、把遊戲帶進東協…" id="searchInput"><button onclick="doSearch()">搜尋產品與解決方案</button></div>
+<div class="quick"><span class="chip">AI 影片</span><span class="chip">AI Agent</span><span class="chip">AI 翻譯</span><span class="chip">SLG</span><span class="chip">Idle</span><span class="chip">SaaS</span><span class="chip">Malaysia</span><span class="chip">Thailand</span></div>
+</div></section>
 
-<section id="home" class="page active">
-<h1>BridgeX 全平台商業作業系統</h1>
-<div class="sub">V14 把 V1–V13 的 Marketplace、Business Hub、AI 媒合、Deal、交易、資料安全與管理數據，整合成同一個營運閉環。</div>
-<div class="grid4">
-<div class="card kpi"><label>產品供給</label><div class="num">1,286</div><div class="delta">＋86 本月</div></div>
-<div class="card kpi"><label>活躍會員</label><div class="num">19,688</div><div class="delta">＋12.4%</div></div>
-<div class="card kpi"><label>進行中 Deal</label><div class="num">37</div><div class="delta">＋8</div></div>
-<div class="card kpi"><label>年度 GMV</label><div class="num">NT$86.4M</div><div class="delta">＋21.8%</div></div>
+<section>
+<div class="wrap">
+<div class="section-head"><div><h2>30 秒看懂 BridgeX</h2><p>不是另一個 AI 工具網站，而是一個把「產品供給 → 企業需求 → 跨境市場 → 商業交易」接起來的平台。</p></div></div>
+<div class="audience">
+<div class="aud"><strong>企業</strong><span>我有問題需要解決 → 找 AI、遊戲、數位產品與服務</span></div>
+<div class="aud"><strong>AI／產品公司</strong><span>我有產品 → 找客戶、代理商、通路與海外市場</span></div>
+<div class="aud"><strong>遊戲／數位產品</strong><span>我有產品 → 找台灣、馬來西亞與東協 Publisher／代理</span></div>
+<div class="aud"><strong>我要進東協</strong><span>找市場、在地夥伴、KOL、媒體、金流、行銷與落地服務</span></div>
 </div>
-<div class="section card">
-<h2>BridgeX 商業閉環</h2>
-<div class="flow"><b>產品上架</b><span class="arrow">→</span><b>合作契約</b><span class="arrow">→</span><b>平台驗證</b><span class="arrow">→</span><b>免費搜尋</b><span class="arrow">→</span><b>付費解鎖</b><span class="arrow">→</span><b>需求</b><span class="arrow">→</span><b>AI 媒合</b><span class="arrow">→</span><b>Chat</b><span class="arrow">→</span><b>Deal</b><span class="arrow">→</span><b>交易</b><span class="arrow">→</span><b>分潤</b></div>
+<div class="flow" style="margin-top:22px">
+<div class="step"><b>01</b>找到產品</div><div class="step"><b>02</b>平台驗證</div><div class="step"><b>03</b>會員解鎖</div><div class="step"><b>04</b>AI 媒合</div><div class="step"><b>05</b>BD／Deal</div><div class="step"><b>06</b>交易／分潤</div>
 </div>
-<div class="section grid2">
-<div class="card"><h2>四大商業入口</h2><div class="list">
-<div class="item"><strong>企業｜我有問題需要解決</strong><p>搜尋 AI、SaaS、行銷、數位與跨境解決方案。</p></div>
-<div class="item"><strong>產品公司｜我有產品，我想出海</strong><p>尋找台灣、馬來西亞及東協 Publisher、代理、通路。</p></div>
-<div class="item"><strong>AI 公司｜我有技術，我要找客戶</strong><p>產品上架、會員專屬方案、企業需求與媒合。</p></div>
-<div class="item"><strong>東協拓展｜我要進入市場</strong><p>找在地夥伴、KOL、媒體、行銷、Localization、支付與營運。</p></div>
+</div></section>
+
+<section id="market">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">01 / Product Marketplace</div><h2>產品 Marketplace</h2><p>免費會員也能搜尋、瀏覽完整產品資料；付費會員則進一步取得聯絡、聊天、媒合與商業合作權限。</p></div><button class="btn" onclick="openModal('listing')">我要上架產品</button></div>
+<div class="grid">
+<div class="card product"><div class="num">AI VIDEO</div><h3>AI Video Pro</h3><p>文字轉影片、短影音廣告、批量內容生成。適合行銷團隊與品牌內容製作。</p><div class="badges"><span class="badge">BridgeX 合作產品</span><span class="badge green">資料保護規範</span><span class="badge gold">會員專屬方案</span></div><div class="price"><div><div class="market">市場方案 NT$1,490/月</div><div class="bxprice">BridgeX NT$1,190/月</div></div><div class="save">省 20%</div></div><button class="btn primary" style="width:100%;margin-top:14px" onclick="openProduct('AI Video Pro')">查看產品詳情</button></div>
+<div class="card product"><div class="num">AI ENTERPRISE</div><h3>Enterprise AI Agent</h3><p>企業知識庫、流程自動化、客服與內部 Agent 導入方案。</p><div class="badges"><span class="badge">已完成平台合作認證</span><span class="badge green">Level 2 脫敏</span><span class="badge gold">企業專屬條件</span></div><div class="price"><div><div class="market">依需求報價</div><div class="bxprice">BridgeX 企業方案</div></div><div class="save">專案價</div></div><button class="btn primary" style="width:100%;margin-top:14px" onclick="openProduct('Enterprise AI Agent')">查看產品詳情</button></div>
+<div class="card product"><div class="num">MARTECH</div><h3>AI Marketing Suite</h3><p>廣告素材、文案、受眾分析與 campaign workflow 整合。</p><div class="badges"><span class="badge">BridgeX 合作產品</span><span class="badge green">AI 資料政策揭露</span><span class="badge gold">會員優惠</span></div><div class="price"><div><div class="market">NT$2,990/月</div><div class="bxprice">NT$2,390/月</div></div><div class="save">省 20%</div></div><button class="btn primary" style="width:100%;margin-top:14px" onclick="openProduct('AI Marketing Suite')">查看產品詳情</button></div>
+<div class="card product"><div class="num">GAME / SLG</div><h3>Legend Strategy</h3><p>SLG 手遊，尋找台灣／馬來西亞／東協 Publisher、代理與營運合作。</p><div class="badges"><span class="badge">BridgeX Verified</span><span class="badge">海外合作可談</span><span class="badge green">資料規範</span></div><button class="btn" style="width:100%;margin-top:14px" onclick="openProduct('Legend Strategy')">查看遊戲詳情</button></div>
+<div class="card product"><div class="num">GAME / IDLE</div><h3>Idle Heroes World</h3><p>Idle RPG，已有產品資料包，可媒合 Publisher、KOL、廣告與在地化服務。</p><div class="badges"><span class="badge">已簽平台合作</span><span class="badge gold">海外發行需求</span></div><button class="btn" style="width:100%;margin-top:14px" onclick="openProduct('Idle Heroes World')">查看遊戲詳情</button></div>
+<div class="card product"><div class="num">SAAS / DIGITAL</div><h3>Cloud Commerce AI</h3><p>電商內容與營運自動化 SaaS，支援企業導入與東協市場拓展。</p><div class="badges"><span class="badge">BridgeX 合作產品</span><span class="badge green">資料保護</span><span class="badge gold">海外合作</span></div><button class="btn" style="width:100%;margin-top:14px" onclick="openProduct('Cloud Commerce AI')">查看產品詳情</button></div>
+</div>
+<div class="notice" style="margin-top:20px">產品價格與優惠條件以實際合作合約及產品商業條款為準。BridgeX 的平台原則是：正式合作產品提供會員專屬價格、折扣、方案或其他會員專屬商業條件；不以「所有產品永遠最低價」作為未經驗證的承諾。</div>
+</div></section>
+
+<section class="darkband" id="trust">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">BridgeX Trust Layer</div><h2>三個平台信任標準</h2><p>讓使用者敢用、敢買、敢合作；讓產品方也能獲得正式商業曝光。</p></div></div>
+<div class="grid">
+<div class="card"><div class="num">01 / VERIFIED</div><h3>正式合作產品</h3><p>所有正式上架的 AI、遊戲、SaaS、數位產品與服務供應方，原則上須完成平台合作合約；企業、公司與個人創作者均納入。</p><div class="badges"><span class="badge">合作合約</span><span class="badge">身分／產品資料</span></div></div>
+<div class="card"><div class="num">02 / EXCLUSIVE</div><h3>BridgeX 會員專屬條件</h3><p>依產品型態提供會員折扣、專屬方案、企業報價、試用、服務包或其他商業條件。</p><div class="badges"><span class="badge gold">會員價格</span><span class="badge gold">企業方案</span></div></div>
+<div class="card"><div class="num">03 / DATA</div><h3>Data Protection Standard</h3><p>不論 AI 工具來自中國、台灣或其他地區，涉及企業敏感資料一律依 BridgeX 資料安全規範處理；跨境使用另依實際法規與資料流向管理。</p><div class="badges"><span class="badge green">脫敏</span><span class="badge green">匿名化</span><span class="badge green">政策揭露</span></div></div>
+</div>
+</div></section>
+
+<section id="solution">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">02 / Solution Center</div><h2>不要先找工具，先說你要解決什麼</h2><p>BridgeX 用「問題」作為搜尋入口，再從產品資料庫找適合的工具與服務。</p></div></div>
+<div class="grid">
+<div class="card"><div class="num">企業行銷</div><h3>我要降低短影音廣告製作成本</h3><p>AI Video → AI 文案 → 素材生成 → 廣告 workflow → 成效優化</p><button class="btn" style="margin-top:14px" onclick="solution('短影音廣告')">找解決方案</button></div>
+<div class="card"><div class="num">企業效率</div><h3>我要導入企業 AI Agent</h3><p>知識庫 → 權限 → 脫敏 → Agent → CRM／客服／內部流程</p><button class="btn" style="margin-top:14px" onclick="solution('企業 AI Agent')">找解決方案</button></div>
+<div class="card"><div class="num">遊戲出海</div><h3>我要把遊戲帶進馬來西亞</h3><p>產品評估 → Publisher → 在地化 → KOL／媒體 → 廣告 → 金流 → 營運</p><button class="btn" style="margin-top:14px" onclick="solution('馬來西亞遊戲出海')">找解決方案</button></div>
+<div class="card"><div class="num">AI 出海</div><h3>我的 AI 產品想找東協客戶</h3><p>市場選擇 → Partner → Demo → 商務媒合 → 在地銷售 → Revenue Share</p><button class="btn" style="margin-top:14px" onclick="solution('AI 東協出海')">找解決方案</button></div>
+</div>
+</div></section>
+
+<section id="export">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">03 / Game & Digital Export</div><h2>遊戲出海不是附加功能，而是一條核心業務線</h2><p>把中國大陸、台灣的遊戲與數位產品，透過台灣／馬來西亞節點進入東協。</p></div><button class="btn primary" onclick="openModal('export')">提交產品出海</button></div>
+<div class="flow">
+<div class="step"><b>供給</b>中國／台灣產品</div><div class="step"><b>評估</b>類型／市場性</div><div class="step"><b>市場</b>TW／MY／SEA</div><div class="step"><b>Partner</b>Publisher／代理</div><div class="step"><b>落地</b>在地化／KOL／廣告</div><div class="step"><b>營運</b>發行／投放／客服</div>
+</div>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Publisher／代理</h3><p>媒合台灣、馬來西亞、泰國、越南、印尼、菲律賓等市場的發行與代理夥伴。</p></div>
+<div class="card"><h3>在地化</h3><p>語言、文化、商店素材、客服、支付、法規與產品調整。</p></div>
+<div class="card"><h3>Marketing／KOL</h3><p>媒體、KOL、社群、廣告投放與內容製作整合。</p></div>
+</div>
+</div></section>
+
+<section id="asean" class="darkband">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">04 / ASEAN Gateway</div><h2>東協不是一個市場，是一組市場節點</h2><p>BridgeX 以馬來西亞作為重要前哨，再依產品特性媒合其他市場。</p></div></div>
+<div class="grid grid4">
+<div class="card"><div class="num">MY</div><h3>馬來西亞</h3><p>多語環境、SEA 商務節點、Publisher／代理／KOL／企業合作。</p></div>
+<div class="card"><div class="num">TH</div><h3>泰國</h3><p>遊戲與數位產品市場、在地代理與行銷合作。</p></div>
+<div class="card"><div class="num">VN / ID</div><h3>越南／印尼</h3><p>依產品規模與商業模式配置在地 Partner 與營運方案。</p></div>
+<div class="card"><div class="num">SG / PH</div><h3>新加坡／菲律賓</h3><p>企業、區域總部、英語市場與跨境合作節點。</p></div>
+</div>
+</div></section>
+
+<section id="demand">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">05 / Business Demand Market</div><h2>會員需求市場：讓需求本身成為商業資產</h2><p>所有人可看到需求摘要；付費會員解鎖聯絡與聊天，平台再以 AI＋人工 BD 把需求轉成 Deal。</p></div><button class="btn primary" onclick="openModal('demand')">發布我的需求</button></div>
+<table class="table">
+<tr><th>需求</th><th>市場</th><th>目前狀態</th><th>會員權限</th></tr>
+<tr><td>找馬來西亞 Publisher｜SLG</td><td>MY／SEA</td><td>媒合中</td><td>付費會員可解鎖</td></tr>
+<tr><td>找企業 AI Agent 導入商</td><td>台灣</td><td>洽談中</td><td>付費會員可聊天</td></tr>
+<tr><td>AI 影片產品尋找東協代理</td><td>TH／MY／SG</td><td>媒合中</td><td>付費會員可解鎖</td></tr>
+<tr><td>尋找 KOL／遊戲行銷服務</td><td>TW／MY</td><td>需求驗證</td><td>依會員等級</td></tr>
+</table>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>免費會員</h3><p>瀏覽產品與需求摘要、收藏、比較、問題導向搜尋。</p></div>
+<div class="card"><h3>付費會員</h3><p>解鎖聯絡資訊、平台 Chat、發布需求、AI 推薦與商務媒合。</p></div>
+<div class="card"><h3>Business／Enterprise</h3><p>專屬 BD、東協落地、代理／發行、行銷、在地化、Deal 管理與長期分潤。</p></div>
+</div>
+</div></section>
+
+<section id="deal">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">06 / Deal Management</div><h2>從「聊得來」到「真的成交」</h2><p>BridgeX 不停在媒合頁；媒合成功後進入 Deal，讓商業案件可追蹤、可管理、可持續產生收入。</p></div></div>
+<div class="timeline">
+<div>需求發布</div><div>找到對象</div><div>開始 Chat</div><div>合作意願</div><div>BD 介入</div><div>報價／合約</div><div>交易執行</div><div>分潤</div>
+</div>
+<div class="grid" style="margin-top:20px">
+<div class="card"><div class="num">DEAL ID</div><h3>BX-MY-2026-0088</h3><p>SLG 遊戲 → 馬來西亞 Publisher → 在地化 → KOL → 發行營運。狀態：商務確認。</p></div>
+<div class="card"><div class="num">COMMERCIAL</div><h3>平台怎麼收錢？</h3><p>會員費＋媒合服務費＋交易服務費＋AI／行銷專案費＋代理／發行收入＋長期 Revenue Share。</p></div>
+<div class="card"><div class="num">PROTECTION</div><h3>媒合保護期</h3><p>對 BridgeX 引介的案件設計合理保護期與服務條款，搭配真正的 BD、合約、在地化與交易服務，而非只靠限制條款。</p></div>
+</div>
+</div></section>
+
+<section id="hub" class="darkband">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">07 / Business Hub</div><h2>會員登入後，所有商務活動集中在一個 Hub</h2><p>把收藏、需求、Chat、媒合與 Deal 串起來，讓會員從「看產品」自然走到「做生意」。</p></div><button class="btn" onclick="openModal('member')">查看會員方案</button></div>
+<div class="grid grid4">
+<div class="card"><h3>我的收藏</h3><p>AI、遊戲、SaaS、服務與市場節點。</p></div>
+<div class="card"><h3>我的需求</h3><p>已發布、媒合中、洽談中需求。</p></div>
+<div class="card"><h3>我的 Chat</h3><p>平台內商務對話與合作邀請。</p></div>
+<div class="card"><h3>我的 Deal</h3><p>案件、合約、里程碑、交易與分潤。</p></div>
+</div>
+</div></section>
+
+<section id="data">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">08 / Data Protection</div><h2>資料保護標準：先分級，再使用 AI</h2><p>BridgeX 不以來源國家直接判定安全性；重點是資料敏感程度、使用場景、供應商條款與跨境流向。</p></div></div>
+<table class="table">
+<tr><th>等級</th><th>範例</th><th>原則</th></tr>
+<tr><td>🟢 Level 1</td><td>公開資訊、一般文案、公開文章</td><td>可依產品政策正常使用</td></tr>
+<tr><td>🟡 Level 2</td><td>內部文件、未公開企劃、客戶分析</td><td>分類、脫敏／去識別後，再送第三方 AI</td></tr>
+<tr><td>🔴 Level 3</td><td>個資、客戶名單、財務資料、密碼、API Key、營業秘密</td><td>原則上不得直接提交第三方 AI；採合規的企業環境與權限控管</td></tr>
+</table>
+<div class="notice" style="margin-top:18px">涉及中國大陸 AI 工具時，若存在跨境資料傳輸或敏感資料處理，應另依適用的個資、資安、資料跨境與供應商條款進行法務／資安審查。以上為平台產品設計原則，不取代法律意見。</div>
+</div></section>
+
+<section id="business">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">09 / Business Model</div><h2>BridgeX 怎麼賺錢</h2><p>會員費建立基礎收入；媒合產生交易；服務產生專案收入；代理／發行產生長期分潤。</p></div></div>
+<div class="grid grid4">
+<div class="card"><div class="num">01</div><h3>會員訂閱費</h3><p>FREE → PRO → BUSINESS → ENTERPRISE。</p></div>
+<div class="card"><div class="num">02</div><h3>產品交易／服務費</h3><p>正式合作產品導購、方案、企業採購與服務交易。</p></div>
+<div class="card"><div class="num">03</div><h3>媒合／專案費</h3><p>AI 媒合、人工 BD、行銷、在地化與企業導入。</p></div>
+<div class="card"><div class="num">04</div><h3>代理／發行／分潤</h3><p>遊戲與數位產品跨境代理、發行與長期 Revenue Share。</p></div>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>核心商業飛輪</h3><p style="font-size:18px;font-weight:800;color:var(--ink)">大中華供給 → 產品資料庫 → 免費流量 → 會員升級 → 需求／Chat → AI＋BD 媒合 → Deal → 台灣／東協落地 → 交易 → Revenue Share → 更多產品與會員</p>
+</div>
+</div></section>
+
+<section>
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">10 / Cooperation Architecture</div><h2>平台不是「工具清單」，而是商業轉換層</h2><p>BridgeX 的長期價值來自產品資料、企業需求、Partner 網絡、商業場景、跨境執行能力與交易關係。</p></div></div>
+<div class="grid">
+<div class="card"><h3>AI 產品供給</h3><p>大中華 AI 工具／方案 → 評估 → 上架 → 企業導入 → 海外代理。</p></div>
+<div class="card"><h3>遊戲／數位產品</h3><p>中國／台灣產品 → 評估 → 台灣／馬來西亞 → Publisher／代理 → SEA。</p></div>
+<div class="card"><h3>企業需求</h3><p>企業提出問題 → 解決方案搜尋 → 產品比較 → 聯絡 → 專案／交易。</p></div>
+</div>
+</div></section>
+
+<section style="padding-top:0">
+<div class="wrap">
+<div class="notice"><strong>Prototype 說明：</strong>本 V10 為完整商業架構與 UI 原型。產品名稱、價格、折扣、合作狀態、資料政策、會員權限與 Deal 數據均為示意；正式上線前需完成供應商合約、個資／資安與跨境資料規範、付款機制、稅務、代理／發行合約、媒合保護期及 Revenue Share 條款等法務與營運設計。</div>
+</div></section>
+</main>
+
+<footer><div class="wrap footergrid">
+<div><div class="footerbrand">BridgeX</div><p>大中華 × 台灣 × 東協的 AI／遊戲／數位產品 Marketplace＋商務媒合＋安全導入＋跨境交易平台。</p></div>
+<div><strong style="color:#fff">探索</strong><p>產品 Marketplace<br>解決方案<br>遊戲出海<br>東協 Gateway</p></div>
+<div><strong style="color:#fff">商務</strong><p>商務需求<br>Business Hub<br>Deal Management<br>產品上架</p></div>
+</div></footer>
+
+<div class="modal" id="modal">
+<div class="modalbox">
+<button class="close" onclick="closeModal()">✕</button>
+<div id="modalContent"></div>
 </div></div>
-<div class="card"><h2>今日營運訊號</h2><div class="list"><div class="item"><strong>18 個產品待驗證</strong><p>11 AI｜5 Game｜2 SaaS</p></div><div class="item"><strong>7 個高意願媒合</strong><p>AI Match ≥ 85%</p></div><div class="item"><strong>5 個 Deal 待進合約</strong><p>Pipeline NT$4.8M</p></div><div class="item"><strong>3 個跨境資料案件</strong><p>需要安全規則確認</p></div></div></div>
-</div>
-</section>
 
-<section id="funnel" class="page">
-<h1>商業漏斗</h1><div class="sub">從流量到成交，每一層都有 KPI。</div>
-<div class="grid4"><div class="card kpi"><label>月訪客</label><div class="num">42,800</div></div><div class="card kpi"><label>免費會員</label><div class="num">19,688</div></div><div class="card kpi"><label>付費會員</label><div class="num">7,284</div></div><div class="card kpi"><label>Deal → 成交</label><div class="num">52.4%</div></div></div>
-<div class="section grid2"><div class="card"><h2>轉換漏斗</h2>
-<div class="row"><span>產品瀏覽</span><b>68,420</b></div><div class="bar"><i style="width:100%"></i></div>
-<div class="row"><span>收藏／比較</span><b>19,158</b></div><div class="bar"><i style="width:28%"></i></div>
-<div class="row"><span>需求／聯絡</span><b>8,920</b></div><div class="bar"><i style="width:13%"></i></div>
-<div class="row"><span>媒合</span><b>5,406</b></div><div class="bar"><i style="width:8%"></i></div>
-<div class="row"><span>Deal</span><b>3,112</b></div><div class="bar"><i style="width:4.6%"></i></div>
-<div class="row"><span>成交</span><b>1,628</b></div><div class="bar"><i style="width:2.4%"></i></div></div>
-<div class="card"><h2>成長控制台</h2><div class="row"><span>SEO／自然流量</span><b>38%</b></div><div class="bar"><i style="width:38%"></i></div><div class="row"><span>內容／社群</span><b>24%</b></div><div class="bar"><i style="width:24%"></i></div><div class="row"><span>合作夥伴導流</span><b>21%</b></div><div class="bar"><i style="width:21%"></i></div><div class="row"><span>活動／BD</span><b>17%</b></div><div class="bar"><i style="width:17%"></i></div></div></div>
-</section>
-
-<section id="revenue" class="page">
-<h1>營收／GMV</h1><div class="sub">BridgeX 不只收會員費，而是讓會員、服務、交易與長期分潤串起來。</div>
-<div class="grid4"><div class="card kpi"><label>本月營收</label><div class="num">NT$5.05M</div></div><div class="card kpi"><label>MRR</label><div class="num">NT$1.86M</div></div><div class="card kpi"><label>交易 Pipeline</label><div class="num">NT$42.8M</div></div><div class="card kpi"><label>持續分潤案件</label><div class="num">63</div></div></div>
-<div class="section grid3"><div class="card"><h2>會員訂閱</h2><div class="num">NT$1.86M</div><p class="mini">Free → PRO → BUSINESS → ENTERPRISE</p></div><div class="card"><h2>服務／媒合</h2><div class="num">NT$2.00M</div><p class="mini">媒合費、AI 專案、行銷、Localization</p></div><div class="card"><h2>代理／發行／分潤</h2><div class="num">NT$1.19M</div><p class="mini">Game、AI、數位產品跨境商業收入</p></div></div>
-<div class="section card"><h2>交易結構</h2><table><tr><th>收入來源</th><th>商業邏輯</th><th>目前 Demo</th><th>長期價值</th></tr><tr><td>會員費</td><td>解鎖 Chat、需求、媒合與企業功能</td><td>NT$1.86M</td><td>Recurring</td></tr><tr><td>媒合／服務</td><td>人工 BD、行銷、Localization、導入</td><td>NT$1.12M</td><td>專案收入</td></tr><tr><td>代理／發行</td><td>產品進入市場後的商業分潤</td><td>NT$0.76M</td><td>長期</td></tr><tr><td>Revenue Share</td><td>持續交易／營運收益</td><td>NT$0.43M</td><td>累積型</td></tr></table></div>
-</section>
-
-<section id="products" class="page">
-<h1>產品中心</h1><div class="sub">免費會員可搜尋與查看完整產品資訊；商業聯絡、媒合與合作功能依會員方案解鎖。</div>
-<div class="actions"><button class="btn primary">AI 產品</button><button class="btn">遊戲</button><button class="btn">SaaS／MarTech</button><button class="btn">東協服務</button><button class="btn">中國</button><button class="btn">台灣</button></div>
-<div class="section card"><table><tr><th>產品</th><th>類型</th><th>來源</th><th>BridgeX 合作</th><th>會員方案</th><th>資料安全</th><th>商業狀態</th></tr><tr><td>AI Video Pro</td><td>AI</td><td>中國</td><td><span class="tag ok">已簽約</span></td><td>專屬方案</td><td>Level 2</td><td>高需求</td></tr><tr><td>Enterprise AI Agent</td><td>AI Enterprise</td><td>台灣</td><td><span class="tag ok">已簽約</span></td><td>企業方案</td><td>Level 2</td><td>POC</td></tr><tr><td>Legend Strategy</td><td>遊戲 SLG</td><td>中國</td><td><span class="tag ok">已簽約</span></td><td>Publisher</td><td>Level 1</td><td>MY／TH</td></tr><tr><td>SEA Localization Pro</td><td>服務</td><td>馬來西亞</td><td><span class="tag ok">已簽約</span></td><td>會員優惠</td><td>Level 1</td><td>活躍</td></tr></table></div>
-</section>
-
-<section id="demands" class="page">
-<h1>需求市場</h1><div class="sub">把「我需要什麼」變成可搜尋、可媒合、可成交的商業需求。</div>
-<div class="grid3"><div class="card"><h2>企業需求</h2><div class="num">1,428</div><p class="mini">AI 導入、行銷、自動化、數位轉型</p></div><div class="card"><h2>出海需求</h2><div class="num">892</div><p class="mini">Publisher、代理、KOL、Localization、支付</p></div><div class="card"><h2>產品合作需求</h2><div class="num">716</div><p class="mini">代理、通路、聯名、投資、策略合作</p></div></div>
-<div class="section card"><table><tr><th>需求</th><th>市場</th><th>類型</th><th>AI Match</th><th>回應</th><th>狀態</th></tr><tr><td>尋找 SLG Publisher</td><td>MY／TH</td><td>遊戲出海</td><td>92%</td><td>12</td><td><span class="tag warn">媒合中</span></td></tr><tr><td>企業 AI Agent 導入</td><td>TW</td><td>企業方案</td><td>88%</td><td>8</td><td><span class="tag ok">洽談中</span></td></tr><tr><td>AI 產品東協代理</td><td>SEA</td><td>代理合作</td><td>86%</td><td>6</td><td><span class="tag">驗證中</span></td></tr></table></div>
-</section>
-
-<section id="matching" class="page">
-<h1>AI 媒合中樞</h1><div class="sub">AI 先找「可能性」，人工 BD 再判斷「能不能成交」。</div>
-<div class="grid3"><div class="card"><h2>Legend Strategy × MY Publisher</h2><div class="num">92%</div><p class="mini">產品類型 × 市場 × Publisher 能力 × 合作需求</p><span class="tag ok">推薦</span></div><div class="card"><h2>AI Video × SEA Agency</h2><div class="num">89%</div><p class="mini">企業需求 × 廣告場景 × 區域服務</p><span class="tag ok">推薦</span></div><div class="card"><h2>AI Agent × Enterprise</h2><div class="num">87%</div><p class="mini">問題場景 × 預算 × 資安要求</p><span class="tag ok">推薦</span></div></div>
-<div class="section card"><h2>媒合 → 人工 BD</h2><div class="flow"><b>需求理解</b><span class="arrow">→</span><b>AI Candidate</b><span class="arrow">→</span><b>資料／資格驗證</b><span class="arrow">→</span><b>人工 BD</b><span class="arrow">→</span><b>Chat</b><span class="arrow">→</span><b>Deal</b></div></div>
-</section>
-
-<section id="deals" class="page">
-<h1>Deal Room</h1><div class="sub">每個交易都有 Deal ID、負責人、階段、預估金額、下一步與收入模式。</div>
-<div class="section card"><table><tr><th>Deal ID</th><th>案件</th><th>市場</th><th>金額</th><th>負責 BD</th><th>階段</th><th>收入模式</th></tr><tr><td>BX-MY-2026-0088</td><td>Legend × MY Publisher</td><td>MY</td><td>US$120K</td><td>BD-01</td><td><span class="tag warn">商務確認</span></td><td>Revenue Share</td></tr><tr><td>BX-TW-2026-0112</td><td>Enterprise AI 導入</td><td>TW</td><td>NT$680K</td><td>BD-03</td><td><span class="tag ok">合約中</span></td><td>服務費</td></tr><tr><td>BX-SEA-2026-0141</td><td>AI Video × Agency</td><td>MY／TH</td><td>US$45K</td><td>BD-02</td><td><span class="tag">洽談中</span></td><td>媒合＋專案</td></tr></table></div>
-<div class="section card"><h2>Deal Lifecycle</h2><div class="flow"><b>需求</b><span class="arrow">→</span><b>Match</b><span class="arrow">→</span><b>Chat</b><span class="arrow">→</span><b>合作意願</b><span class="arrow">→</span><b>報價</b><span class="arrow">→</span><b>合約</b><span class="arrow">→</span><b>執行</b><span class="arrow">→</span><b>交易</b><span class="arrow">→</span><b>分潤</b></div></div>
-</section>
-
-<section id="contracts" class="page">
-<h1>契約／服務中心</h1><div class="sub">產品要上架，先完成合作契約；交易產生後，再由 Deal 連接服務與合約。</div>
-<div class="grid3"><div class="card"><h2>產品合作契約</h2><div class="num">1,104</div><p class="mini">已完成簽約的正式上架產品</p></div><div class="card"><h2>待簽產品</h2><div class="num">82</div><p class="mini">等待供應商／創作者補件</p></div><div class="card"><h2>服務案件</h2><div class="num">246</div><p class="mini">AI、行銷、Localization、BD</p></div></div>
-<div class="section card"><div class="notice">正式平台版本可在此串接電子簽約、服務訂單、SLA、付款條件、媒合保護期與案件文件。實際契約條款需依適用法律及個案確認。</div></div>
-</section>
-
-<section id="delivery" class="page">
-<h1>交付／分潤</h1><div class="sub">交易不是終點；交付、里程碑、付款與 Revenue Share 才是長期收入資產。</div>
-<div class="grid4"><div class="card kpi"><label>執行中案件</label><div class="num">37</div></div><div class="card kpi"><label>本月里程碑</label><div class="num">58</div></div><div class="card kpi"><label>待收款</label><div class="num">NT$2.7M</div></div><div class="card kpi"><label>分潤中</label><div class="num">63</div></div></div>
-<div class="section card"><table><tr><th>案件</th><th>交付</th><th>里程碑</th><th>收款</th><th>分潤</th><th>狀態</th></tr><tr><td>Legend Strategy MY</td><td>上線準備</td><td>3／4</td><td>80%</td><td>開始計算</td><td><span class="tag ok">正常</span></td></tr><tr><td>AI Agent Enterprise</td><td>POC</td><td>2／3</td><td>50%</td><td>—</td><td><span class="tag warn">待驗收</span></td></tr></table></div>
-</section>
-
-<section id="security" class="page">
-<h1>資料安全</h1><div class="sub">不論 AI 工具來自中國、台灣或其他市場，企業敏感資料都遵循 BridgeX 的資料安全與脫敏規範。</div>
-<div class="grid3"><div class="card"><h2>Level 1</h2><p class="mini">公開資料、一般文案、公開資訊</p><span class="tag ok">可直接使用</span></div><div class="card"><h2>Level 2</h2><p class="mini">內部文件、未公開計畫、客戶分析</p><span class="tag warn">先脫敏／匿名化</span></div><div class="card"><h2>Level 3</h2><p class="mini">個資、客戶名單、財務、密碼、API Key、營業秘密</p><span class="tag">禁止直接送第三方 AI</span></div></div>
-<div class="section card"><h2>平台控制點</h2><div class="list"><div class="item"><strong>供應商安全揭露</strong><p>資料使用、保存、刪除、模型訓練政策。</p></div><div class="item"><strong>企業資料分級</strong><p>在產品使用前判斷資料類型與處理方式。</p></div><div class="item"><strong>跨境傳輸檢核</strong><p>涉及跨境資料時，依適用法規與契約確認。</p></div></div></div>
-</section>
-
-<section id="growth" class="page">
-<h1>市場成長</h1><div class="sub">V14 新增 Growth OS：把產品供給、SEO、內容、會員、BD 與市場拓展放在同一張圖。</div>
-<div class="grid3"><div class="card"><h2>台灣</h2><div class="num">41%</div><p class="mini">企業 AI、SaaS、遊戲與數位需求</p></div><div class="card"><h2>馬來西亞</h2><div class="num">27%</div><p class="mini">Publisher、Localization、SEA Hub</p></div><div class="card"><h2>其他東協</h2><div class="num">32%</div><p class="mini">TH／ID／VN／SG／PH</p></div></div>
-<div class="section grid2"><div class="card"><h2>市場複製模型</h2><div class="flow"><b>台灣驗證</b><span class="arrow">→</span><b>馬來西亞</b><span class="arrow">→</span><b>泰國</b><span class="arrow">→</span><b>印尼</b><span class="arrow">→</span><b>其他 SEA</b></div></div><div class="card"><h2>Growth 指標</h2><div class="row"><span>新產品／月</span><b>86</b></div><div class="row"><span>新會員／月</span><b>1,920</b></div><div class="row"><span>新需求／月</span><b>386</b></div><div class="row"><span>新 Deal／月</span><b>74</b></div></div></div>
-</section>
-
-<section id="report" class="page">
-<h1>董事會／投資人</h1><div class="sub">用一組指標回答：平台有沒有供給？有沒有需求？有沒有交易？交易能不能累積？</div>
-<div class="grid4"><div class="card kpi"><label>產品</label><div class="num">1,286</div></div><div class="card kpi"><label>付費會員</label><div class="num">7,284</div></div><div class="card kpi"><label>Pipeline</label><div class="num">NT$42.8M</div></div><div class="card kpi"><label>GMV</label><div class="num">NT$86.4M</div></div></div>
-<div class="section card"><h2>平台價值鏈</h2><table><tr><th>層級</th><th>核心 KPI</th><th>商業意義</th></tr><tr><td>供給</td><td>產品數／驗證率／契約率</td><td>Marketplace 深度</td></tr><tr><td>需求</td><td>會員／企業需求／搜尋</td><td>市場需求密度</td></tr><tr><td>媒合</td><td>Match／Chat／人工 BD</td><td>商業轉換能力</td></tr><tr><td>交易</td><td>Deal／GMV／收款</td><td>平台變現</td></tr><tr><td>長期</td><td>Revenue Share／留存</td><td>累積型收入資產</td></tr></table>
-<div class="section actions"><button class="btn primary" onclick="alert('Demo：正式版可匯出 Investor Update / Board Pack')">產生董事會報表</button><button class="btn" onclick="alert('Demo：正式版可匯出 CSV / Excel / PDF')">匯出 KPI</button></div></div>
-</section>
-</main></div>
 <script>
-const map={home:'總覽',funnel:'商業漏斗',revenue:'營收／GMV',products:'產品中心',demands:'需求市場',matching:'AI 媒合',deals:'Deal Room',contracts:'契約／服務',delivery:'交付／分潤',security:'資料安全',growth:'市場成長',report:'董事會／投資人'};
-function go(id,b){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('crumb').textContent=map[id]}
+const modal=document.getElementById('modal'), content=document.getElementById('modalContent');
+function openModal(type){
+let title='',body='';
+if(type==='member'){title='BridgeX 會員方案';body=`<p>FREE：完整產品資料庫、產品詳情、收藏／比較、問題導向搜尋。</p><p>PRO：解鎖聯絡資訊、平台 Chat、發布需求、AI 推薦與基礎媒合。</p><p>BUSINESS：專屬 BD、需求優先媒合、企業方案、東協市場服務。</p><p>ENTERPRISE：客製導入、跨境專案、代理／發行、Deal 管理與長期合作。</p><button class="btn primary" onclick="alert('Demo：會員註冊流程')">開始註冊</button>`}
+if(type==='demand'){title='建立商務需求';body=`<div class="field"><label>我想找</label><select><option>AI 產品／工具</option><option>遊戲 Publisher／代理</option><option>行銷／KOL／媒體</option><option>東協在地夥伴</option><option>投資／策略合作</option></select></div><div class="field"><label>需求說明</label><textarea rows="5" placeholder="例如：我有一款 SLG，希望找馬來西亞 Publisher…"></textarea></div><button class="btn primary" onclick="alert('Demo：需求已建立')">送出需求</button>`}
+if(type==='listing'){title='產品上架申請';body=`<p>BridgeX 正式合作產品原則上須完成平台合作合約與基本資料審核。</p><div class="field"><label>產品名稱</label><input placeholder="產品／公司名稱"></div><div class="field"><label>產品類型</label><select><option>AI 工具</option><option>AI Enterprise</option><option>遊戲</option><option>SaaS／數位產品</option><option>行銷／海外服務</option></select></div><div class="field"><label>希望合作市場</label><input placeholder="台灣／馬來西亞／泰國／越南／印尼…"></div><button class="btn primary" onclick="alert('Demo：已送出上架申請')">送出申請</button>`}
+if(type==='export'){title='遊戲／數位產品出海';body=`<p>BridgeX 可協助產品評估、市場選擇、Publisher／代理媒合、在地化、KOL／媒體、廣告、支付與營運。</p><div class="field"><label>產品名稱</label><input placeholder="遊戲／數位產品"></div><div class="field"><label>目前需求</label><textarea rows="4" placeholder="例如：找馬來西亞與泰國 Publisher…"></textarea></div><button class="btn primary" onclick="alert('Demo：已送出出海需求')">開始媒合</button>`}
+content.innerHTML='<h2>'+title+'</h2>'+body;modal.classList.add('show')}
+function closeModal(){modal.classList.remove('show')}
+function openProduct(name){content.innerHTML=`<h2>${name}</h2><div class="badges"><span class="badge">BridgeX Verified</span><span class="badge gold">會員專屬方案</span><span class="badge green">Data Protection</span></div><p><strong>產品摘要：</strong>這是產品詳情頁 Demo，正式版可呈現核心功能、使用場景、影片／Demo、定價、API、支援語言、台灣／東協可用性、企業方案、代理／發行需求與合作狀態。</p><p><strong>商務合作：</strong>免費會員可瀏覽；付費會員可解鎖平台聯絡／Chat；Business／Enterprise 可申請 BridgeX BD 介入。</p><button class="btn primary" onclick="alert('Demo：升級會員後可解鎖合作')">解鎖合作</button>`;modal.classList.add('show')}
+function solution(x){alert('Demo：正在為「'+x+'」整理 BridgeX 產品與服務方案。')}
+function doSearch(){let q=document.getElementById('searchInput').value.trim();alert(q?'Demo 搜尋：'+q+'\\n正式版將返回產品、解決方案與可媒合夥伴。':'請輸入你要解決的問題或想找的產品。')}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()})
 </script>
-</body></html>
+</body>
+</html>
