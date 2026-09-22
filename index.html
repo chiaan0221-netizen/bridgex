@@ -2,15 +2,28 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BridgeX V10｜大中華 × 台灣 × 東協商業平台</title>
 <style>
-:root{--ink:#10233f;--muted:#607089;--line:#dfe6ef;--bg:#f6f8fb;--card:#fff;--accent:#175cd3;--accent2:#0b8f71;--gold:#b7791f;--danger:#b42318;--dark:#071426}
+:root{--ink:#10233f;--muted:#607089;--line:#dfe6ef;--bg:#f6f8fb;--card:#fff;--accent:#175cd3;--accent2:#0b8f71;--gold:#b7791f;--danger:#b42318;--dark:#071426;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
 a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:900;letter-spacing:.5px}.brand span{color:var(--accent)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:22px;font-weight:900;letter-spacing:.5px}.brand span{color:var(--accent)}
 nav{display:flex;gap:22px;font-size:14px;color:#42526a}nav a:hover{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.hamburger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px;flex-shrink:0}
+.hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-nav{display:none;flex-direction:column;gap:2px;background:#fff;border-bottom:1px solid var(--line);overflow:hidden;max-height:0;transition:max-height .25s ease}
+.mobile-nav.open{max-height:520px}
+.mobile-nav a{padding:14px 24px;font-size:15px;color:#33415a;border-top:1px solid var(--line)}
+.mobile-nav a:active{background:#f2f6fb}
+.mobile-nav .btn{margin:12px 24px 18px}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-weight:800;border:1px solid var(--line);background:#fff;cursor:pointer}
 .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.dark{background:var(--dark);color:#fff;border-color:var(--dark)}
 .hero{background:linear-gradient(135deg,#eef5ff 0%,#fff 54%,#eefbf7 100%);padding:76px 0 62px;border-bottom:1px solid var(--line)}
@@ -29,22 +42,45 @@ section{padding:66px 0}.section-head{display:flex;justify-content:space-between;
 .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{background:#fff;border:1px solid var(--line);padding:16px 10px;border-radius:12px;text-align:center;font-size:13px;font-weight:800}.step b{display:block;font-size:11px;color:var(--accent);margin-bottom:5px}
 .product{position:relative}.price{display:flex;justify-content:space-between;align-items:end;margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}.market{text-decoration:line-through;color:#8995a7;font-size:13px}.bxprice{font-size:20px;font-weight:900}.save{color:var(--accent2);font-size:12px;font-weight:800}
 .darkband{background:var(--dark);color:#fff}.darkband .section-head p{color:#b7c4d5}.darkband .card{background:#0d2038;border-color:#233852}.darkband .card p{color:#b7c4d5}.darkband .num{color:#78a7ff}
-.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:13px}.table th{background:#f0f4f9}
+.table-scroll{width:100%;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+.table{width:100%;min-width:560px;border-collapse:collapse;background:#fff;overflow:hidden}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:13px;white-space:nowrap}.table th{background:#f0f4f9}
 .timeline{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}.timeline div{background:#fff;border:1px solid var(--line);padding:12px 8px;border-radius:10px;text-align:center;font-size:12px;font-weight:800}
 .notice{border-left:4px solid var(--gold);background:#fffaf0;padding:16px 18px;border-radius:8px;color:#6d521b;font-size:13px}
 footer{background:#081526;color:#aebdce;padding:42px 0}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footerbrand{font-size:22px;color:#fff;font-weight:900}
 .modal{display:none;position:fixed;inset:0;background:rgba(4,13,26,.58);z-index:50;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#fff;max-width:720px;width:100%;border-radius:18px;padding:28px;max-height:88vh;overflow:auto}.close{float:right;border:0;background:#eef2f7;border-radius:8px;padding:6px 10px;cursor:pointer}.field{margin:12px 0}.field label{font-size:13px;font-weight:800;display:block;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cfd8e5;border-radius:9px;font:inherit}
-@media(max-width:900px){nav{display:none}.grid,.grid4{grid-template-columns:1fr 1fr}.audience{grid-template-columns:1fr 1fr}.flow,.timeline{grid-template-columns:repeat(3,1fr)}h1{font-size:40px}}
-@media(max-width:620px){.grid,.grid4,.audience{grid-template-columns:1fr}.flow,.timeline{grid-template-columns:1fr 1fr}.hero{padding-top:48px}h1{font-size:34px}.search{flex-direction:column}.search button{height:44px}}
+@media(max-width:900px){
+nav{display:none}
+.hamburger{display:flex}
+.mobile-nav{display:flex}
+.grid,.grid4{grid-template-columns:1fr 1fr}.audience{grid-template-columns:1fr 1fr}.flow,.timeline{grid-template-columns:repeat(3,1fr)}h1{font-size:40px}
+.wrap{padding:0 18px}
+}
+@media(max-width:620px){.grid,.grid4,.audience{grid-template-columns:1fr}.flow,.timeline{grid-template-columns:1fr 1fr}.hero{padding:32px 0 40px}h1{font-size:30px;letter-spacing:-.5px}.lead{font-size:17px}.search{flex-direction:column}.search input{width:100%}.search button{height:46px;width:100%}.actions{flex-direction:column}.actions .btn{width:100%}.section-head{flex-direction:column;align-items:start}.footergrid{grid-template-columns:1fr;gap:24px}.nav{height:64px}.brand{font-size:19px}}
+@media(max-width:400px){h1{font-size:26px}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
+<header>
+<div class="wrap nav">
 <div class="brand">Bridge<span>X</span> <small style="font-size:11px;color:#75839a">V10</small></div>
 <nav>
 <a href="#market">產品 Marketplace</a><a href="#solution">解決方案</a><a href="#export">遊戲出海</a><a href="#asean">東協 Gateway</a><a href="#demand">商務媒合</a><a href="#deal">Deal</a><a href="#hub">Business Hub</a>
-</nav><button class="btn primary" onclick="openModal('member')">加入會員</button>
-</div></header>
+</nav>
+<div class="nav-actions">
+<button class="btn primary" onclick="openModal('member')">加入會員</button>
+<button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+</div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="#market" onclick="closeMobileNav()">產品 Marketplace</a>
+<a href="#solution" onclick="closeMobileNav()">解決方案</a>
+<a href="#export" onclick="closeMobileNav()">遊戲出海</a>
+<a href="#asean" onclick="closeMobileNav()">東協 Gateway</a>
+<a href="#demand" onclick="closeMobileNav()">商務媒合</a>
+<a href="#deal" onclick="closeMobileNav()">Deal</a>
+<a href="#hub" onclick="closeMobileNav()">Business Hub</a>
+</div>
+</header>
 
 <main>
 <section class="hero">
@@ -133,13 +169,13 @@ footer{background:#081526;color:#aebdce;padding:42px 0}.footergrid{display:grid;
 <section id="demand">
 <div class="wrap">
 <div class="section-head"><div><div class="kicker">05 / Business Demand Market</div><h2>會員需求市場：讓需求本身成為商業資產</h2><p>所有人可看到需求摘要；付費會員解鎖聯絡與聊天，平台再以 AI＋人工 BD 把需求轉成 Deal。</p></div><button class="btn primary" onclick="openModal('demand')">發布我的需求</button></div>
-<table class="table">
+<div class="table-scroll"><table class="table">
 <tr><th>需求</th><th>市場</th><th>目前狀態</th><th>會員權限</th></tr>
 <tr><td>找馬來西亞 Publisher｜SLG</td><td>MY／SEA</td><td>媒合中</td><td>付費會員可解鎖</td></tr>
 <tr><td>找企業 AI Agent 導入商</td><td>台灣</td><td>洽談中</td><td>付費會員可聊天</td></tr>
 <tr><td>AI 影片產品尋找東協代理</td><td>TH／MY／SG</td><td>媒合中</td><td>付費會員可解鎖</td></tr>
 <tr><td>尋找 KOL／遊戲行銷服務</td><td>TW／MY</td><td>需求驗證</td><td>依會員等級</td></tr>
-</table>
+</table></div>
 <div class="grid" style="margin-top:20px">
 <div class="card"><h3>免費會員</h3><p>瀏覽產品與需求摘要、收藏、比較、問題導向搜尋。</p></div>
 <div class="card"><h3>付費會員</h3><p>解鎖聯絡資訊、平台 Chat、發布需求、AI 推薦與商務媒合。</p></div>
@@ -174,12 +210,12 @@ footer{background:#081526;color:#aebdce;padding:42px 0}.footergrid{display:grid;
 <section id="data">
 <div class="wrap">
 <div class="section-head"><div><div class="kicker">08 / Data Protection</div><h2>資料保護標準：先分級，再使用 AI</h2><p>BridgeX 不以來源國家直接判定安全性；重點是資料敏感程度、使用場景、供應商條款與跨境流向。</p></div></div>
-<table class="table">
+<div class="table-scroll"><table class="table">
 <tr><th>等級</th><th>範例</th><th>原則</th></tr>
 <tr><td>🟢 Level 1</td><td>公開資訊、一般文案、公開文章</td><td>可依產品政策正常使用</td></tr>
 <tr><td>🟡 Level 2</td><td>內部文件、未公開企劃、客戶分析</td><td>分類、脫敏／去識別後，再送第三方 AI</td></tr>
 <tr><td>🔴 Level 3</td><td>個資、客戶名單、財務資料、密碼、API Key、營業秘密</td><td>原則上不得直接提交第三方 AI；採合規的企業環境與權限控管</td></tr>
-</table>
+</table></div>
 <div class="notice" style="margin-top:18px">涉及中國大陸 AI 工具時，若存在跨境資料傳輸或敏感資料處理，應另依適用的個資、資安、資料跨境與供應商條款進行法務／資安審查。以上為平台產品設計原則，不取代法律意見。</div>
 </div></section>
 
@@ -238,8 +274,21 @@ function closeModal(){modal.classList.remove('show')}
 function openProduct(name){content.innerHTML=`<h2>${name}</h2><div class="badges"><span class="badge">BridgeX Verified</span><span class="badge gold">會員專屬方案</span><span class="badge green">Data Protection</span></div><p><strong>產品摘要：</strong>這是產品詳情頁 Demo，正式版可呈現核心功能、使用場景、影片／Demo、定價、API、支援語言、台灣／東協可用性、企業方案、代理／發行需求與合作狀態。</p><p><strong>商務合作：</strong>免費會員可瀏覽；付費會員可解鎖平台聯絡／Chat；Business／Enterprise 可申請 BridgeX BD 介入。</p><button class="btn primary" onclick="alert('Demo：升級會員後可解鎖合作')">解鎖合作</button>`;modal.classList.add('show')}
 function solution(x){alert('Demo：正在為「'+x+'」整理 BridgeX 產品與服務方案。')}
 function doSearch(){let q=document.getElementById('searchInput').value.trim();alert(q?'Demo 搜尋：'+q+'\\n正式版將返回產品、解決方案與可媒合夥伴。':'請輸入你要解決的問題或想找的產品。')}
-function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});closeMobileNav()}
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()})
+
+const hamburger=document.getElementById('hamburger'), mobileNav=document.getElementById('mobileNav');
+function toggleMobileNav(){
+  const open=mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open',open);
+  hamburger.setAttribute('aria-expanded',open?'true':'false');
+}
+function closeMobileNav(){
+  mobileNav.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
+}
+window.addEventListener('resize',()=>{ if(window.innerWidth>900) closeMobileNav(); });
 </script>
 </body>
 </html>
