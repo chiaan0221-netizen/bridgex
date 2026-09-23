@@ -31,6 +31,17 @@ h1{font-size:clamp(42px,6vw,68px);line-height:1.08;letter-spacing:-2.8px;margin:
 footer{background:#111827;color:#cbd2dc;padding:35px 24px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;font-size:13px}
 @media(max-width:900px){.navlinks{display:none}.grid,.arch,.questions{grid-template-columns:1fr 1fr}.moat{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:600px){.nav{height:60px}.navbtn{display:none}.hero{padding-top:55px}.grid,.arch,.questions,.coregrid{grid-template-columns:1fr}.moat{grid-template-columns:repeat(2,1fr)}h1{font-size:43px}.section{padding:55px 18px}}
+
+.flowline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;padding:22px 10px;font-weight:700}
+.flowline div{padding:10px 14px;border:1px solid #d9e2ec;border-radius:12px;background:#fff;color:#182234}
+.flowline span{color:#667085}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.step{background:#fff;border:1px solid #e4e7ec;border-radius:16px;padding:18px;min-height:150px}
+.step b{display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:50%;background:#111827;color:#fff;margin-bottom:12px}
+.step h3{margin:4px 0 8px}.step p{margin:0;color:#667085;line-height:1.7}
+@media(max-width:900px){.timeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.timeline{grid-template-columns:1fr}.flowline{justify-content:flex-start}}
+
 </style>
 </head>
 <body>
@@ -44,6 +55,7 @@ footer{background:#111827;color:#cbd2dc;padding:35px 24px}.foot{max-width:1180px
 <a href="#moat">競爭護城河</a>
 <a href="#layers">資訊分層</a>
 <a href="#monetization">資料變現</a>
+<a href="#dealengine">交易引擎</a>
 <a href="#flywheel">資料飛輪</a>
 <a href="#questions">討論問題</a>
 </div>
@@ -254,9 +266,132 @@ footer{background:#111827;color:#cbd2dc;padding:35px 24px}.foot{max-width:1180px
 </div>
 </section>
 
+
+<section class="section" id="dealengine">
+<div class="wrap">
+<div class="head">
+<h2>七、BridgeX 商業交易引擎</h2>
+<p>交易不是一個「成交按鈕」，而是一套從商機、案件、洽談、報價、合約、付款、交付到結案的標準化流程。BridgeX 的目標不是控制所有交易，而是成為商業合作的流程與資料中樞。</p>
+</div>
+
+<div class="core">
+<h2>交易的核心：把「可能合作」變成「可以管理的商業案件」</h2>
+<p>當 AI 媒合產生一個高品質商機後，系統建立唯一案件編號，將雙方的合作目標、條件、報價、提案、談判、文件、付款、執行與結果全部串在同一個案件中。</p>
+<div class="flowline">
+<div>需求</div><span>→</span><div>AI媒合</div><span>→</span><div>高品質商機</div><span>→</span><div>建立案件</div><span>→</span><div>商務洽談</div><span>→</span><div>交易</div><span>→</span><div>落地</div><span>→</span><div>商業記憶</div>
+</div>
+</div>
+
+<div class="head" style="margin-top:42px">
+<h2>一筆案件的完整交易生命週期</h2>
+<p>每個階段都有明確狀態、待辦事項與可執行動作，讓交易從「聊天」變成可追蹤的商業流程。</p>
+</div>
+
+<div class="timeline">
+<div class="step"><b>01</b><h3>商機</h3><p>AI媒合產生符合條件的合作機會。</p></div>
+<div class="step"><b>02</b><h3>建立案件</h3><p>建立案件編號與雙方合作目標。</p></div>
+<div class="step"><b>03</b><h3>商務洽談</h3><p>訊息、文件、會議紀錄與待辦集中管理。</p></div>
+<div class="step"><b>04</b><h3>報價／提案</h3><p>建立正式報價與商業合作提案。</p></div>
+<div class="step"><b>05</b><h3>談判</h3><p>記錄條件變更，AI協助整理重點。</p></div>
+<div class="step"><b>06</b><h3>合作確認</h3><p>確認市場、價格、分工、期限與合作模式。</p></div>
+<div class="step"><b>07</b><h3>合約／付款</h3><p>管理合約與付款狀態，可逐步串接第三方服務。</p></div>
+<div class="step"><b>08</b><h3>執行／驗收</h3><p>追蹤交付、里程碑、驗收與問題。</p></div>
+<div class="step"><b>09</b><h3>結案</h3><p>記錄實際成果、交易結果與合作評價。</p></div>
+<div class="step"><b>10</b><h3>商業記憶</h3><p>將結果回饋 AI，支援下一次媒合與決策。</p></div>
+</div>
+
+<div class="head" style="margin-top:42px">
+<h2>報價不等於成交：建立「金額生命週期」</h2>
+<p>BridgeX 不應把最初報價視為最終交易金額。平台要同時記錄需求預算、初始報價、正式提案、談判條件、最終成交與後續追加／續約。</p>
+</div>
+<div class="grid">
+<div class="card"><h3>需求預算</h3><p>客戶一開始預計投入多少。</p></div>
+<div class="card"><h3>初始報價</h3><p>供給方第一次提出的價格與條件。</p></div>
+<div class="card"><h3>談判條件</h3><p>價格、分潤、期限、區域與責任如何變化。</p></div>
+<div class="card"><h3>最終成交</h3><p>以雙方確認的實際條件作為交易結果。</p></div>
+<div class="card"><h3>追加／續約</h3><p>後續擴充、追加採購或續約形成新的交易價值。</p></div>
+<div class="card"><h3>交易總價值</h3><p>累積案件生命週期中的實際商業價值。</p></div>
+</div>
+
+<div class="core" style="margin-top:20px">
+<h2>平台不需要控制交易，但要成為「商業流程中樞」</h2>
+<p>真正難以完全避免的是雙方轉到其他通訊工具後私下合作。因此 BridgeX 的策略不應只是禁止，而是讓平台提供只有留在平台上才能持續取得的價值：案件管理、AI整理、提案與報價、雙語溝通、文件管理、合作紀錄、商業信用、交易認證與後續 AI 推薦。</p>
+</div>
+
+<div class="head" style="margin-top:42px">
+<h2>遇到「繞過平台」時的五層機制</h2>
+<p>不能假設所有成交都會回到平台填寫。應該建立來源歸因、案件保護、會員誘因、異常偵測與交易驗證。</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="num">01</div><h3>商機歸因</h3>
+<p>記錄「誰因為 BridgeX 認識誰」：搜尋、查看、AI推薦、發起聯絡、接受邀請與建立案件，形成案件來源鏈。</p>
+</div>
+<div class="card">
+<div class="num">02</div><h3>案件保護</h3>
+<p>建立合理的案件保護期。若雙方因平台媒合在約定期間形成相關合作，依會員服務條款處理案件歸屬與相關服務費。</p>
+</div>
+<div class="card">
+<div class="num">03</div><h3>回報誘因</h3>
+<p>完成交易回報可累積商業信用、合作履歷、交易認證與後續高品質商機權益，讓回報成為會員自己的資產。</p>
+</div>
+<div class="card">
+<div class="num">04</div><h3>異常偵測</h3>
+<p>AI觀察案件長時間無更新、文件大量交換後突然停止等狀態，只標記「可能發生狀態變化」，不直接認定為逃單。</p>
+</div>
+<div class="card">
+<div class="num">05</div><h3>雙方交易驗證</h3>
+<p>建立「雙方確認／單方確認／尚未確認」三種狀態。若雙方都確認合作，交易可信度提高；沒有回報則標示為「結果未確認」。</p>
+</div>
+</div>
+
+<div class="head" style="margin-top:42px">
+<h2>不要逼會員填「成交金額」，而要降低回報門檻</h2>
+<p>交易結果可以先用狀態管理，再逐步取得更完整資訊，避免會員因為填寫負擔或商業敏感性而完全不回報。</p>
+</div>
+<div class="grid">
+<div class="card"><h3>仍在洽談</h3><p>案件還沒有進入合作階段。</p></div>
+<div class="card"><h3>條件確認</h3><p>雙方正在確認商業條件。</p></div>
+<div class="card"><h3>已合作</h3><p>先確認合作狀態，再視情況補充金額。</p></div>
+<div class="card"><h3>暫停</h3><p>案件暫時沒有進度。</p></div>
+<div class="card"><h3>沒有合作</h3><p>記錄未成交原因，成為 AI 學習資料。</p></div>
+<div class="card"><h3>結果未確認</h3><p>平台不猜測、不污染資料，保留「尚未確認」狀態。</p></div>
+</div>
+
+<div class="core" style="margin-top:20px">
+<h2>用「交易信用」建立長期留平台的誘因</h2>
+<p>會員每完成一筆經驗可驗證的合作，就累積自己的商業履歷。交易越完整，BridgeX 越能理解會員，也越能提供精準的 AI 推薦與高品質商機。</p>
+<div class="coregrid">
+<div class="coreitem"><strong>合作履歷</strong><span>完成過哪些合作、哪些市場與哪些類型的案件。</span></div>
+<div class="coreitem"><strong>商業信用</strong><span>身份、合作、交付與交易結果所形成的可信度資訊。</span></div>
+<div class="coreitem"><strong>交易認證</strong><span>在符合條件與授權的情況下，形成可驗證的合作紀錄。</span></div>
+<div class="coreitem"><strong>AI推薦</strong><span>交易與結果越完整，未來媒合可以越精準。</span></div>
+</div>
+</div>
+
+<div class="head" style="margin-top:42px">
+<h2>交易後還要追蹤：成交不等於成功</h2>
+<p>BridgeX 應該持續追蹤「成交 → 執行 → 完成 → 續約」，讓平台真正知道哪些媒合產生了商業結果。</p>
+</div>
+<div class="arch">
+<div class="layer"><h3>成交</h3><p>雙方確認合作。</p></div>
+<div class="layer"><h3>執行</h3><p>開始交付與市場落地。</p></div>
+<div class="layer"><h3>完成</h3><p>驗收並確認結果。</p></div>
+<div class="layer"><h3>續約</h3><p>是否產生第二次合作。</p></div>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h3>BridgeX 最終要建立的是「交易閉環」</h3>
+<p><strong>需求 → AI理解 → 媒合 → 高品質商機 → 商業案件 → AI協作 → 報價 → 提案 → 談判 → 合約 → 付款 → 執行 → 驗收 → 結案 → 信用／關係／商業記憶 → AI學習 → 下一次媒合</strong></p>
+<p>交易因此不是 BridgeX 的終點，而是最重要的商業資料產生器，也是後續商業情報、AI決策與企業服務的資料來源。</p>
+</div>
+</div>
+</section>
+
 <section class="section" id="flywheel">
 <div class="wrap">
-<div class="head"><h2>七、BridgeX 資料飛輪</h2><p>每一次使用，不只是完成一次媒合，也是在幫下一次媒合變得更好。</p></div>
+<div class="head"><h2>八、BridgeX 資料飛輪</h2><p>每一次使用，不只是完成一次媒合，也是在幫下一次媒合變得更好。</p></div>
 <div class="card">
 <div class="flywheel">
 <div class="fly">需求資料</div><div class="arrow">→</div><div class="fly">供給資料</div><div class="arrow">→</div><div class="fly">AI 媒合</div><div class="arrow">→</div><div class="fly">高品質商機</div><div class="arrow">→</div><div class="fly">商務案件</div><div class="arrow">→</div><div class="fly">交易</div><div class="arrow">→</div><div class="fly">合作結果</div><div class="arrow">→</div><div class="fly">AI 學習</div><div class="arrow">→</div><div class="fly">更準媒合</div>
@@ -294,7 +429,7 @@ footer{background:#111827;color:#cbd2dc;padding:35px 24px}.foot{max-width:1180px
 
 <section class="section">
 <div class="wrap">
-<div class="head"><h2>八、BridgeX 與傳統平台的差異</h2><p>不是否定既有平台，而是重新定義「商業媒合」的入口。</p></div>
+<div class="head"><h2>九、BridgeX 與傳統平台的差異</h2><p>不是否定既有平台，而是重新定義「商業媒合」的入口。</p></div>
 <div class="compare">
 <table>
 <thead><tr><th>類型</th><th>主要解決</th><th>典型入口</th><th>BridgeX 的不同</th></tr></thead>
@@ -312,7 +447,7 @@ footer{background:#111827;color:#cbd2dc;padding:35px 24px}.foot{max-width:1180px
 
 <section class="section" id="questions">
 <div class="wrap">
-<div class="head"><h2>九、夥伴討論：現在最重要的問題</h2><p>這些問題會直接影響 BridgeX 未來能不能形成真正的護城河。</p></div>
+<div class="head"><h2>十、夥伴討論：現在最重要的問題</h2><p>這些問題會直接影響 BridgeX 未來能不能形成真正的護城河。</p></div>
 <div class="questions">
 <div class="q">哪些資料是我們一開始就必須設計成可累積的？</div>
 <div class="q">哪些資料可以公開，哪些必須留在 BridgeX 核心層？</div>
