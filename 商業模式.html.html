@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BridgeX｜AI 商業執行中樞</title>
+<style>
+:root{--ink:#142033;--muted:#6b778c;--line:#e5eaf1;--bg:#f6f8fb;--card:#fff;--accent:#1769ff;--accent2:#0d4fd1;--good:#16845b;--warn:#b7791f;--dark:#0f1728}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,"Noto Sans TC",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.top{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 34px;gap:28px;position:sticky;top:0;z-index:30}.logo{font-size:22px;font-weight:850;letter-spacing:.2px}.logo small{font-size:12px;color:var(--muted);font-weight:600;margin-left:8px}.topnav{display:flex;gap:20px;flex:1}.topnav button{background:none;color:#536075;padding:8px 2px}.topnav button:hover{color:var(--accent)}.top-actions{display:flex;gap:9px;align-items:center}.btn{padding:10px 15px;border-radius:10px;background:#eef3fa;color:#26354d;font-weight:750}.btn.primary{background:var(--accent);color:white}.btn.ghost{background:white;border:1px solid var(--line)}.avatar{width:36px;height:36px;border-radius:50%;background:#dfe9ff;display:grid;place-items:center;font-weight:800;color:#2854a8}.hero{background:linear-gradient(120deg,#0e1830,#16365e);color:#fff;padding:58px 7vw 50px}.hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}.eyebrow{color:#9fc0ff;font-size:13px;font-weight:800;letter-spacing:1px}.hero h1{font-size:43px;line-height:1.16;margin:10px 0 16px}.hero p{color:#d6deeb;max-width:720px;font-size:17px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.hero .btn{background:#fff;color:#163158}.hero .btn.primary{background:#4f8cff;color:#fff}.hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px}.hero-panel h3{margin:0 0 14px}.mini-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}.mini-row:last-child{border:0}.mini-tag{background:rgba(255,255,255,.1);padding:3px 8px;border-radius:20px;color:#cfe0ff}
+.wrap{max-width:1180px;margin:auto;padding:34px 24px 70px}.section{margin:0 0 38px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:15px}.section h2{font-size:24px;margin:0}.sub{color:var(--muted);font-size:14px;margin:4px 0 0}.grid{display:grid;gap:14px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 3px 14px rgba(21,34,55,.035)}.card.click{cursor:pointer;transition:.18s}.card.click:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(21,34,55,.08)}.metric .num{font-size:28px;font-weight:850}.metric .label{color:var(--muted);font-size:13px}.metric .trend{font-size:12px;color:var(--good);margin-top:6px}.badge{display:inline-flex;align-items:center;gap:4px;border-radius:20px;padding:4px 9px;background:#edf3ff;color:#2456aa;font-size:12px;font-weight:750}.badge.green{background:#eaf8f2;color:#13734f}.badge.yellow{background:#fff6e4;color:#9a6718}.badge.gray{background:#f0f2f5;color:#677284}.dual .card{min-height:185px}.icon{font-size:26px}.card h3{margin:8px 0 7px}.card p{color:var(--muted);font-size:14px;margin:0 0 13px}.flow{display:flex;align-items:center;gap:8px;overflow:auto;padding:3px 0}.step{min-width:140px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;text-align:center;font-weight:750}.arrow{font-size:21px;color:#8a96a9}.task{display:flex;justify-content:space-between;gap:18px;align-items:center}.progress{height:7px;background:#edf0f4;border-radius:8px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:var(--accent);border-radius:8px}.task-list{display:grid;gap:10px}.task-row{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff}.task-row strong{display:block}.task-row small{color:var(--muted)}.assistant{background:#f0f5ff;border:1px solid #d9e5ff}.assistant .bubble{background:#fff;border:1px solid #e0e7f2;border-radius:13px;padding:13px;margin:10px 0}.match{display:flex;gap:14px;align-items:flex-start}.match .score{font-size:21px;font-weight:850;color:var(--accent)}.match small{color:var(--muted)}.reason{margin-top:8px;padding:8px 10px;background:#f7f9fc;border-radius:9px;font-size:13px}.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:15px}.table{width:100%;border-collapse:collapse;min-width:760px}.table th,.table td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px}.table th{color:#657187;background:#fbfcfe;font-weight:750}.table tr:last-child td{border-bottom:0}.timeline{display:grid;gap:10px}.tl{display:grid;grid-template-columns:22px 1fr;gap:10px}.dot{width:12px;height:12px;border-radius:50%;background:#cbd3df;margin-top:5px}.tl.done .dot{background:var(--good)}.tl.active .dot{background:var(--accent);box-shadow:0 0 0 5px #e6efff}.money{font-size:27px;font-weight:850}.dark-card{background:var(--dark);color:#fff;border-radius:17px;padding:22px}.dark-card p{color:#c8d1df}.dark-card .money{color:#fff}.bar{height:9px;background:#28344b;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:#5b92ff}.radar{display:grid;gap:11px}.radar-row{display:grid;grid-template-columns:110px 1fr 70px;align-items:center;gap:10px}.radar-row .bar{background:#edf1f6}.radar-row .bar i{background:var(--accent)}.notice{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--line)}.notice:last-child{border:0}.notice b{display:block}.notice small{color:var(--muted)}.footer{padding:35px 24px;border-top:1px solid var(--line);color:#778196;text-align:center;font-size:13px}
+.modal-back{position:fixed;inset:0;background:rgba(10,20,35,.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}.modal{background:#fff;border-radius:18px;width:min(700px,100%);max-height:88vh;overflow:auto;padding:24px;box-shadow:0 20px 70px rgba(0,0,0,.2)}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{background:#f1f3f6;border-radius:8px;width:34px;height:34px}.form{display:grid;gap:12px;margin-top:15px}.form label{font-size:13px;font-weight:750}.form input,.form textarea,.form select{width:100%;padding:11px 12px;border:1px solid #dce2eb;border-radius:10px;background:#fff}.form textarea{min-height:105px;resize:vertical}.modal-foot{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.menu-btn{display:none;background:#eef3fa;border-radius:9px;padding:8px 10px}
+@media(max-width:900px){.top{padding:0 16px}.topnav{display:none}.menu-btn{display:block}.top-actions .optional{display:none}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:35px}.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}}
+@media(max-width:580px){.hero{padding:42px 20px}.wrap{padding:25px 15px 55px}.g4,.g3{grid-template-columns:1fr}.top{height:60px}.logo small{display:none}.hero h1{font-size:31px}.section-head{align-items:flex-start;flex-direction:column}.hero-actions .btn{width:100%}.dual .card{min-height:auto}.radar-row{grid-template-columns:90px 1fr 55px}}
+
+.onboard{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}
+.onboard-top{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.pillbar{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.asset{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.asset:last-child{border-bottom:0}
+.checklist{display:grid;gap:9px;margin-top:12px}
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:10px;background:#f8fafc}
+.check.done{background:#edf9f3}.check .mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e2e7ef;font-size:12px}.check.done .mark{background:#d4f1e4;color:#13734f}
+.credit{display:grid;grid-template-columns:130px 1fr;gap:22px;align-items:center}
+.credit-score{width:112px;height:112px;border-radius:50%;border:10px solid #dfe9ff;display:grid;place-items:center;font-size:28px;font-weight:850;color:var(--accent)}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.service-card h3{margin:4px 0 6px}
+.service-card p{margin:0 0 10px;color:var(--muted);font-size:13px}
+.exec-box{background:#f4f7ff;border:1px solid #dce7ff;border-radius:14px;padding:16px}
+.exec-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.status-line{display:flex;gap:8px;align-items:center;font-size:13px;margin-top:8px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
+
+.value-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;background:linear-gradient(135deg,#eef5ff,#fff);border:1px solid var(--line);border-radius:24px;padding:34px;margin-bottom:22px}
+.value-hero h3{font-size:32px;line-height:1.25;margin:14px 0}.value-hero p{font-size:16px;line-height:1.8;color:var(--muted)}
+.value-flow{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap}.value-flow>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 16px;text-align:center;min-width:150px;box-shadow:0 8px 24px rgba(20,35,60,.06)}.value-flow span{font-size:25px;color:#7b8798}
+.value-card{position:relative;overflow:hidden}.value-icon{font-weight:800;font-size:13px;color:#3568d4;margin-bottom:12px}.value-result{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:700;font-size:13px}
+.proof-card{display:grid;grid-template-columns:.75fr 1.25fr;gap:30px;margin-bottom:22px}.proof-list{display:grid;gap:12px}.proof-list div{padding:15px 18px;background:#f8fafc;border-radius:12px;line-height:1.7}
+.mini{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.mini strong{display:block;font-size:18px;margin-bottom:7px}.mini span{font-size:13px;color:var(--muted);line-height:1.6}
+.action-card{border-left:4px solid #4b7bec}.action-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin-bottom:12px}.action-buttons{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+@media(max-width:850px){.value-hero,.proof-card{grid-template-columns:1fr}.value-hero h3{font-size:26px}.value-flow{justify-content:flex-start}}
+
+
+/* V11.1 top navigation fix */
+.topbar, .top-nav, header .nav, .nav-links {
+  min-width: 0 !important;
+}
+.topbar nav, header nav {
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  white-space:nowrap !important;
+  scrollbar-width:none !important;
+}
+.topbar nav::-webkit-scrollbar, header nav::-webkit-scrollbar { display:none !important; }
+.topbar nav a, header nav a {
+  flex:0 0 auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  word-break:keep-all !important;
+  line-height:1 !important;
+  padding:9px 10px !important;
+  font-size:13px !important;
+  max-width:none !important;
+  overflow:visible !important;
+}
+@media(max-width:900px){
+  .topbar nav a, header nav a {font-size:12px !important;padding:8px 9px !important;}
+}
+@media(max-width:680px){
+  .topbar nav, header nav {display:none !important;}
+}
+
+/* V11.1 page navigation compatibility */
+.page { display:none; }
+.page.active { display:block; }
+section.section { scroll-margin-top:90px; }
+
+/* Keep in-page links from interfering with JS page switching */
+.topbar nav a[href^="#"], header nav a[href^="#"] {
+  text-decoration:none !important;
+}
+
+
+/* V11 complete business-flow additions */
+.identity-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}.identity-main{display:flex;gap:18px;align-items:center}.avatar{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:#eef4ff;font-weight:800;font-size:24px}
+.op-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin-bottom:12px}.opportunity-card{display:flex;flex-direction:column}.opportunity-card .btn{margin-top:auto;align-self:flex-start}
+.trust-banner{display:grid;grid-template-columns:1fr 190px;gap:25px;align-items:center;background:linear-gradient(135deg,#f1f6ff,#fff);border:1px solid var(--line);border-radius:22px;padding:28px;margin-bottom:18px}.trust-score{text-align:center;border-left:1px solid var(--line)}.trust-score strong{display:block;font-size:54px}.trust-score span{color:var(--muted);font-size:13px}.check{font-size:22px;margin-bottom:8px}.status{font-size:12px;color:#2f7d4a;font-weight:700}.trust-flow-card{margin-top:18px}.trust-flow{display:flex;align-items:center;justify-content:space-between;gap:10px;overflow:auto;padding:16px 0}.trust-flow>div{min-width:145px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}.trust-flow b,.trust-flow span{display:block}.trust-flow span{font-size:12px;color:var(--muted);margin-top:5px}.trust-flow i{font-style:normal;color:#8290a5;font-size:22px}.rule-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.rule-grid div{background:#f8fafc;border-radius:10px;padding:12px;font-size:13px}
+.chat-layout{display:grid;grid-template-columns:220px 1fr 260px;gap:14px}.chat-list{padding:8px}.chat-item{padding:15px;border-radius:12px;cursor:pointer}.chat-item.active{background:#eef4ff}.chat-item b,.chat-item span{display:block}.chat-item span{font-size:12px;color:var(--muted);margin-top:6px}.chat-head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:14px}.chat-messages{display:grid;gap:12px;padding:18px 0}.bubble{max-width:80%;padding:12px 15px;border-radius:15px;line-height:1.65;font-size:13px}.bubble.other{background:#f2f4f7}.bubble.me{background:#eaf1ff;margin-left:auto}.bubble.ai{background:#f7f4e9;border:1px dashed #c9bd8b}.unresolved{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}.unresolved span{padding:7px 10px;border-radius:999px;background:#fff4df;font-size:12px}.kv{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.kv span{color:var(--muted)}.full{width:100%;margin-top:10px}
+.asset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.asset-folder{position:relative}.folder-icon{font-size:24px;margin-bottom:10px}.asset-folder strong{position:absolute;right:18px;top:18px;font-size:24px}.asset-folder p{color:var(--muted);font-size:13px}
+.transaction-card{overflow:hidden}.transaction-summary{display:grid;grid-template-columns:1fr 180px 150px;gap:20px;align-items:center}.transaction-summary span{display:block;color:var(--muted);font-size:12px}.transaction-summary strong{font-size:24px}.transaction-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:28px 0;position:relative}.transaction-steps:before{content:"";position:absolute;top:20px;left:5%;right:5%;height:2px;background:var(--line)}.transaction-steps>div{position:relative;text-align:center;z-index:1}.transaction-steps i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--line);margin:0 auto 8px;font-style:normal;font-weight:700}.transaction-steps .done-step i{background:#eaf7ef;border-color:#86c69a}.transaction-steps .current-step i{background:#eef4ff;border-color:#6d92e5}.transaction-steps span{display:block;font-size:11px;color:var(--muted);margin-top:4px}.transaction-bottom{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:18px;border-top:1px solid var(--line);padding-top:18px}.transaction-bottom span{display:block;color:var(--muted);font-size:12px}.service-card{position:relative}.service-no{font-size:12px;color:#5379ca;font-weight:800}.service-card.featured{border-color:#7b9be5;box-shadow:0 12px 30px rgba(70,100,170,.08)}
+@media(max-width:950px){.identity-grid,.chat-layout,.transaction-summary{grid-template-columns:1fr}.asset-grid{grid-template-columns:1fr 1fr}.rule-grid{grid-template-columns:1fr 1fr}.transaction-steps{grid-template-columns:repeat(3,1fr);gap:20px}.transaction-steps:before{display:none}.transaction-bottom{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.asset-grid,.rule-grid{grid-template-columns:1fr}.trust-banner{grid-template-columns:1fr}.trust-score{border-left:0;border-top:1px solid var(--line);padding-top:18px}.bubble{max-width:95%}.transaction-steps{grid-template-columns:1fr 1fr}.transaction-bottom{grid-template-columns:1fr}.identity-main{align-items:flex-start}}
+
+
+/* BridgeX V11 additions */
+.onboard-flow{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr;align-items:center;gap:8px;margin-bottom:18px}.on-step{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}.on-step.active{border-color:#7898df;box-shadow:0 8px 25px rgba(50,80,150,.07)}.on-step span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef4ff;font-weight:800;margin-bottom:10px}.on-step b,.on-step small{display:block}.on-step small{color:var(--muted);line-height:1.6;margin-top:5px}.onboard-flow>i{font-style:normal;text-align:center;color:#7e8ba0;font-size:20px}.first-task{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.network-map{display:grid;grid-template-columns:1fr 220px 1fr;gap:20px;align-items:center;margin-bottom:18px}.network-side{padding:30px;border:1px solid var(--line);border-radius:22px;background:#fff}.network-side.demand{background:#f8fbff}.network-side.supply{background:#fbfbff}.big-icon{font-size:30px;display:block;margin-bottom:12px}.network-side strong{display:block;margin-top:12px}.network-core{height:170px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#eef4ff;border:1px solid #cbd8f4;box-shadow:0 12px 30px rgba(60,90,160,.08)}.network-core span,.network-core b,.network-core small{display:block}.network-core b{font-size:20px}.network-core small{color:var(--muted);padding:0 15px}.network-value{margin-bottom:10px}
+.match-trust-card{display:grid;grid-template-columns:1.1fr 1.5fr .9fr;gap:20px;align-items:start}.match-person{display:flex;gap:14px}.match-person h3{margin:5px 0 8px}.trust-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.trust-mini-grid>div{padding:12px;background:#f8fafc;border-radius:10px}.trust-mini-grid b,.trust-mini-grid span{display:block;font-size:12px}.trust-mini-grid span{margin-top:5px}.ok{color:#2f7d4a}.warn{color:#b06a18}.match-reason{padding:16px;background:#f8fafc;border-radius:14px}.match-reason p{font-size:13px;line-height:1.7;color:var(--muted)}
+.credit-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:16px}.credit-score strong{font-size:52px;display:block;margin:8px 0}.credit-items{display:grid;gap:9px}.credit-items div{display:flex;justify-content:space-between;padding:10px 12px;background:#f8fafc;border-radius:9px;font-size:13px}
+.relation-card{min-height:190px;display:flex;flex-direction:column}.relation-card .btn{margin-top:auto;align-self:flex-start}
+.dealflow{display:flex;align-items:center;gap:7px;overflow:auto;padding:8px 0 16px}.df{min-width:130px;padding:15px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}.df span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);margin:0 auto 8px}.df b,.df small{display:block}.df small{font-size:11px;color:var(--muted);margin-top:5px}.df.done span{background:#eaf7ef;border-color:#8fc9a0}.df.current{border-color:#7898df;background:#f7faff}.dealflow>i{font-style:normal;color:#8591a4}
+.flywheel{height:430px;max-width:760px;margin:0 auto;position:relative}.fw-node{position:absolute;width:145px;min-height:80px;padding:14px;border:1px solid var(--line);border-radius:18px;background:#fff;text-align:center;box-shadow:0 8px 25px rgba(20,35,60,.05)}.fw-node b,.fw-node span{display:block}.fw-node span{font-size:12px;color:var(--muted);margin-top:5px}.n1{top:10px;left:50%;transform:translateX(-50%)}.n2{top:95px;right:8%}.n3{bottom:55px;right:13%}.n4{bottom:5px;left:50%;transform:translateX(-50%)}.n5{bottom:55px;left:13%}.n6{top:95px;left:8%}.fw-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:180px;height:180px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#eef4ff;border:1px solid #cad8f5;font-size:22px;font-weight:800}.fw-center small{display:block;font-size:12px;font-weight:500;color:var(--muted)}.fly-note{margin-top:4px;line-height:1.7}
+.join-no{font-size:12px;color:#4e73c4;font-weight:800}.join-grid .card{min-height:170px}
+@media(max-width:950px){.onboard-flow{grid-template-columns:1fr 1fr;}.onboard-flow>i{display:none}.network-map,.match-trust-card,.credit-grid{grid-template-columns:1fr}.network-core{height:120px;border-radius:20px}.trust-mini-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.onboard-flow{grid-template-columns:1fr}.first-task{display:block}.first-task .btn{margin-top:15px}.trust-mini-grid{grid-template-columns:1fr 1fr}.flywheel{height:620px}.fw-node{width:125px}.n1{top:5px}.n2{top:110px;right:0}.n3{bottom:100px;right:0}.n4{bottom:5px}.n5{bottom:100px;left:0}.n6{top:110px;left:0}.fw-center{width:150px;height:150px}}
+
+
+@media(max-width:650px){
+  .section-head{align-items:flex-start}
+  .section-head .btn{width:100%}
+  .modal-card{max-width:calc(100vw - 20px);max-height:calc(100vh - 20px)}
+  .network-side,.card{min-width:0}
+  .match-person{flex-wrap:wrap}
+}
+
+
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr}
+  .top{padding:0 16px;gap:14px}
+  .topnav{gap:12px}
+}
+
+
+/* BridgeX V11 FINAL LAYOUT FIX */
+.v11-section{display:block;position:relative;clear:both;width:100%;overflow:hidden}
+.v11-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.v11-head>div{min-width:0}
+.v11-head .btn{flex:0 0 auto}
+.v11-onboard{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:10px;align-items:stretch;margin:18px 0}
+.v11-step{min-width:0;padding:18px;border:1px solid #e3e7ee;border-radius:16px;background:#fff;color:#202938}
+.v11-step span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#edf3ff;color:#315aa8;font-weight:800;margin-bottom:10px}
+.v11-step strong{display:block;color:#202938;line-height:1.45}
+.v11-step em{display:block;color:#667085;font-size:12px;font-style:normal;line-height:1.6;margin-top:6px}
+.v11-arrow{display:grid;place-items:center;color:#7c8798;font-size:20px}
+.v11-example{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.v11-example>div{min-width:0}.v11-example h3{color:#202938;margin:9px 0 6px}.v11-example p{color:#667085;line-height:1.7}
+.v11-network{display:grid;grid-template-columns:minmax(0,1fr) 230px minmax(0,1fr);gap:20px;align-items:center}
+.v11-network-card{min-width:0;padding:28px;border:1px solid #e3e7ee;border-radius:20px;background:#fff;color:#202938}
+.v11-network-card h3{color:#202938}.v11-network-card p{color:#667085}.v11-network-card strong{display:block;line-height:1.6;color:#202938}.v11-icon{font-size:28px}
+.v11-network-core{min-width:0;min-height:170px;border-radius:50%;background:#edf3ff;border:1px solid #cbd8f4;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;color:#202938}
+.v11-network-core small{color:#5573a9}.v11-network-core strong{font-size:18px;margin:5px 0}.v11-network-core em{font-size:11px;color:#667085;font-style:normal}
+.v11-match{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr) minmax(0,.95fr);gap:20px;align-items:start;color:#202938}
+.v11-match-title{display:flex;gap:12px;min-width:0}.v11-match-title>div:last-child{min-width:0}.v11-match-title h3{color:#202938}
+.v11-trust-list{display:grid;grid-template-columns:1fr 1fr;gap:9px}.v11-trust-list>div{min-width:0;padding:11px;background:#f7f9fc;border-radius:9px}.v11-trust-list b,.v11-trust-list span{display:block;font-size:12px}.v11-trust-list span{margin-top:5px}
+.v11-reason{min-width:0;padding:15px;background:#f7f9fc;border-radius:14px}.v11-reason p{font-size:13px;color:#667085;line-height:1.7}
+.v11-credit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);gap:16px}.v11-score{display:block;font-size:52px;line-height:1.1;margin:8px 0;color:#202938}.v11-credit-list{display:grid;gap:8px}.v11-credit-list div{display:flex;justify-content:space-between;padding:9px 11px;background:#f7f9fc;border-radius:8px;font-size:13px}
+.v11-relations .card{min-width:0;min-height:185px;display:flex;flex-direction:column}.v11-relations .btn{margin-top:auto;align-self:flex-start}
+.v11-dealflow{display:flex;align-items:center;gap:7px;overflow-x:auto;padding:5px 0 14px}.v11-df{min-width:130px;padding:14px;border:1px solid #e3e7ee;border-radius:14px;background:#fff;text-align:center;color:#202938}.v11-df span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid #d9dee8;margin:0 auto 7px}.v11-df b,.v11-df em{display:block}.v11-df em{font-size:11px;color:#667085;font-style:normal;margin-top:4px}.v11-df.done span{background:#eaf7ef;border-color:#8fc9a0}.v11-df.current{border-color:#7898df;background:#f7faff}.v11-dealflow>i{font-style:normal;color:#8591a4}
+.v11-fly{height:420px;max-width:760px;margin:0 auto;position:relative}.v11-fn{position:absolute;width:145px;padding:14px;border:1px solid #e3e7ee;border-radius:17px;background:#fff;text-align:center;color:#202938}.v11-fn b,.v11-fn span{display:block}.v11-fn span{font-size:12px;color:#667085;margin-top:5px}.f1{top:5px;left:50%;transform:translateX(-50%)}.f2{top:90px;right:7%}.f3{bottom:55px;right:12%}.f4{bottom:0;left:50%;transform:translateX(-50%)}.f5{bottom:55px;left:12%}.f6{top:90px;left:7%}.v11-fc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:175px;height:175px;border-radius:50%;background:#edf3ff;border:1px solid #cbd8f4;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#202938}.v11-fc b{font-size:21px}.v11-fc span{font-size:11px;color:#667085;margin-top:5px}
+.v11-no{font-size:12px;color:#4e73c4;font-weight:800}.v11-join .card{min-width:0;min-height:165px}
+.v11-section h2,.v11-section h3,.v11-section p,.v11-section span,.v11-section b,.v11-section strong,.v11-section small{overflow-wrap:anywhere}
+.v11-section .btn{white-space:normal;line-height:1.4}
+@media(max-width:950px){.v11-onboard{grid-template-columns:1fr 1fr}.v11-arrow{display:none}.v11-network,.v11-match,.v11-credit{grid-template-columns:1fr}.v11-network-core{border-radius:20px;min-height:120px}.v11-head{flex-direction:column}.v11-head .btn{width:100%}}
+@media(max-width:650px){.v11-example{display:block}.v11-example .btn{margin-top:10px}.v11-trust-list{grid-template-columns:1fr 1fr}.v11-onboard{grid-template-columns:1fr}.v11-fly{height:600px}.v11-fn{width:120px}.f1{top:0}.f2{top:105px;right:0}.f3{bottom:90px;right:0}.f4{bottom:0}.f5{bottom:90px;left:0}.f6{top:105px;left:0}.v11-fc{width:145px;height:145px}}
+
+
+/* FINAL TEXT FIT PATCH */
+html,body{max-width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+.v11-section{max-width:100%;overflow:hidden}
+.v11-section .card,.v11-section .v11-step,.v11-section .v11-network-card,.v11-section .v11-df,.v11-section .v11-fn{overflow:hidden;word-break:break-word;overflow-wrap:anywhere}
+.v11-section h2{font-size:22px;line-height:1.35}
+.v11-section h3{font-size:17px;line-height:1.4}
+.v11-section p,.v11-section li{font-size:13px;line-height:1.65}
+.v11-section .btn{font-size:13px;padding:9px 13px}
+.v11-step strong,.v11-network-card strong,.v11-df b,.v11-fn b{font-size:14px;line-height:1.45}
+.v11-step em,.v11-network-core em,.v11-fn span{font-size:11px;line-height:1.5}
+.v11-network-core strong{font-size:17px}
+.v11-credit-list div,.v11-trust-list>div{font-size:12px}
+@media(max-width:950px){.v11-section h2{font-size:21px}.v11-section h3{font-size:16px}.v11-section p{font-size:13px}.v11-network-core{width:100%;min-height:110px}.v11-fn{width:130px}}
+@media(max-width:650px){.v11-section h2{font-size:19px}.v11-section h3{font-size:15px}.v11-section p{font-size:12.5px}.v11-section .card{padding:16px}.v11-step{padding:15px}.v11-network-card{padding:20px}.v11-fn{width:115px;padding:11px}.v11-fc{width:140px;height:140px}.v11-fc b{font-size:18px}}
+
+.member-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.member-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.member-cover{background:linear-gradient(135deg,#eef4ff,#f8fbff);border:1px solid #dfe8f8;border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start}.member-avatar{width:72px;height:72px;border-radius:18px;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;flex:0 0 auto}.member-name{font-size:24px;font-weight:800;margin:2px 0 4px}.member-title{color:var(--muted);font-size:14px}.intro-text{font-size:15px;line-height:1.8;margin:18px 0}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.info-item{border:1px solid var(--line);border-radius:12px;padding:12px}.info-item b{display:block;font-size:13px;margin-bottom:3px}.info-item span{font-size:13px;color:var(--muted)}.member-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}@media(max-width:760px){.member-intro{grid-template-columns:1fr}.member-name{font-size:20px}.member-card{padding:18px}.member-cover{padding:16px}.info-grid{grid-template-columns:1fr}.member-avatar{width:60px;height:60px;font-size:23px}}
+</style>
+
+<style id="bx-final-layout-fix">
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+.bx-plan-grid{width:100%}
+.bx-plan-card{overflow:hidden}
+.bx-plan-card h3,.bx-plan-card p,.bx-plan-card li,.bx-plan-card button{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:900px){.bx-plan-grid{grid-template-columns:1fr 1fr!important}.bx-plan-card{padding:22px!important}.bx-plan-card h3{font-size:22px!important}.bx-plan-card p,.bx-plan-card li{font-size:14px!important}}
+@media(max-width:640px){.bx-plan-grid{grid-template-columns:1fr!important}.bx-plan-card{padding:20px!important}.bx-plan-card h3{font-size:20px!important}.bx-plan-card p,.bx-plan-card li{font-size:14px!important}.bx-plan-card button{font-size:14px!important;white-space:normal;height:auto;min-height:44px;line-height:1.4}}
+</style>
+
+<style id="bx-layout-fix-v12">
+/* ---------- Conflict fixes (desktop + mobile) ---------- */
+.grid>*,.identity-grid>*,.match-trust-card>*,.credit-grid>*,.network-map>*,.chat-layout>*,.value-hero>*,.proof-card>*{min-width:0}
+/* header avatar was overridden to 64px square by a later rule */
+.top .avatar{width:36px;height:36px;border-radius:50%;font-size:15px;background:#dfe9ff;color:#2854a8;flex:0 0 auto}
+/* checklist rows were being enlarged by the trust-card icon rule */
+.checklist .check{font-size:inherit;margin-bottom:0}
+.trust-grid .check{font-size:22px;margin-bottom:8px;display:block;padding:0;background:none;color:var(--good)}
+/* credit card in 商業信用 section was inheriting the 112px circle */
+.credit-grid .credit-score{width:auto;height:auto;border-radius:16px;border:1px solid var(--line);display:block;place-items:initial;font-size:inherit;font-weight:inherit;color:inherit}
+.credit-grid .credit-score>span{color:var(--muted);font-size:13px}
+.credit-grid .credit-score strong{color:var(--accent)}
+.credit-items div span{color:var(--muted)}
+/* missing components */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{display:inline-block;padding:3px 9px;border-radius:999px;background:#f0f3f8;color:#4a5870;font-size:12px;line-height:1.5}
+.badge.red{background:#fdecec;color:#b42318}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.bx-btn{display:block;padding:11px 15px;border-radius:10px;background:var(--accent);color:#fff;font-weight:750;border:0;cursor:pointer}
+.bx-plan-card:not(:nth-child(2)) .bx-btn{background:#eef3fa;color:#26354d}
+#home .section-head p{color:var(--muted);font-size:14px;margin:4px 0 0}
+#home .section-head .eyebrow{color:var(--accent);margin-bottom:4px}
+.proof-card .eyebrow{color:var(--accent)}
+.match-person h3{margin:0 0 8px}
+.trust-flow{justify-content:flex-start}
+.value-flow{flex-wrap:nowrap}
+
+.checklist .check small{display:block;color:var(--muted);font-size:12px}
+#home .section>.grid+.card,#home .section>.card+.card,#home .section>.card+.grid,#home .section>.value-hero+.grid{margin-top:16px}
+#home .section>.grid+.card.proof-card{margin-bottom:16px}
+.relation-card .badge,.opportunity-card .badge,.value-card .badge{align-self:flex-start}
+.fw-center{display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1.3}.fw-center br{display:none}.fw-center small{margin-top:6px}
+.bx-plan-card{display:flex;flex-direction:column}.bx-plan-card .bx-btn{margin-top:auto}
+/* ---------- Tablet ---------- */
+@media(max-width:900px){
+  .stat-grid{grid-template-columns:repeat(4,1fr)!important}
+}
+
+/* ---------- Mobile: keep boxes side by side ---------- */
+@media(max-width:650px){
+  .wrap{padding:22px 14px 50px}
+  .hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hero-actions .btn{width:auto!important;padding:11px 4px;font-size:13px;line-height:1.35;white-space:nowrap;text-align:center}
+  .onboard-top{flex-direction:column;align-items:stretch}.onboard-top .btn{width:100%}
+  .g4,.g3,.asset-grid,.rule-grid,.onboard-flow,.transaction-bottom{grid-template-columns:1fr 1fr!important;gap:10px}
+  /* odd last item in a 2-col layout spans full width */
+  .g3>:last-child:nth-child(odd),.onboard-flow>.on-step:last-child:nth-of-type(odd){grid-column:1/-1}
+  .stat-grid{grid-template-columns:1fr 1fr!important;gap:14px 10px}
+  .card{padding:15px}
+  .card h3{font-size:15px;line-height:1.4}
+  .card p{font-size:13px}
+  .metric .num{font-size:24px}
+  .metric .label{font-size:12px}
+  .metric .trend{font-size:11px}
+  .money{font-size:23px}
+  .mini{padding:14px}.mini strong{font-size:16px}
+  .service-card{padding:14px}
+  .join-grid .card,.relation-card{min-height:auto}
+  .card .btn,.service-card .btn{padding:8px 11px;font-size:13px}
+  .asset-folder strong{right:14px;top:14px;font-size:20px}
+  .transaction-bottom .btn{grid-column:1/-1}
+  /* value hero: 3 steps in one row */
+  .value-hero{padding:20px 16px;gap:18px;border-radius:18px}
+  .value-hero h3{font-size:21px}
+  .value-hero p{font-size:14px}
+  .value-flow{display:grid;grid-template-columns:1fr 12px 1fr 12px 1fr;gap:4px;align-items:stretch}
+  .value-flow>div{min-width:0;padding:10px 6px;font-size:12px;line-height:1.45;border-radius:12px;display:flex;flex-direction:column;justify-content:center}
+  .value-flow>div b{font-size:12px}
+  .value-flow span{font-size:13px;align-self:center;text-align:center}
+  .proof-card{gap:14px}
+  .onboard-flow{gap:10px}.on-step{padding:14px}
+  .trust-banner{padding:20px}
+  .flow .step{min-width:110px;padding:11px}
+}
+@media(max-width:360px){
+  .hero-actions .btn{font-size:12px;white-space:normal}
+  .value-flow>div,.value-flow>div b{font-size:11px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="logo">BridgeX <small>AI 商業執行中樞</small></div>
+  <nav class="topnav">
+    <button onclick="go('home')">首頁</button><button onclick="go('explore')">探索市場</button>
+    <button onclick="go('tasks')">我的任務</button><button onclick="go('opps')">商業機會</button>
+    <button onclick="go('cases')">案件合作</button><button onclick="go('execute')">人工智慧執行</button>
+    <button onclick="go('radar')">商業雷達</button><button onclick="go('profile')">商業檔案</button>
+ <button onclick="go('memberintro')">會員方案</button>
+  <a href='#plans' onclick="location.hash='plans'">會員方案</a></nav>
+  <div class="top-actions"><button class="btn optional" onclick="openModal('demand')">發布需求</button><button class="btn primary optional" onclick="openModal('supply')">上架產品／服務</button><button class="btn ghost optional" onclick="openModal('notice')">通知 3</button><div class="avatar">劉</div><button class="menu-btn" onclick="toggleMenu()">☰</button></div>
+</header>
+
+<div id="mobileMenu" style="display:none;background:#fff;border-bottom:1px solid var(--line);padding:12px 16px;position:sticky;top:60px;z-index:29">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    <button class="btn" onclick="go('home')">首頁</button><button class="btn" onclick="go('explore')">探索市場</button>
+    <button class="btn" onclick="go('tasks')">我的任務</button><button class="btn" onclick="go('opps')">商業機會</button>
+    <button class="btn" onclick="go('cases')">案件合作</button><button class="btn" onclick="go('execute')">人工智慧執行</button>
+    <button class="btn" onclick="go('radar')">商業雷達</button><button class="btn" onclick="go('profile')">商業檔案</button>
+    <button class="btn" onclick="go('memberintro')">會員介紹</button><button class="btn" onclick="go('plans')">會員方案</button>
+  </div>
+</div>
+
+<main id="home" style="display:block">
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="eyebrow">BRIDGEX BUSINESS OPERATING SYSTEM</div>
+<h1>把一個商業目標，<br>一路推進到成交與落地。</h1>
+<p>BridgeX 從你的需求與能力出發，透過人工智慧理解、搜尋、媒合與執行，找到產品、服務、客戶與合作夥伴，再把商機推進成真正的商業案件。</p>
+<div class="hero-actions"><button class="btn primary" onclick="openModal('demand')">🔍 我要找</button><button class="btn" onclick="openModal('supply')">📦 我要提供</button><button class="btn" onclick="go('tasks')">繼續我的任務</button></div>
+</div>
+<div class="hero-panel">
+<h3>今天 BridgeX 正在幫你</h3>
+<div class="mini-row"><span>尋找東南亞遊戲代理商</span><span class="mini-tag">進行中</span></div>
+<div class="mini-row"><span>人工智慧行銷合作</span><span class="mini-tag">3 個媒合</span></div>
+<div class="mini-row"><span>馬來西亞市場拓展</span><span class="mini-tag">待確認</span></div>
+<div class="mini-row"><span>新的高品質商機</span><span class="mini-tag">5 筆</span></div>
+</div>
+</div>
+</section>
+
+<div class="wrap">
+<section class="section">
+<div class="grid g4">
+<div class="card metric"><div class="num">06</div><div class="label">進行中的商業任務</div><div class="trend">↑ 2 個本週新增</div></div>
+<div class="card metric"><div class="num">18</div><div class="label">人工智慧媒合結果</div><div class="trend">↑ 6 個高相關</div></div>
+<div class="card metric"><div class="num">05</div><div class="label">新的高品質商機</div><div class="trend">3 個待回覆</div></div>
+<div class="card metric"><div class="num">03</div><div class="label">進行中的合作案件</div><div class="trend">2 個本週有進度</div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="onboard">
+  <div class="onboard-top">
+    <div><span class="badge green">人工智慧已啟用</span><h2 style="margin:7px 0 3px">你的商業檔案已完成 82%</h2><p class="sub">資料越完整，人工智慧越能理解你的能力、需求與適合的市場。</p></div>
+    <button class="btn primary" onclick="openModal('profile')">完善我的商業檔案</button>
+  </div>
+  <div class="progress" style="margin-top:16px"><i style="width:82%"></i></div>
+  <div class="pillbar"><span class="badge">身份已確認</span><span class="badge">產品 3 項</span><span class="badge">服務能力 6 項</span><span class="badge">關注市場 4 個</span><span class="badge yellow">還差 3 項資料</span></div>
+</div>
+</section>
+
+<section class="section dual">
+<div class="section-head"><div><h2>先告訴 BridgeX，你要做什麼</h2><p class="sub">需求方與供給方都可以從同一個會員帳戶開始。</p></div></div>
+<div class="grid g2">
+<div class="card click" onclick="openModal('demand')"><div class="icon">🔍</div><h3>我有需求，要找什麼？</h3><p>找產品、服務、客戶、合作夥伴、代理／發行、跨境市場或其他商業資源。</p><span class="badge">建立商業任務 →</span></div>
+<div class="card click" onclick="openModal('supply')"><div class="icon">📦</div><h3>我有產品／服務，要找誰？</h3><p>讓 BridgeX 理解你的能力與產品，主動找到適合的需求與合作對象。</p><span class="badge green">上架並接受媒合 →</span></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>從需求到交易，BridgeX 怎麼幫你</h2><p class="sub">不是只把人介紹給你，而是把商業任務一路往前推。</p></div></div>
+<div class="flow">
+<div class="step">需求／供給</div><div class="arrow">→</div><div class="step">人工智慧理解</div><div class="arrow">→</div><div class="step">市場與對象</div><div class="arrow">→</div><div class="step">智能媒合</div><div class="arrow">→</div><div class="step">高品質商機</div><div class="arrow">→</div><div class="step">提案／報價</div><div class="arrow">→</div><div class="step">案件</div><div class="arrow">→</div><div class="step">交易／落地</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>今天 BridgeX 正在幫你完成什麼？</h2><p class="sub">把會員首頁變成真正的商業工作台。</p></div><button class="btn ghost" onclick="go('tasks')">查看全部任務</button></div>
+<div class="grid g3">
+<div class="card"><span class="badge">進行中</span><h3>尋找東南亞遊戲代理商</h3><p>已分析產品與市場條件，正在篩選代理／發行夥伴。</p><div class="progress"><i style="width:72%"></i></div><small>72%｜下一步：比較 4 個合作對象</small></div>
+<div class="card"><span class="badge yellow">待確認</span><h3>人工智慧行銷合作</h3><p>已有 3 個符合需求的服務商，需要確認預算與時程。</p><div class="progress"><i style="width:54%"></i></div><small>54%｜下一步：查看媒合理由</small></div>
+<div class="card"><span class="badge green">新機會</span><h3>馬來西亞市場拓展</h3><p>AI 發現新的市場需求，可能與你的產品能力吻合。</p><div class="progress"><i style="width:38%"></i></div><small>38%｜下一步：查看市場機會</small></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>有人正在找你</h2><p class="sub">不是只有你主動搜尋，市場也會主動來找你。</p></div><button class="btn ghost" onclick="go('opps')">查看全部商機</button></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>需求</th><th>市場</th><th>需要能力</th><th>吻合度</th><th>狀態</th></tr></thead><tbody>
+<tr><td>尋找遊戲行銷合作夥伴</td><td>馬來西亞</td><td>遊戲行銷／KOL</td><td><span class="badge green">94%</span></td><td>新商機</td></tr>
+<tr><td>尋找人工智慧導入服務</td><td>台灣</td><td>人工智慧／行銷</td><td><span class="badge green">91%</span></td><td>待查看</td></tr>
+<tr><td>尋找東南亞代理產品</td><td>印尼</td><td>遊戲／數位產品</td><td><span class="badge">86%</span></td><td>新商機</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="section">
+<div class="grid g2">
+<div class="card assistant"><h2>人工智慧商業助理</h2><p>AI 不只回答問題，而是協助你完成下一步。</p><div class="bubble"><b>我已經找到 12 個可能的合作對象。</b><br><small>其中 4 個符合你的市場、產品與合作條件。</small></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" onclick="go('explore')">查看 4 個對象</button><button class="btn" onclick="openModal('proposal')">產生合作提案</button><button class="btn" onclick="openModal('message')">準備聯繫</button></div></div>
+<div class="card"><h2>我的商業成果</h2><div class="grid g2 stat-grid" style="margin-top:14px"><div><div class="money">128</div><small>累積商業機會</small></div><div><div class="money">24</div><small>進入洽談</small></div><div><div class="money">08</div><small>完成合作</small></div><div><div class="money">03</div><small>新增市場</small></div></div><button class="btn ghost" style="margin-top:18px" onclick="go('results')">查看完整成果</button></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>我的商業信用</h2><p class="sub">讓合作對象看見你的身份、能力與過往合作紀錄。</p></div><button class="btn ghost" onclick="openModal('credit')">查看信任資料</button></div>
+<div class="grid g2">
+  <div class="card credit">
+    <div class="credit-score">86</div>
+    <div><span class="badge green">商業資料完整</span><h3>可信任的合作身份</h3><p>身份、產品、需求與合作紀錄已逐步驗證。</p><div class="progress"><i style="width:86%"></i></div><small>合作紀錄 12 件｜完成合作 8 件｜跨境合作 5 件</small></div>
+  </div>
+  <div class="card">
+    <h3>驗證狀態</h3>
+    <div class="checklist">
+      <div class="check done"><span class="mark">✓</span><div><b>身份／帳戶</b><small>已確認</small></div></div>
+      <div class="check done"><span class="mark">✓</span><div><b>產品／服務</b><small>已確認 3 項</small></div></div>
+      <div class="check done"><span class="mark">✓</span><div><b>合作紀錄</b><small>已有實際合作資料</small></div></div>
+      <div class="check"><span class="mark">＋</span><div><b>成功案例</b><small>補充案例可提升媒合精準度</small></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>我的商業資產</h2><p class="sub">你的產品、夥伴、需求、案件與合作成果，都會在 BridgeX 持續累積。</p></div></div>
+<div class="grid g3">
+  <div class="card"><h3>📦 產品／服務</h3><div class="money">03</div><p>3 個可接受媒合的產品與服務。</p><button class="btn" onclick="openModal('supply')">管理供給</button></div>
+  <div class="card"><h3>🤝 合作夥伴</h3><div class="money">18</div><p>已建立關係、關注或曾合作的夥伴。</p><button class="btn" onclick="go('explore')">探索更多</button></div>
+  <div class="card"><h3>📁 合作紀錄</h3><div class="money">08</div><p>已完成案件、合作市場與成果。</p><button class="btn" onclick="go('results')">查看成果</button></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>BridgeX 可以幫你做什麼？</h2><p class="sub">你可以自己完成，也可以把需要的工作交給 BridgeX。</p></div></div>
+<div class="grid g3">
+  <div class="service-card"><span class="badge">人工智慧</span><h3>人工智慧市場研究</h3><p>分析市場、競品、需求與適合的合作方向。</p><button class="btn" onclick="openModal('service')">了解服務</button></div>
+  <div class="service-card"><span class="badge green">商務服務</span><h3>跨境商務媒合</h3><p>協助尋找夥伴、建立聯繫與推進合作。</p><button class="btn" onclick="openModal('service')">申請協助</button></div>
+  <div class="service-card"><span class="badge yellow">執行服務</span><h3>市場落地協助</h3><p>在地化、行銷、代理／發行、支付與上線執行。</p><button class="btn" onclick="openModal('service')">交給 BridgeX</button></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-head"><div><h2>AI 商業雷達</h2><p class="sub">持續掃描你關注的市場與能力，主動發現新機會。</p></div><button class="btn ghost" onclick="go('radar')">進入雷達</button></div>
+<div class="grid g3">
+<div class="card"><span class="badge green">高度相關</span><h3>馬來西亞遊戲代理需求增加</h3><p>與你的遊戲產品能力高度吻合，建議查看 4 個新需求。</p></div>
+<div class="card"><span class="badge">市場機會</span><h3>印尼數位產品合作機會</h3><p>AI 發現新的合作方與在地執行能力。</p></div>
+<div class="card"><span class="badge yellow">需要注意</span><h3>你關注的夥伴新增服務</h3><p>可能適合你目前的跨境市場任務。</p></div>
+</div>
+</section>
+
+<section id="why" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">BridgeX 價值</div>
+      <h2>為什麼值得使用 BridgeX？</h2>
+      <p>不是再多一個資料庫，而是把「找機會、找人、談合作、做交易」真正串起來。</p>
+    </div>
+  </div>
+  <div class="value-hero">
+    <div>
+      <span class="badge">從需求開始，不從搜尋開始</span>
+      <h3>你不需要知道答案，<br>只需要告訴 BridgeX 你想完成什麼。</h3>
+      <p>BridgeX 會理解你的身份、能力、需求與目標市場，透過人工智慧整理需求、找出合適對象、解釋推薦原因，並把機會一路推進到洽談、案件、交易與落地。</p>
+    </div>
+    <div class="value-flow">
+      <div>告訴 BridgeX<br><b>你想完成什麼</b></div><span>→</span>
+      <div>人工智慧理解<br><b>你的商業目標</b></div><span>→</span>
+      <div>找到真正相關的<br><b>人、產品、服務與市場</b></div>
+    </div>
+  </div>
+  <div class="grid g3 value-grid">
+    <div class="card value-card"><div class="value-icon">01</div><h3>少花時間找錯的人</h3><p>把分散的產品、服務、需求與合作夥伴，轉成可以理解、比較與行動的商業資訊。</p><div class="value-result">搜尋 → 人工智慧篩選 → 智能媒合</div></div>
+    <div class="card value-card"><div class="value-icon">02</div><h3>不只是推薦，而是說明原因</h3><p>重要媒合提供「為什麼適合」與關鍵條件，讓會員知道下一步該比較什麼、問什麼。</p><div class="value-result">推薦 → 理由 → 比較 → 決策</div></div>
+    <div class="card value-card"><div class="value-icon">03</div><h3>讓商機真正往成交前進</h3><p>從商業機會延伸到訊息、提案、報價、案件、付款、交付與合作成果，而不是停在聯絡方式。</p><div class="value-result">商機 → 案件 → 交易 → 落地</div></div>
+  </div>
+  <div class="card proof-card">
+    <div><div class="eyebrow">THE BRIDGEX DIFFERENCE</div><h3>會員得到的不只是「資訊」</h3></div>
+    <div class="proof-list">
+      <div><b>以前：</b>自己搜尋、自己判斷、自己找人、自己談、自己追進度。</div>
+      <div><b>BridgeX：</b>人工智慧理解你的商業目標，協助你找、選、談、推進，並留下完整合作紀錄。</div>
+      <div><b>長期價值：</b>使用越久，BridgeX 越了解你的商業能力、合作偏好與歷史，下一次媒合就能更精準。</div>
+    </div>
+  </div>
+  <div class="grid g4 mini-value">
+    <div class="mini"><strong>更快</strong><span>縮短找產品、找人、找市場的時間</span></div>
+    <div class="mini"><strong>更準</strong><span>結合需求、供給與信任條件</span></div>
+    <div class="mini"><strong>更容易成交</strong><span>從媒合一路進入提案、報價與案件</span></div>
+    <div class="mini"><strong>越用越懂你</strong><span>累積商業記憶與合作資料</span></div>
+  </div>
+</section>
+
+<section id="today" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">今日行動</div>
+      <h2>今天 BridgeX 正在幫你處理什麼？</h2>
+      <p>把真正需要你決定的事情集中在這裡，其他工作先交給人工智慧整理。</p>
+    </div>
+  </div>
+  <div class="grid g2">
+    <div class="card action-card">
+      <div class="action-top"><span class="badge red">需要你決定</span><span>剛剛</span></div>
+      <h3>馬來西亞遊戲代理商比較</h3>
+      <p>人工智慧已篩選 12 個對象，目前有 3 個符合你的市場與合作條件。</p>
+      <div class="action-buttons"><button class="btn primary" onclick="go('compare')">比較 3 個對象</button><button class="btn" onclick="go('cases')">查看洽談</button></div>
+    </div>
+    <div class="card action-card">
+      <div class="action-top"><span class="badge green">人工智慧已完成</span><span>今天</span></div>
+      <h3>發現 4 個適合你的新需求</h3>
+      <p>其中 2 個需求正在尋找你目前提供的遊戲與跨境服務。</p>
+      <div class="action-buttons"><button class="btn primary" onclick="go('opps')">查看商機</button><button class="btn" onclick="openModal('lead')">查看高品質商機</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="memory" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">BUSINESS MEMORY</div>
+      <h2>BridgeX 商業記憶</h2>
+      <p>每一次需求、媒合、洽談與合作，都會成為下一次人工智慧判斷的上下文。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('memory')">查看我的商業記憶</button>
+  </div>
+  <div class="grid g3">
+    <div class="card"><h3>我的能力</h3><p>遊戲營運、跨境商務、行銷、代理／發行、合作開發等。</p><div class="tags"><span>遊戲</span><span>跨境</span><span>商務</span></div></div>
+    <div class="card"><h3>我的偏好</h3><p>記住你偏好的市場、合作方式、產品類型與夥伴條件。</p><div class="tags"><span>東南亞</span><span>代理</span><span>分潤</span></div></div>
+    <div class="card"><h3>我的歷史</h3><p>保留合作過的夥伴、案件、結果與經驗，形成你的商業履歷。</p><div class="tags"><span>合作紀錄</span><span>案件</span><span>成果</span></div></div>
+  </div>
+</section>
+
+
+<section id="identity" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">商業身份</div>
+      <h2>我的商業身份</h2>
+      <p>BridgeX 先理解你是誰、能提供什麼、正在找什麼，再開始替你尋找商業機會。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('profile')">編輯商業檔案</button>
+  </div>
+  <div class="identity-grid">
+    <div class="card identity-main">
+      <div class="avatar">A</div>
+      <div>
+        <span class="badge green">身份已驗證</span>
+        <h3>遊戲／數位產品與跨境商務</h3>
+        <p>目前角色：產品方、服務方、合作夥伴</p>
+        <div class="tags"><span>遊戲</span><span>數位產品</span><span>跨境商務</span><span>東南亞</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>我正在找</h3>
+      <p>東南亞代理／發行、在地營運、KOL／媒體與市場合作。</p>
+      <button class="btn" onclick="openModal('demand')">新增需求</button>
+    </div>
+    <div class="card">
+      <h3>我可以提供</h3>
+      <p>遊戲產品、數位產品、行銷與跨境商務資源。</p>
+      <button class="btn" onclick="openModal('supply')">上架產品／服務</button>
+    </div>
+  </div>
+</section>
+
+<section id="memberintro" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">會員方案</div>
+      <h2>讓合作對象快速認識你</h2>
+      <p>這是其他會員看到的你的商業介紹。BridgeX 會把你的身份、能力、需求、合作市場與信任資訊整理成一張可理解的商業名片。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('profile')">編輯會員方案</button>
+  </div>
+  <div class="member-intro">
+    <div class="member-card">
+      <div class="member-cover">
+        <div class="member-avatar">A</div>
+        <div>
+          <span class="badge green">身份已驗證</span>
+          <div class="member-name">劉先生</div>
+          <div class="member-title">遊戲與跨境商務｜產品方・服務方・合作夥伴</div>
+          <div class="tags" style="margin-top:9px"><span>遊戲</span><span>數位產品</span><span>商務開發</span><span>東南亞</span></div>
+        </div>
+      </div>
+      <p class="intro-text">專注於遊戲營運、產品發行、商務開發與跨境合作，協助產品與服務尋找合適的市場、合作夥伴與商業機會。熟悉台灣、大中華與東南亞市場，期待與產品方、企業、代理／發行商及在地服務夥伴建立長期合作。</p>
+      <div class="info-grid">
+        <div class="info-item"><b>我正在找</b><span>東南亞代理／發行、行銷夥伴、企業合作與市場資源</span></div>
+        <div class="info-item"><b>我可以提供</b><span>遊戲營運、商務開發、跨境合作、產品與市場資源</span></div>
+        <div class="info-item"><b>關注市場</b><span>台灣、大中華、馬來西亞、印尼、泰國</span></div>
+        <div class="info-item"><b>合作方式</b><span>產品合作、代理／發行、商務媒合、跨境市場合作</span></div>
+      </div>
+      <div class="member-actions"><button class="btn primary" onclick="openModal('message')">聯繫會員</button><button class="btn" onclick="openModal('profile')">查看完整資料</button><button class="btn ghost" onclick="openModal('trust')">查看信任資訊</button></div>
+    </div>
+    <div class="member-card">
+      <span class="badge">BridgeX AI 摘要</span>
+      <h3 style="margin:12px 0 8px">人工智慧如何理解這位會員？</h3>
+      <p class="sub">BridgeX 不只顯示自我介紹，也會把會員資料轉成可用於媒合的商業條件。</p>
+      <div class="mini-row"><span>遊戲營運／發行</span><span class="mini-tag">高度符合</span></div>
+      <div class="mini-row"><span>跨境商務／媒合</span><span class="mini-tag">高度符合</span></div>
+      <div class="mini-row"><span>東南亞市場</span><span class="mini-tag">高度關注</span></div>
+      <div class="mini-row"><span>代理／發行合作</span><span class="mini-tag">正在尋找</span></div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+      <h3 style="margin:0 0 8px">合作前你可以先看到</h3>
+      <div class="pillbar"><span class="badge green">身份已確認</span><span class="badge green">產品／服務已確認</span><span class="badge">合作紀錄 12 件</span><span class="badge">跨境合作 5 件</span></div>
+      <p class="sub" style="margin-top:14px">會員方案、信任資訊與合作紀錄會一起進入人工智慧媒合，讓雙方在聯繫前先理解彼此。</p>
+    </div>
+  </div>
+</section>
+
+<section id="finding" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">INBOUND OPPORTUNITIES</div>
+      <h2>有人正在找你</h2>
+      <p>BridgeX 不只幫你找人，也會主動找出正在尋找你能力的需求。</p>
+    </div>
+  </div>
+  <div class="grid g3">
+    <div class="card opportunity-card"><div class="op-top"><span class="badge green">匹配 92%</span><span>今天</span></div><h3>馬來西亞企業尋找遊戲行銷夥伴</h3><p>需要市場行銷、KOL 與在地推廣能力。</p><div class="tags"><span>馬來西亞</span><span>遊戲</span><span>行銷</span></div><button class="btn primary" onclick="openModal('lead')">查看需求</button></div>
+    <div class="card opportunity-card"><div class="op-top"><span class="badge green">匹配 88%</span><span>昨天</span></div><h3>印尼遊戲團隊尋找台灣合作方</h3><p>尋找產品合作、發行與商務拓展資源。</p><div class="tags"><span>印尼</span><span>發行</span><span>合作</span></div><button class="btn primary" onclick="openModal('lead')">查看需求</button></div>
+    <div class="card opportunity-card"><div class="op-top"><span class="badge">匹配 84%</span><span>2 天前</span></div><h3>東南亞服務商尋找產品合作</h3><p>正在尋找可共同拓展市場的數位產品。</p><div class="tags"><span>東南亞</span><span>數位產品</span><span>通路</span></div><button class="btn" onclick="openModal('lead')">查看需求</button></div>
+  </div>
+</section>
+
+<section id="trust" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">TRUST STANDARD</div>
+      <h2>平台信任標準</h2>
+      <p>BridgeX 不只媒合，更把「誰可信、需求是否真實、合作條件是否清楚」放進商業流程。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('trust')">查看我的信任狀態</button>
+  </div>
+  <div class="trust-banner">
+    <div><span class="badge green">平台信任層</span><h3>讓會員在聯繫前，就能先理解合作風險與條件。</h3><p>信任標準不是單一分數，而是由身份、產品／服務、需求、商務條件與合作紀錄組成。</p></div>
+    <div class="trust-score"><strong>86</strong><span>目前信任狀態</span></div>
+  </div>
+  <div class="grid g4 trust-grid">
+    <div class="card"><div class="check">✓</div><h3>身份驗證</h3><p>確認個人、團隊或企業身份。</p><span class="status">已完成</span></div>
+    <div class="card"><div class="check">✓</div><h3>產品／服務驗證</h3><p>確認產品內容、能力與可合作條件。</p><span class="status">已完成</span></div>
+    <div class="card"><div class="check">✓</div><h3>需求驗證</h3><p>確認需求真實性、預算、時程與決策權。</p><span class="status">部分完成</span></div>
+    <div class="card"><div class="check">✓</div><h3>合作紀錄</h3><p>累積案件完成、合作成果與履約紀錄。</p><span class="status">持續累積</span></div>
+  </div>
+  <div class="card trust-flow-card">
+    <h3>信任如何進入商業流程</h3>
+    <div class="trust-flow">
+      <div><b>身份</b><span>我是真的</span></div><i>→</i>
+      <div><b>產品／服務</b><span>我能提供</span></div><i>→</i>
+      <div><b>需求</b><span>他真的需要</span></div><i>→</i>
+      <div><b>商務條件</b><span>條件清楚</span></div><i>→</i>
+      <div><b>合作紀錄</b><span>結果可追蹤</span></div>
+    </div>
+  </div>
+  <div class="card trust-rules">
+    <h3>高品質商機的基本驗證</h3>
+    <div class="rule-grid">
+      <div>✓ 需求真實</div><div>✓ 需求明確</div><div>✓ 預算確認</div><div>✓ 決策權確認</div>
+      <div>✓ 時程確認</div><div>✓ 合作意願</div><div>✓ 供需吻合</div><div>✓ 市場條件清楚</div>
+    </div>
+  </div>
+</section>
+
+<section id="chatroom" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">COOPERATION ROOM</div>
+      <h2>合作洽談室</h2>
+      <p>把商機、訊息、AI 摘要、合作條件、提案與下一步放在同一個工作區。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('message')">開始洽談</button>
+  </div>
+  <div class="chat-layout">
+    <div class="card chat-list">
+      <div class="chat-item active"><b>馬來西亞遊戲代理</b><span>待確認 3 項條件</span></div>
+      <div class="chat-item"><b>AI 行銷合作</b><span>對方已回覆</span></div>
+      <div class="chat-item"><b>印尼市場合作</b><span>提案已送出</span></div>
+    </div>
+    <div class="card chat-main">
+      <div class="chat-head"><div><h3>馬來西亞遊戲代理</h3><span class="badge green">高品質商機</span></div><button class="btn" onclick="openModal('trust')">查看信任狀態</button></div>
+      <div class="chat-messages">
+        <div class="bubble other">我們對遊戲在馬來西亞的代理合作有興趣，希望了解市場與行銷規劃。</div>
+        <div class="bubble ai"><b>人工智慧摘要</b><br>雙方已確認：市場、產品類型、合作方向。尚未確認：分潤比例、行銷預算、合約期限。</div>
+        <div class="bubble me">可以，我先提供產品資料與初步合作方案。</div>
+      </div>
+      <div class="unresolved"><b>尚未確認的條件</b><span>分潤比例</span><span>行銷預算</span><span>合約期限</span><button class="btn primary" onclick="openModal('proposal')">產生合作提案</button></div>
+    </div>
+    <div class="card condition-panel">
+      <h3>合作條件</h3>
+      <div class="kv"><span>市場</span><b>馬來西亞</b></div><div class="kv"><span>合作方式</span><b>代理／發行</b></div><div class="kv"><span>產品</span><b>SLG 遊戲</b></div><div class="kv"><span>時程</span><b>預計 3 個月</b></div>
+      <button class="btn primary full" onclick="openModal('quote')">建立報價</button>
+      <button class="btn full" onclick="openModal('deal')">轉成案件</button>
+    </div>
+  </div>
+</section>
+
+<section id="documents" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">BUSINESS ASSETS</div>
+      <h2>我的商業資料庫</h2>
+      <p>把產品、公司資料、提案、報價、合約、市場研究與合作紀錄集中管理，讓人工智慧可以持續使用。</p>
+    </div>
+    <button class="btn primary" onclick="openModal('upload')">新增資料</button>
+  </div>
+  <div class="asset-grid">
+    <div class="card asset-folder"><div class="folder-icon">▣</div><h3>產品／服務</h3><strong>03</strong><p>產品介紹、功能、案例、合作條件</p></div>
+    <div class="card asset-folder"><div class="folder-icon">▤</div><h3>公司與團隊</h3><strong>02</strong><p>公司資料、能力、商業簡介</p></div>
+    <div class="card asset-folder"><div class="folder-icon">◇</div><h3>提案與報價</h3><strong>07</strong><p>合作提案、報價與版本紀錄</p></div>
+    <div class="card asset-folder"><div class="folder-icon">□</div><h3>案件與合約</h3><strong>08</strong><p>案件、合約、付款與交付紀錄</p></div>
+    <div class="card asset-folder"><div class="folder-icon">◎</div><h3>市場研究</h3><strong>05</strong><p>市場、競品、在地化與跨境資料</p></div>
+    <div class="card asset-folder"><div class="folder-icon">★</div><h3>合作成果</h3><strong>08</strong><p>合作案例、成果與可驗證紀錄</p></div>
+  </div>
+</section>
+
+<section id="transaction" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">TRANSACTION CENTER</div>
+      <h2>交易與落地中心</h2>
+      <p>成交不是終點，BridgeX 讓會員看得到合約、付款、交付、驗收與分潤進度。</p>
+    </div>
+  </div>
+  <div class="card transaction-card">
+    <div class="transaction-summary"><div><span>案件</span><h3>馬來西亞遊戲代理合作</h3></div><div><span>商業價值</span><strong>NT$ 480,000</strong></div><div><span>目前狀態</span><b class="badge green">執行中</b></div></div>
+    <div class="transaction-steps">
+      <div class="done-step"><i>✓</i><b>合作確認</b><span>已完成</span></div><div class="done-step"><i>✓</i><b>提案／報價</b><span>已完成</span></div><div class="done-step"><i>✓</i><b>合約</b><span>已完成</span></div><div class="current-step"><i>4</i><b>付款</b><span>待確認</span></div><div><i>5</i><b>交付</b><span>尚未開始</span></div><div><i>6</i><b>驗收／分潤</b><span>尚未開始</span></div>
+    </div>
+    <div class="transaction-bottom"><div><span>已付款</span><b>NT$ 240,000</b></div><div><span>待付款</span><b>NT$ 240,000</b></div><div><span>預計分潤</span><b>依案件條件計算</b></div><button class="btn primary" onclick="openModal('deal')">進入案件室</button></div>
+  </div>
+</section>
+
+<section id="service" class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">BridgeX 協助</div>
+      <h2>交給 BridgeX 協助</h2>
+      <p>會員可以自己完成，也可以把需要專業執行的工作交給 BridgeX。</p>
+    </div>
+  </div>
+  <div class="grid g3">
+    <div class="card service-card"><span class="service-no">01</span><h3>自己完成</h3><p>自行探索、媒合、聯絡與管理案件。</p><button class="btn" onclick="go('explore')">開始探索</button></div>
+    <div class="card service-card featured"><span class="service-no">02</span><h3>人工智慧協助</h3><p>人工智慧幫你分析市場、找對象、整理條件、產生提案與提醒下一步。</p><button class="btn primary" onclick="go('execute')">查看人工智慧執行</button></div>
+    <div class="card service-card"><span class="service-no">03</span><h3>BridgeX 專業協助</h3><p>需要時交由 BridgeX 協助 BD、談判、跨境合作、在地化與市場落地。</p><button class="btn primary" onclick="openModal('service')">申請協助</button></div>
+  </div>
+</section>
+
+
+<section id="onboarding" class="section">
+  <div class="section-head"><div><div class="eyebrow">第一次使用</div><h2>第一次使用 BridgeX，從這裡開始</h2><p>不用先研究平台功能，只要告訴 BridgeX 你想完成什麼，人工智慧會替你建立第一個商業任務。</p></div><button class="btn primary" onclick="openModal('onboarding')">開始建立我的商業任務</button></div>
+  <div class="onboard-flow">
+    <div class="on-step active"><span>1</span><b>告訴我們你是誰</b><small>個人／團隊／新創／企業／產品方／服務方</small></div>
+    <i>→</i><div class="on-step"><span>2</span><b>告訴我們你想完成什麼</b><small>找客戶、找產品、找夥伴、進市場、出海</small></div>
+    <i>→</i><div class="on-step"><span>3</span><b>人工智慧理解你</b><small>整理能力、需求、產品與目標市場</small></div>
+    <i>→</i><div class="on-step"><span>4</span><b>建立第一個商業任務</b><small>開始媒合、追蹤與推進</small></div>
+  </div>
+  <div class="card first-task"><div><span class="badge green">範例</span><h3>「我要把我的遊戲推進馬來西亞」</h3><p>BridgeX 會自動建立市場拓展任務，並整理需要的代理／發行、行銷、KOL、支付、在地化與營運能力。</p></div><button class="btn primary" onclick="openModal('onboarding')">用這個範例體驗</button></div>
+</section>
+
+<section id="network" class="section">
+  <div class="section-head"><div><div class="eyebrow">雙邊商業網路</div><h2>需求找供給，也讓供給找到需求</h2><p>BridgeX 的價值不是單向搜尋，而是讓需求方與供給方互相產生商業機會。</p></div></div>
+  <div class="network-map">
+    <div class="network-side demand"><span class="big-icon">⌕</span><h3>需求方</h3><p>提出需求、目標與條件</p><strong>找產品／服務／客戶／夥伴／市場</strong></div>
+    <div class="network-core"><span>人工智慧</span><b>雙向智能媒合</b><small>需求 × 供給 × 信任 × 商業條件</small></div>
+    <div class="network-side supply"><span class="big-icon">□</span><h3>供給方</h3><p>上架產品、服務與能力</p><strong>讓真正有需求的人找到你</strong></div>
+  </div>
+  <div class="grid g3 network-value">
+    <div class="card"><h3>需求方得到</h3><p>更快找到符合條件的產品、服務與合作夥伴。</p></div>
+    <div class="card"><h3>供給方得到</h3><p>不用只靠流量等待，AI 主動找出正在尋找自己的需求。</p></div>
+    <div class="card"><h3>平台得到</h3><p>需求、供給、媒合、合作與交易資料持續累積，讓下一次媒合更精準。</p></div>
+  </div>
+</section>
+
+<section id="trustmatch" class="section">
+  <div class="section-head"><div><div class="eyebrow">媒合信任</div><h2>信任標準直接進入每一次媒合</h2><p>信任不是另一個頁面，而是會員決定「要不要談」時看得到的資訊。</p></div><button class="btn" onclick="go('trust')">查看完整信任標準</button></div>
+  <div class="match-trust-card card">
+    <div class="match-person"><div class="avatar">M</div><div><h3>馬來西亞遊戲代理夥伴</h3><span class="badge green">人工智慧媒合 92%</span><div class="tags"><span>馬來西亞</span><span>遊戲代理</span><span>在地營運</span></div></div></div>
+    <div class="trust-mini-grid">
+      <div><b>身份</b><span class="ok">✓ 已驗證</span></div><div><b>公司／團隊</b><span class="ok">✓ 已驗證</span></div><div><b>能力</b><span class="ok">✓ 已驗證</span></div><div><b>合作紀錄</b><span class="ok">✓ 8 件</span></div><div><b>需求／條件</b><span class="warn">⚠ 待確認</span></div><div><b>跨境經驗</b><span class="ok">✓ 有</span></div>
+    </div>
+    <div class="match-reason"><b>為什麼推薦？</b><p>市場覆蓋、遊戲類型、代理能力與你的目標高度吻合；目前主要差異在分潤比例與行銷預算尚未確認。</p><button class="btn primary" onclick="openModal('lead')">查看完整商機</button></div>
+  </div>
+</section>
+
+<section id="credit" class="section">
+  <div class="section-head"><div><div class="eyebrow">商業信用</div><h2>我的商業信用會隨合作累積</h2><p>不是單純評分，而是把身份、產品、需求品質、回覆與合作成果轉成可理解的信任資訊。</p></div></div>
+  <div class="credit-grid">
+    <div class="card credit-score"><span>目前商業信用</span><strong>86</strong><div class="progress"><i style="width:86%"></i></div><p>完成更多驗證與合作紀錄，可以持續提升可見度與信任。</p></div>
+    <div class="card"><h3>信用如何成長</h3><div class="credit-items"><div><span>身份完整</span><b>＋10</b></div><div><span>產品驗證</span><b>＋10</b></div><div><span>高品質需求</span><b>＋8</b></div><div><span>合作完成</span><b>＋12</b></div><div><span>跨境成果</span><b>＋15</b></div></div></div>
+    <div class="card"><h3>下一個成長機會</h3><p>你目前有 2 個合作案件正在進行。完成其中一件後，可增加一筆可驗證的合作紀錄。</p><button class="btn primary" onclick="go('cases')">查看進行中的案件</button></div>
+  </div>
+</section>
+
+<section id="relationships" class="section">
+  <div class="section-head"><div><div class="eyebrow">商業關係網</div><h2>我的商業關係網</h2><p>合作不是一次性的媒合。BridgeX 持續記住你曾合作、正在合作與關注的夥伴。</p></div></div>
+  <div class="grid g4">
+    <div class="card relation-card"><span class="badge green">合作中</span><h3>馬來西亞代理商 A</h3><p>目前 1 件案件執行中</p><button class="btn" onclick="go('chatroom')">進入洽談</button></div>
+    <div class="card relation-card"><span class="badge">曾合作</span><h3>印尼發行商 B</h3><p>過去完成 2 件合作</p><button class="btn" onclick="openModal('relation')">查看紀錄</button></div>
+    <div class="card relation-card"><span class="badge">關注</span><h3>泰國行銷公司 C</h3><p>新增了東南亞服務</p><button class="btn" onclick="openModal('relation')">查看變化</button></div>
+    <div class="card relation-card"><span class="badge green">AI 推薦</span><h3>新加坡服務商 D</h3><p>可能適合你的跨境任務</p><button class="btn primary" onclick="openModal('lead')">查看推薦</button></div>
+  </div>
+</section>
+
+<section id="dealflow" class="section">
+  <div class="section-head"><div><div class="eyebrow">完整成交流程</div><h2>一個商業機會，如何走到成交</h2><p>BridgeX 將每個階段串起來，讓會員知道現在在哪裡、下一步是什麼。</p></div></div>
+  <div class="dealflow">
+    <div class="df done"><span>1</span><b>需求／供給</b><small>已建立</small></div><i>→</i>
+    <div class="df done"><span>2</span><b>人工智慧理解</b><small>已完成</small></div><i>→</i>
+    <div class="df done"><span>3</span><b>媒合／信任</b><small>已完成</small></div><i>→</i>
+    <div class="df current"><span>4</span><b>洽談</b><small>進行中</small></div><i>→</i>
+    <div class="df"><span>5</span><b>提案／報價</b><small>下一步</small></div><i>→</i>
+    <div class="df"><span>6</span><b>案件</b><small>尚未開始</small></div><i>→</i>
+    <div class="df"><span>7</span><b>交易／落地</b><small>尚未開始</small></div>
+  </div>
+</section>
+
+<section id="flywheel" class="section">
+  <div class="section-head"><div><div class="eyebrow">BridgeX 商業飛輪</div><h2>BridgeX 為什麼會越用越有價值？</h2><p>會員使用平台產生的商業資料，會反過來提升人工智慧的理解與媒合能力。</p></div></div>
+  <div class="flywheel">
+    <div class="fw-node n1"><b>會員</b><span>需求／供給</span></div>
+    <div class="fw-node n2"><b>人工智慧</b><span>理解／媒合</span></div>
+    <div class="fw-node n3"><b>商業機會</b><span>高品質商機</span></div>
+    <div class="fw-node n4"><b>交易</b><span>案件／落地</span></div>
+    <div class="fw-node n5"><b>商業資料</b><span>合作／成果</span></div>
+    <div class="fw-node n6"><b>商業記憶</b><span>越用越懂你</span></div>
+    <div class="fw-center">BridgeX<br><small>持續產生下一個機會</small></div>
+  </div>
+  <div class="card fly-note"><b>平台價值：</b>更多會員 → 更多需求與供給 → 更多媒合 → 更多合作與交易 → 更多可信資料 → 更精準的人工智慧 → 更高品質的商業機會。</div>
+</section>
+
+<section id="joinvalue" class="section">
+  <div class="section-head"><div><div class="eyebrow">加入價值</div><h2>加入 BridgeX，你會得到什麼？</h2><p>從「自己找機會」變成「讓機會主動找到你」，並把商業合作真正往前推進。</p></div></div>
+  <div class="grid g3 join-grid">
+    <div class="card"><span class="join-no">01</span><h3>找到原本找不到的人</h3><p>透過需求、能力、市場與合作條件做更深層的媒合。</p></div>
+    <div class="card"><span class="join-no">02</span><h3>讓真正的需求找到你</h3><p>產品與服務不必只等待曝光，人工智慧會主動尋找吻合需求。</p></div>
+    <div class="card"><span class="join-no">03</span><h3>少做重複的研究</h3><p>人工智慧協助整理市場、產品、合作對象與談判資訊。</p></div>
+    <div class="card"><span class="join-no">04</span><h3>從商機走到成交</h3><p>訊息、提案、報價、案件、付款與交付在同一條商業流程裡。</p></div>
+    <div class="card"><span class="join-no">05</span><h3>建立自己的商業信用</h3><p>每次驗證與完成合作，都會成為未來合作的信任基礎。</p></div>
+    <div class="card"><span class="join-no">06</span><h3>需要時交給 BridgeX</h3><p>不想自己執行時，可以交由 BridgeX 協助 BD、跨境與市場落地。</p></div>
+  </div>
+</section>
+
+<section id="plans" class="bx-section bx-plans" style="padding:10px 0 0;">
+  <div style="text-align:center;max-width:760px;margin:0 auto 34px;">
+    <div class="eyebrow">BRIDGEX 會員方案</div>
+    <h2 style="font-size:32px;line-height:1.3;margin:10px 0 12px;word-break:keep-all;overflow-wrap:anywhere;">從免費開始，逐步把 BridgeX 變成你的商業成長工具</h2>
+    <p style="color:#667085;line-height:1.8;margin:0;overflow-wrap:anywhere;">依照你的商業需求選擇會員層級。C 會員先探索與建立身份，B 會員強化商機與商務執行，A 會員則面向企業級團隊與跨境合作。</p>
+  </div>
+  <div class="bx-plan-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;">
+    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
+      <div style="font-size:13px;font-weight:700;color:#667085;">C｜免費會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">開始使用 BridgeX</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合想先建立商業身份、探索產品與合作機會的個人、小團隊與新創。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>建立商業身份</li><li>發布需求</li><li>上架產品／服務</li><li>AI 基礎媒合</li><li>探索市場與合作機會</li>
+      </ul>
+      <button class="bx-btn" onclick="go('profile')" style="width:100%;">免費開始</button>
+    </div>
+    <div class="bx-plan-card" style="border:2px solid #111827;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;position:relative;">
+      <div style="position:absolute;right:18px;top:18px;font-size:11px;font-weight:700;padding:5px 9px;border-radius:999px;background:#111827;color:#fff;">商務主力</div>
+      <div style="font-size:13px;font-weight:700;color:#667085;">B｜商務會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">把機會變成案件</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合正在積極拓展客戶、合作夥伴、產品發行與跨境商務的商業使用者。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>包含 C 會員全部功能</li><li>進階 AI 商業媒合</li><li>高品質商機</li><li>商務案件管理</li><li>進階 AI 商業助理</li><li>跨境市場與合作工具</li>
+      </ul>
+      <button class="bx-btn" onclick="alert('B 商務會員：可在正式平台進一步選擇方案與付款。')" style="width:100%;">升級商務會員</button>
+    </div>
+    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
+      <div style="font-size:13px;font-weight:700;color:#667085;">A｜企業會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">建立企業商業能力</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合企業、組織與需要多人協作、跨市場拓展與專業服務的團隊。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>包含 B 會員主要功能</li><li>企業團隊管理</li><li>企業級商業資料與分析</li><li>跨境合作與市場服務</li><li>BridgeX 專業協助</li><li>企業整合與客製方案</li>
+      </ul>
+      <button class="bx-btn" onclick="alert('A 企業會員：可與 BridgeX 洽談企業合作方案。')" style="width:100%;">洽談企業方案</button>
+    </div>
+  </div>
+  <div style="margin-top:28px;padding:20px;border-radius:16px;background:#f8fafc;border:1px solid #e5e7eb;text-align:center;color:#475467;line-height:1.8;overflow-wrap:anywhere;">
+    <strong>BridgeX 的會員升級邏輯</strong>　C 免費探索 → B 商務取得更多商機與執行能力 → A 企業建立團隊級、跨市場的商業能力
+  </div>
+</section>
+</div>
+</main>
+
+<main id="explore" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>探索市場</h2><p class="sub">搜尋產品、服務、夥伴與市場能力。</p></div><button class="btn primary" onclick="openModal('demand')">建立需求</button></div>
+<div class="grid g3">
+<div class="card click" onclick="openModal('product')"><span class="badge green">已驗證</span><h3>東南亞遊戲發行服務</h3><p>馬來西亞／印尼／泰國｜代理、發行、在地營運、KOL。</p><span class="badge">適合你的任務 94%</span></div>
+<div class="card click" onclick="openModal('product')"><span class="badge green">已驗證</span><h3>人工智慧行銷解決方案</h3><p>人工智慧內容、廣告自動化、數據分析與行銷執行。</p><span class="badge">適合你的任務 91%</span></div>
+<div class="card click" onclick="openModal('product')"><span class="badge">待媒合</span><h3>跨境在地化服務</h3><p>語言、支付、內容、法規與市場進入支援。</p><span class="badge">適合你的任務 87%</span></div>
+</div></section>
+<section class="section"><div class="card"><h3>你也可以比較合作對象</h3><p>從市場覆蓋、能力、條件與合作紀錄一起看，而不是只看產品名稱。</p><button class="btn primary" onclick="go('compare')">比較合作對象</button></div></section>
+</div></main>
+
+<main id="tasks" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>我的商業任務</h2><p class="sub">每一個需求，都變成一個可以推進的任務。</p></div><button class="btn primary" onclick="openModal('demand')">建立新任務</button></div>
+<div class="task-list">
+<div class="task-row"><div class="task"><div><span class="badge">進行中</span><strong>尋找東南亞遊戲代理商</strong><small>市場：馬來西亞、印尼｜預算：待確認｜期限：60 天</small></div><button class="btn" onclick="openModal('task')">查看任務</button></div><div class="progress"><i style="width:72%"></i></div></div>
+<div class="task-row"><div class="task"><div><span class="badge yellow">待確認</span><strong>人工智慧行銷合作</strong><small>市場：台灣｜預算：30–80 萬｜期限：30 天</small></div><button class="btn" onclick="openModal('task')">查看任務</button></div><div class="progress"><i style="width:54%"></i></div></div>
+<div class="task-row"><div class="task"><div><span class="badge green">新機會</span><strong>拓展馬來西亞市場</strong><small>AI 已發現 7 個相關機會</small></div><button class="btn" onclick="openModal('market')">查看機會</button></div><div class="progress"><i style="width:38%"></i></div></div>
+</div></section>
+</div></main>
+
+<main id="opps" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>我的商業機會</h2><p class="sub">所有「發現 → 評估 → 媒合 → 洽談 → 案件 → 成交」集中管理。</p></div></div>
+<div class="grid g4"><div class="card metric"><div class="num">05</div><div class="label">新的高品質商機</div></div><div class="card metric"><div class="num">08</div><div class="label">評估中</div></div><div class="card metric"><div class="num">04</div><div class="label">洽談中</div></div><div class="card metric"><div class="num">03</div><div class="label">已轉案件</div></div></div>
+</section>
+<section class="section"><div class="table-wrap"><table class="table"><thead><tr><th>商業機會</th><th>來源</th><th>吻合度</th><th>預算／條件</th><th>下一步</th></tr></thead><tbody>
+<tr><td>馬來西亞遊戲代理需求</td><td>AI 商業雷達</td><td><span class="badge green">94%</span></td><td>已確認預算</td><td><button class="btn" onclick="openModal('lead')">查看商機</button></td></tr>
+<tr><td>人工智慧行銷服務需求</td><td>有人正在找你</td><td><span class="badge green">91%</span></td><td>30–80 萬</td><td><button class="btn" onclick="openModal('lead')">查看商機</button></td></tr>
+<tr><td>印尼數位產品合作</td><td>探索市場</td><td><span class="badge">86%</span></td><td>條件洽談中</td><td><button class="btn" onclick="openModal('lead')">查看商機</button></td></tr>
+</tbody></table></div></section>
+</div></main>
+
+<main id="compare" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>合作對象比較</h2><p class="sub">把「為什麼推薦」變成可以比較的商業條件。</p></div></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>比較項目</th><th>夥伴 A</th><th>夥伴 B</th><th>夥伴 C</th></tr></thead><tbody>
+<tr><td>人工智慧媒合吻合度</td><td><span class="badge green">94%</span></td><td><span class="badge">88%</span></td><td><span class="badge">84%</span></td></tr>
+<tr><td>市場覆蓋</td><td>馬來西亞／印尼／泰國</td><td>馬來西亞</td><td>印尼／泰國</td></tr>
+<tr><td>代理／發行能力</td><td>完整</td><td>完整</td><td>部分</td></tr>
+<tr><td>在地營運</td><td>有</td><td>有</td><td>合作夥伴</td></tr>
+<tr><td>行銷／KOL</td><td>有</td><td>有</td><td>部分</td></tr>
+<tr><td>合作紀錄</td><td>8 件</td><td>4 件</td><td>2 件</td></tr>
+<tr><td>人工智慧分析</td><td colspan="3">夥伴 A 與目前任務的市場、產品與執行條件吻合度最高；夥伴 B 適合單一市場快速測試；夥伴 C 適合作為第二合作方。</td></tr>
+</tbody></table></div>
+</section></div></main>
+
+<main id="cases" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>案件與合作</h2><p class="sub">從提案、報價到付款與交付，都在同一個案件中。</p></div><button class="btn primary" onclick="openModal('deal')">建立案件</button></div>
+<div class="grid g2">
+<div class="card"><span class="badge green">進行中</span><h3>遊戲東南亞代理合作</h3><p>合作對象：馬來西亞發行夥伴</p><div class="timeline">
+<div class="tl done"><div class="dot"></div><div><b>需求確認</b><small>已完成</small></div></div>
+<div class="tl done"><div class="dot"></div><div><b>合作提案</b><small>已送出</small></div></div>
+<div class="tl active"><div class="dot"></div><div><b>條件協商</b><small>等待對方確認分潤與市場範圍</small></div></div>
+<div class="tl"><div class="dot"></div><div><b>合約／付款</b><small>尚未開始</small></div></div>
+<div class="tl"><div class="dot"></div><div><b>上線／落地</b><small>尚未開始</small></div></div>
+</div><button class="btn primary" style="margin-top:15px" onclick="openModal('deal')">進入商務案件室</button></div>
+<div class="dark-card"><span class="badge">案件經濟</span><h3>目前預估商業價值</h3><div class="money">NT$ 1,200,000</div><p>預估專案金額｜尚未最終確認</p><div class="bar"><i style="width:62%"></i></div><p style="font-size:13px;margin-top:8px">成交推進 62%｜下一步：完成條件確認</p></div>
+</div></section>
+<section class="section"><div class="card"><h3>合作提案與報價</h3><p>AI 可依任務資料自動產生合作提案，並整理市場、能力、合作方式、時程、費用與分潤條件。</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" onclick="openModal('proposal')">產生合作提案</button><button class="btn" onclick="openModal('quote')">建立報價／條件</button><button class="btn" onclick="openModal('message')">開啟案件訊息</button></div></div></section>
+</div></main>
+
+
+<main id="execute" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>人工智慧執行中心</h2><p class="sub">不是只告訴你答案，而是把商業任務推到下一步。</p></div><span class="badge green">3 項任務可執行</span></div>
+<div class="grid g2">
+<div class="card">
+  <span class="badge">目前任務</span><h3>把遊戲推進馬來西亞</h3><p>AI 已完成產品分析、市場分析與第一輪夥伴搜尋。</p>
+  <div class="checklist">
+    <div class="check done"><span class="mark">✓</span><div><b>分析產品</b><small>已完成</small></div></div>
+    <div class="check done"><span class="mark">✓</span><div><b>分析市場</b><small>已完成</small></div></div>
+    <div class="check done"><span class="mark">✓</span><div><b>找到合作對象</b><small>12 個候選，4 個高度符合</small></div></div>
+    <div class="check"><span class="mark">4</span><div><b>比較合作條件</b><small>等待你確認</small></div></div>
+    <div class="check"><span class="mark">5</span><div><b>產生合作提案</b><small>AI 可立即建立</small></div></div>
+    <div class="check"><span class="mark">6</span><div><b>發送合作邀請</b><small>確認後執行</small></div></div>
+  </div>
+  <div class="exec-actions"><button class="btn primary" onclick="openModal('proposal')">產生合作提案</button><button class="btn" onclick="openModal('message')">準備合作邀請</button></div>
+</div>
+<div class="card assistant">
+  <h3>AI 正在替你處理</h3>
+  <div class="bubble"><b>我建議先比較 4 個合作對象。</b><br><small>差異主要在代理期限、分潤、行銷投入與印尼延伸能力。</small></div>
+  <div class="bubble"><b>我已整理出 3 個尚未確認的條件。</b><br><small>確認後，我可以直接建立第一版合作提案。</small></div>
+  <div class="bubble"><b>下一步可以交給我。</b><br><small>你確認後，我會把結果帶入案件室，持續追蹤合作進度。</small></div>
+  <div class="exec-actions"><button class="btn primary" onclick="go('compare')">查看比較</button><button class="btn" onclick="openModal('deal')">進入案件室</button></div>
+</div>
+</div></section>
+<section class="section"><div class="card"><h3>你可以讓 BridgeX 協助執行</h3><p>當你不想自己處理全部流程，可以直接提出協助需求。</p>
+<div class="grid g3">
+<div class="service-card"><b>找夥伴</b><p>市場、代理、發行、客戶、服務商。</p><button class="btn" onclick="openModal('service')">申請</button></div>
+<div class="service-card"><b>做市場</b><p>市場研究、在地化、行銷與 KOL。</p><button class="btn" onclick="openModal('service')">申請</button></div>
+<div class="service-card"><b>推進交易</b><p>提案、報價、條件協商與案件追蹤。</p><button class="btn" onclick="openModal('service')">申請</button></div>
+</div></div></section>
+</div></main>
+
+<main id="radar" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>人工智慧商業雷達</h2><p class="sub">根據你的商業檔案、任務、關注市場與合作紀錄，主動尋找機會。</p></div></div>
+<div class="grid g2">
+<div class="card"><h3>市場機會熱度</h3><div class="radar" style="margin-top:15px">
+<div class="radar-row"><b>馬來西亞</b><div class="bar"><i style="width:91%"></i></div><b>91%</b></div>
+<div class="radar-row"><b>印尼</b><div class="bar"><i style="width:84%"></i></div><b>84%</b></div>
+<div class="radar-row"><b>泰國</b><div class="bar"><i style="width:77%"></i></div><b>77%</b></div>
+<div class="radar-row"><b>台灣</b><div class="bar"><i style="width:73%"></i></div><b>73%</b></div>
+</div></div>
+<div class="card"><h3>AI 主動發現</h3><div class="notice"><div>🔎</div><div><b>4 個新需求符合你的遊戲產品</b><small>其中 2 個已確認預算</small></div></div><div class="notice"><div>🤝</div><div><b>1 個新夥伴與你高度互補</b><small>具備印尼在地營運能力</small></div></div><div class="notice"><div>📈</div><div><b>你關注的市場出現新的合作趨勢</b><small>建議建立新的商業任務</small></div></div></div>
+</div></section>
+</div></main>
+
+
+<main id="profile" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>我的商業檔案</h2><p class="sub">這是人工智慧理解你的基礎，也是其他會員認識你的商業名片。</p></div><button class="btn primary" onclick="openModal('profile')">編輯檔案</button></div>
+<div class="grid g2">
+<div class="card"><span class="badge green">82% 完整</span><h3>劉先生｜遊戲與跨境商務</h3><p>遊戲營運、發行、行銷、商務開發與東南亞市場合作能力。</p><div class="pillbar"><span class="badge">產品方</span><span class="badge">服務方</span><span class="badge">跨境合作</span><span class="badge">東南亞</span></div></div>
+<div class="card"><h3>人工智慧理解到的能力</h3><div class="asset"><span>遊戲營運／發行</span><span class="badge green">高度</span></div><div class="asset"><span>商務開發／媒合</span><span class="badge green">高度</span></div><div class="asset"><span>東南亞市場</span><span class="badge">已建立</span></div><div class="asset"><span>人工智慧行銷</span><span class="badge yellow">待補資料</span></div></div>
+</div></section>
+<section class="section"><div class="grid g3">
+<div class="card"><h3>我正在找</h3><p>東南亞代理／發行、行銷夥伴、企業合作機會。</p><button class="btn" onclick="go('tasks')">查看任務</button></div>
+<div class="card"><h3>我可以提供</h3><p>遊戲營運、BD、跨境市場合作、產品與商業資源。</p><button class="btn" onclick="openModal('supply')">管理供給</button></div>
+<div class="card"><h3>我的市場</h3><p>台灣、大中華、馬來西亞、印尼、泰國。</p><button class="btn" onclick="go('radar')">查看市場雷達</button></div>
+</div></section>
+<section class="section"><div class="card"><h3>還可以補充什麼？</h3><div class="checklist">
+<div class="check done"><span class="mark">✓</span><div><b>基本身份</b><small>已完成</small></div></div>
+<div class="check done"><span class="mark">✓</span><div><b>產品／服務</b><small>已完成</small></div></div>
+<div class="check"><span class="mark">＋</span><div><b>成功案例</b><small>加入案例後，AI 可以更準確推薦合作對象。</small></div></div>
+<div class="check"><span class="mark">＋</span><div><b>合作條件</b><small>加入預算、合作方式與市場偏好。</small></div></div>
+</div></div></section>
+</div></main>
+
+<main id="results" style="display:none"><div class="wrap">
+<section class="section"><div class="section-head"><div><h2>我的商業成果</h2><p class="sub">把平台活動轉成可理解的商業成效。</p></div></div>
+<div class="grid g4"><div class="card metric"><div class="num">128</div><div class="label">累積商業機會</div></div><div class="card metric"><div class="num">24</div><div class="label">進入洽談</div></div><div class="card metric"><div class="num">08</div><div class="label">完成合作</div></div><div class="card metric"><div class="num">03</div><div class="label">新增市場</div></div></div>
+</section>
+<section class="section"><div class="grid g2"><div class="card"><h3>商業轉換</h3><p>發現 → 評估 → 洽談 → 案件 → 完成</p><div class="radar">
+<div class="radar-row"><span>發現</span><div class="bar"><i style="width:100%"></i></div><b>128</b></div>
+<div class="radar-row"><span>評估</span><div class="bar"><i style="width:67%"></i></div><b>86</b></div>
+<div class="radar-row"><span>洽談</span><div class="bar"><i style="width:39%"></i></div><b>24</b></div>
+<div class="radar-row"><span>完成</span><div class="bar"><i style="width:13%"></i></div><b>8</b></div>
+</div></div><div class="dark-card"><h3>合作累積商業價值</h3><div class="money">NT$ 3,680,000</div><p>依已完成與進行中案件估算，實際金額以案件最終結果為準。</p><button class="btn" onclick="openModal('result')">查看成果明細</button></div></div></section>
+</div></main>
+
+<footer class="footer">BridgeX｜AI 商業執行中樞｜從需求、媒合到交易與落地</footer>
+
+<div class="modal-back" id="back" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2 id="mtitle">BridgeX</h2><button class="close" onclick="closeModal()">×</button></div><div id="mbody"></div></div></div>
+<script>
+const D={onboarding:{t:'建立我的第一個商業任務',b:`<div class="form"><label>你目前的身份<select><option>產品方</option><option>服務方</option><option>企業</option><option>新創／小團隊</option><option>合作夥伴</option></select></label><label>你想完成什麼？<textarea placeholder="例如：我要把我的遊戲推進馬來西亞"></textarea></label><label>目標市場<input value="馬來西亞"></label><button class="btn primary" onclick="done('人工智慧已建立你的第一個商業任務，並開始尋找相關機會')">建立商業任務</button></div>`},
+relation:{t:'商業關係紀錄',b:`<div class="modal-grid"><div class="card"><b>合作紀錄</b><p>已完成 2 件案件</p></div><div class="card"><b>最近互動</b><p>7 天前回覆一項市場合作需求</p></div><div class="card"><b>目前能力</b><p>新增東南亞行銷與在地營運服務</p></div><div class="card"><b>人工智慧建議</b><p>可能與你目前的馬來西亞市場任務相關。</p></div></div>`},
+trust:{t:'我的信任狀態',b:`<div class="modal-grid">
+<div class="card"><b>身份驗證</b><p>已完成</p></div>
+<div class="card"><b>產品／服務驗證</b><p>已完成</p></div>
+<div class="card"><b>需求驗證</b><p>部分完成，仍需確認預算與決策權</p></div>
+<div class="card"><b>合作紀錄</b><p>已累積 8 件</p></div>
+</div>`},
+upload:{t:'新增商業資料',b:`<div class="form"><label>資料類型<select><option>產品／服務</option><option>公司與團隊</option><option>提案</option><option>報價</option><option>市場研究</option><option>合作成果</option></select></label><label>資料名稱<input placeholder="例如：馬來西亞遊戲代理提案"></label><button class="btn primary" onclick="done('資料已加入商業資料庫')">加入資料庫</button></div>`},
+
+memory:{t:'我的商業記憶',b:`<div class="modal-grid">
+<div class="card"><b>人工智慧目前理解</b><p>你提供遊戲、數位產品與跨境商務能力，近期主要關注東南亞市場。</p></div>
+<div class="card"><b>近期目標</b><p>尋找馬來西亞與其他東南亞市場的代理、發行與商務合作。</p></div>
+<div class="card"><b>合作偏好</b><p>偏好明確合作條件、可量化的商業機會，以及能直接推進到案件的夥伴。</p></div>
+<div class="card"><b>歷史經驗</b><p>過去的需求、媒合、案件與合作成果，會持續作為下一次人工智慧推薦的參考。</p></div>
+</div>`},
+demand:{t:'建立商業需求',b:`<div class="form"><label>你現在最想完成什麼？</label><textarea id="dtext" placeholder="例如：我要把我的遊戲推進馬來西亞，尋找代理商與在地行銷夥伴。"></textarea><label>目標市場</label><input value="馬來西亞"><label>預算</label><input placeholder="可填預算範圍或待確認"><label>預計時程</label><select><option>30 天</option><option>60 天</option><option>90 天</option><option>待確認</option></select></div><div class="modal-foot"><button class="btn ghost" onclick="closeModal()">取消</button><button class="btn primary" onclick="createTask()">建立任務並交給人工智慧分析</button></div>`},
+supply:{t:'上架產品／服務',b:`<div class="form"><label>產品／服務名稱</label><input placeholder="例如：東南亞遊戲發行服務"><label>你能提供什麼？</label><textarea placeholder="描述產品、服務、能力、可進入市場與合作方式。"></textarea><label>可服務市場</label><input value="台灣／大中華／東南亞"><label>合作方式</label><select><option>專案合作</option><option>代理／發行</option><option>服務採購</option><option>策略合作</option><option>其他</option></select></div><div class="modal-foot"><button class="btn ghost" onclick="closeModal()">取消</button><button class="btn primary" onclick="done('產品／服務已建立，BridgeX 將開始尋找適合的需求。')">上架並開始媒合</button></div>`},
+product:{t:'產品／服務詳細資料',b:`<span class="badge green">已驗證</span><h3>東南亞遊戲發行服務</h3><p>提供馬來西亞、印尼、泰國的代理／發行、在地營運、KOL 與市場執行能力。</p><div class="card" style="margin-top:12px;background:#f8fafc"><b>為什麼 BridgeX 推薦給你？</b><p>你的「東南亞遊戲代理」任務需要代理能力、在地營運與行銷資源，此服務三項皆符合。</p></div><div class="modal-foot"><button class="btn" onclick="openModal('compare')">加入比較</button><button class="btn primary" onclick="openModal('message')">發起合作</button></div>`},
+lead:{t:'高品質商機',b:`<span class="badge green">已驗證商機</span><h3>馬來西亞遊戲代理需求</h3><p>對方正在尋找可進入馬來西亞市場的遊戲產品，已確認需求、預算與合作時程。</p><div class="grid g2"><div class="card"><b>需求明確度</b><h3>高</h3></div><div class="card"><b>人工智慧吻合度</b><h3>94%</h3></div><div class="card"><b>預算</b><h3>已確認</h3></div><div class="card"><b>決策權</b><h3>已確認</h3></div></div><div class="modal-foot"><button class="btn" onclick="openModal('message')">先聯繫</button><button class="btn primary" onclick="openModal('deal')">轉成商務案件</button></div>`},
+message:{t:'發起合作',b:`<div class="form"><label>合作對象</label><input value="馬來西亞遊戲發行夥伴"><label>合作目的</label><textarea>希望討論遊戲在馬來西亞的代理／發行與市場營運合作。</textarea><label>AI 建議</label><div class="card" style="background:#f7f9fc">建議先確認：市場範圍、代理期限、分潤比例、行銷投入與上線時程。</div></div><div class="modal-foot"><button class="btn ghost" onclick="closeModal()">取消</button><button class="btn primary" onclick="done('合作訊息已送出，BridgeX 將建立後續追蹤。')">送出合作邀請</button></div>`},
+proposal:{t:'人工智慧合作提案',b:`<div class="card" style="background:#f7f9fc"><b>提案摘要</b><p>依據目前任務，BridgeX 建議以「馬來西亞市場代理／發行」為合作主軸，第一階段確認產品、市場範圍、合作期限、分潤與行銷投入，再進入上線執行。</p><p><b>合作方式：</b>代理／發行　<b>市場：</b>馬來西亞　<b>時程：</b>60 天啟動</p></div><div class="form"><label>補充條件</label><textarea placeholder="加入你希望對方知道的條件"></textarea></div><div class="modal-foot"><button class="btn" onclick="done('提案已儲存，可進一步修改。')">儲存草稿</button><button class="btn primary" onclick="done('合作提案已準備完成，可送出給合作對象。')">產生正式提案</button></div>`},
+deal:{t:'商務案件室',b:`<span class="badge">案件進行中</span><h3>遊戲東南亞代理合作</h3><div class="grid g2"><div class="card"><b>目前階段</b><h3>條件協商</h3></div><div class="card"><b>預估商業價值</b><h3>NT$ 1,200,000</h3></div><div class="card"><b>待確認</b><p>分潤比例、代理期限、市場範圍</p></div><div class="card"><b>下一步</b><p>雙方確認合作條件</p></div></div><div class="timeline" style="margin-top:14px"><div class="tl done"><div class="dot"></div><div><b>需求確認</b><small>已完成</small></div></div><div class="tl done"><div class="dot"></div><div><b>合作提案</b><small>已完成</small></div></div><div class="tl active"><div class="dot"></div><div><b>條件協商</b><small>進行中</small></div></div><div class="tl"><div class="dot"></div><div><b>合約／付款</b><small>待開始</small></div></div><div class="tl"><div class="dot"></div><div><b>交付／上線</b><small>待開始</small></div></div></div><div class="modal-foot"><button class="btn" onclick="openModal('quote')">查看報價／條件</button><button class="btn primary" onclick="done('案件狀態已更新。')">更新案件進度</button></div>`},
+quote:{t:'報價／合作條件',b:`<div class="form"><label>合作金額</label><input value="NT$ 1,200,000"><label>分潤比例</label><input placeholder="例如：收入分潤 30%"><label>合作期限</label><input value="12 個月"><label>市場範圍</label><input value="馬來西亞"><label>付款方式</label><select><option>簽約＋里程碑付款</option><option>月費</option><option>專案一次付清</option><option>分潤</option></select></div><div class="modal-foot"><button class="btn" onclick="done('條件已儲存。')">儲存條件</button><button class="btn primary" onclick="done('報價已準備，可送出給合作對象。')">送出報價</button></div>`},
+market:{t:'市場機會分析',b:`<span class="badge green">人工智慧發現</span><h3>馬來西亞遊戲市場新合作機會</h3><p>BridgeX 根據你的產品、過去合作與關注市場，發現新的代理／發行需求。</p><div class="card" style="background:#f7f9fc"><b>為什麼值得查看？</b><p>市場符合度 91%｜能力吻合度 94%｜已有在地合作資源｜部分需求已確認預算。</p></div><div class="modal-foot"><button class="btn" onclick="done('已加入我的關注。')">加入關注</button><button class="btn primary" onclick="done('已建立新的商業任務。')">建立商業任務</button></div>`},
+notice:{t:'通知中心',b:`<div class="notice"><div>🟢</div><div><b>有新的高品質商機</b><small>馬來西亞企業正在尋找遊戲行銷合作夥伴。</small></div></div><div class="notice"><div>🤝</div><div><b>合作夥伴回覆你</b><small>案件「遊戲東南亞代理合作」有新的訊息。</small></div></div><div class="notice"><div>📈</div><div><b>AI 發現新的市場機會</b><small>印尼出現與你能力高度吻合的需求。</small></div></div>`},
+task:{t:'商業任務詳情',b:`<span class="badge">進行中</span><h3>尋找東南亞遊戲代理商</h3><p>目標：找到可執行馬來西亞市場代理／發行的合作夥伴。</p><div class="grid g2"><div class="card"><b>已完成</b><p>產品分析、需求結構化、初步市場搜尋</p></div><div class="card"><b>AI 建議下一步</b><p>比較 4 個合作對象並確認代理條件。</p></div></div><div class="modal-foot"><button class="btn" onclick="go('compare');closeModal()">比較合作對象</button><button class="btn primary" onclick="openModal('proposal')">產生合作提案</button></div>`},
+credit:{t:'我的商業信用',b:`<div class="credit"><div class="credit-score">86</div><div><span class="badge green">可合作</span><h3>商業信用資料</h3><p>平台不以單一分數決定合作，而是呈現可驗證的身份、產品、需求與合作紀錄。</p></div></div><div class="checklist"><div class="check done"><span class="mark">✓</span><div><b>身份／帳戶驗證</b><small>已完成</small></div></div><div class="check done"><span class="mark">✓</span><div><b>產品／服務驗證</b><small>3 項</small></div></div><div class="check done"><span class="mark">✓</span><div><b>合作紀錄</b><small>12 件</small></div></div><div class="check done"><span class="mark">✓</span><div><b>跨境經驗</b><small>5 件</small></div></div></div>`},
+service:{t:'BridgeX 商務服務',b:`<span class="badge green">可申請</span><h3>需要 BridgeX 幫你完成嗎？</h3><p>你可以自己使用平台，也可以把需要的工作交給 BridgeX。</p><div class="grid g2"><div class="card"><b>找合作夥伴</b><p>市場、代理、發行、客戶、服務商。</p></div><div class="card"><b>市場研究</b><p>市場、競品、需求與進入策略。</p></div><div class="card"><b>商務推進</b><p>提案、聯繫、條件與案件追蹤。</p></div><div class="card"><b>跨境落地</b><p>在地化、KOL、支付與營運。</p></div></div><div class="modal-foot"><button class="btn ghost" onclick="closeModal()">先自己完成</button><button class="btn primary" onclick="done('BridgeX 已收到你的協助需求，將建立商務服務任務。')">交給 BridgeX 協助</button></div>`},
+profile:{t:'完善我的商業檔案',b:`<div class="form"><label>你的商業身份</label><select><option>個人／專業人士</option><option>小團隊</option><option>新創</option><option>企業</option><option>產品／服務商</option></select><label>你正在找什麼？</label><textarea placeholder="例如：尋找東南亞遊戲代理、企業客戶與行銷夥伴。"></textarea><label>你可以提供什麼？</label><textarea placeholder="產品、服務、能力、資源、可進入市場。"></textarea><label>你希望 BridgeX 幫你找到哪些市場？</label><input value="台灣／大中華／東南亞"><label>合作方式</label><input placeholder="代理／發行、專案、服務採購、策略合作等"></div><div class="modal-foot"><button class="btn primary" onclick="done('商業檔案已更新，人工智慧將重新計算你的媒合結果。')">儲存並重新分析</button></div>`},
+result:{t:'成果明細',b:`<div class="grid g2"><div class="card"><b>累積商業機會</b><h2>128</h2></div><div class="card"><b>進入洽談</b><h2>24</h2></div><div class="card"><b>完成合作</b><h2>8</h2></div><div class="card"><b>新增市場</b><h2>3</h2></div></div><p style="margin-top:15px">這些資料可持續回饋人工智慧，用來改善下一次的搜尋、媒合與市場建議。</p>`}
+};
+function go(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const owner=el.closest('main')||el;
+  document.querySelectorAll('main').forEach(m=>m.style.display='none');
+  owner.style.display='block';
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  if(el.classList.contains('page')) el.classList.add('active');
+  if(owner.id==='home' && el!==owner){requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'start'}));}
+  else{window.scrollTo({top:0,behavior:'smooth'});}
+  const mm=document.getElementById('mobileMenu'); if(mm)mm.style.display='none';
+}
+
+function openModal(t){if(t==='compare'){go('compare');return}const x=D[t]||D.demand;document.getElementById('mtitle').textContent=x.t;document.getElementById('mbody').innerHTML=x.b;document.getElementById('back').style.display='flex'}
+function closeModal(){document.getElementById('back').style.display='none'}
+function done(msg){closeModal();alert(msg)}
+function createTask(){closeModal();go('tasks');setTimeout(()=>alert('商業任務已建立。BridgeX 正在進行人工智慧分析與媒合。'),200)}
+function toggleMenu(){const x=document.getElementById('mobileMenu');x.style.display=x.style.display==='none'?'block':'none'}
+</script>
+
+<script>
+/* V11.1 navigation safety layer */
+(function(){
+  function safeAnchorNavigation(){
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      if(a.dataset.navBound) return;
+      a.dataset.navBound='1';
+      a.addEventListener('click', function(e){
+        var id=this.getAttribute('href').slice(1);
+        if(!id) return;
+        var target=document.getElementById(id);
+        if(!target) return;
+        e.preventDefault();
+        if(typeof go === 'function'){
+          try { go(id); return; } catch(err) {}
+        }
+        document.querySelectorAll('.page').forEach(function(el){el.classList.remove('active');});
+        target.classList.add('active');
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',safeAnchorNavigation);
+  else safeAnchorNavigation();
+})();
+</script>
+
+
+<script>
+/* BridgeX V11 navigation compatibility */
+(function(){
+  var aliases = {
+    'opportunities':'opps',
+    'commercial':'opps',
+    'business':'cases',
+    'deal':'cases'
+  };
+  function activate(id){
+    var targetId = aliases[id] || id;
+    var target = document.getElementById(targetId);
+    if(!target) return false;
+    var pages = document.querySelectorAll('.page');
+    if(pages.length){
+      pages.forEach(function(x){x.classList.remove('active');});
+      if(target.classList.contains('page')) target.classList.add('active');
+    }
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+    return true;
+  }
+  window.BridgeXV11Go = activate;
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id=a.getAttribute('href').slice(1);
+    if(!id) return;
+    if(document.getElementById(id) || aliases[id]){
+      e.preventDefault();
+      if(typeof window.go==='function'){
+        try{ window.go(aliases[id]||id); return; }catch(err){}
+      }
+      activate(id);
+    }
+  });
+})();
+</script>
+
+
+
+</body>
+</html>
