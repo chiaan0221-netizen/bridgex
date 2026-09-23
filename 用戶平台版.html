@@ -189,6 +189,86 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.bx-plan-grid{grid-template-columns:1fr 1fr!important}.bx-plan-card{padding:22px!important}.bx-plan-card h3{font-size:22px!important}.bx-plan-card p,.bx-plan-card li{font-size:14px!important}}
 @media(max-width:640px){.bx-plan-grid{grid-template-columns:1fr!important}.bx-plan-card{padding:20px!important}.bx-plan-card h3{font-size:20px!important}.bx-plan-card p,.bx-plan-card li{font-size:14px!important}.bx-plan-card button{font-size:14px!important;white-space:normal;height:auto;min-height:44px;line-height:1.4}}
 </style>
+
+<style id="bx-layout-fix-v12">
+/* ---------- Conflict fixes (desktop + mobile) ---------- */
+.grid>*,.identity-grid>*,.match-trust-card>*,.credit-grid>*,.network-map>*,.chat-layout>*,.value-hero>*,.proof-card>*{min-width:0}
+/* header avatar was overridden to 64px square by a later rule */
+.top .avatar{width:36px;height:36px;border-radius:50%;font-size:15px;background:#dfe9ff;color:#2854a8;flex:0 0 auto}
+/* checklist rows were being enlarged by the trust-card icon rule */
+.checklist .check{font-size:inherit;margin-bottom:0}
+.trust-grid .check{font-size:22px;margin-bottom:8px;display:block;padding:0;background:none;color:var(--good)}
+/* credit card in 商業信用 section was inheriting the 112px circle */
+.credit-grid .credit-score{width:auto;height:auto;border-radius:16px;border:1px solid var(--line);display:block;place-items:initial;font-size:inherit;font-weight:inherit;color:inherit}
+.credit-grid .credit-score>span{color:var(--muted);font-size:13px}
+.credit-grid .credit-score strong{color:var(--accent)}
+.credit-items div span{color:var(--muted)}
+/* missing components */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{display:inline-block;padding:3px 9px;border-radius:999px;background:#f0f3f8;color:#4a5870;font-size:12px;line-height:1.5}
+.badge.red{background:#fdecec;color:#b42318}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.bx-btn{display:block;padding:11px 15px;border-radius:10px;background:var(--accent);color:#fff;font-weight:750;border:0;cursor:pointer}
+.bx-plan-card:not(:nth-child(2)) .bx-btn{background:#eef3fa;color:#26354d}
+#home .section-head p{color:var(--muted);font-size:14px;margin:4px 0 0}
+#home .section-head .eyebrow{color:var(--accent);margin-bottom:4px}
+.proof-card .eyebrow{color:var(--accent)}
+.match-person h3{margin:0 0 8px}
+.trust-flow{justify-content:flex-start}
+.value-flow{flex-wrap:nowrap}
+
+.checklist .check small{display:block;color:var(--muted);font-size:12px}
+#home .section>.grid+.card,#home .section>.card+.card,#home .section>.card+.grid,#home .section>.value-hero+.grid{margin-top:16px}
+#home .section>.grid+.card.proof-card{margin-bottom:16px}
+.relation-card .badge,.opportunity-card .badge,.value-card .badge{align-self:flex-start}
+.fw-center{display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1.3}.fw-center br{display:none}.fw-center small{margin-top:6px}
+.bx-plan-card{display:flex;flex-direction:column}.bx-plan-card .bx-btn{margin-top:auto}
+/* ---------- Tablet ---------- */
+@media(max-width:900px){
+  .stat-grid{grid-template-columns:repeat(4,1fr)!important}
+}
+
+/* ---------- Mobile: keep boxes side by side ---------- */
+@media(max-width:650px){
+  .wrap{padding:22px 14px 50px}
+  .hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hero-actions .btn{width:auto!important;padding:11px 4px;font-size:13px;line-height:1.35;white-space:nowrap;text-align:center}
+  .onboard-top{flex-direction:column;align-items:stretch}.onboard-top .btn{width:100%}
+  .g4,.g3,.asset-grid,.rule-grid,.onboard-flow,.transaction-bottom{grid-template-columns:1fr 1fr!important;gap:10px}
+  /* odd last item in a 2-col layout spans full width */
+  .g3>:last-child:nth-child(odd),.onboard-flow>.on-step:last-child:nth-of-type(odd){grid-column:1/-1}
+  .stat-grid{grid-template-columns:1fr 1fr!important;gap:14px 10px}
+  .card{padding:15px}
+  .card h3{font-size:15px;line-height:1.4}
+  .card p{font-size:13px}
+  .metric .num{font-size:24px}
+  .metric .label{font-size:12px}
+  .metric .trend{font-size:11px}
+  .money{font-size:23px}
+  .mini{padding:14px}.mini strong{font-size:16px}
+  .service-card{padding:14px}
+  .join-grid .card,.relation-card{min-height:auto}
+  .card .btn,.service-card .btn{padding:8px 11px;font-size:13px}
+  .asset-folder strong{right:14px;top:14px;font-size:20px}
+  .transaction-bottom .btn{grid-column:1/-1}
+  /* value hero: 3 steps in one row */
+  .value-hero{padding:20px 16px;gap:18px;border-radius:18px}
+  .value-hero h3{font-size:21px}
+  .value-hero p{font-size:14px}
+  .value-flow{display:grid;grid-template-columns:1fr 12px 1fr 12px 1fr;gap:4px;align-items:stretch}
+  .value-flow>div{min-width:0;padding:10px 6px;font-size:12px;line-height:1.45;border-radius:12px;display:flex;flex-direction:column;justify-content:center}
+  .value-flow>div b{font-size:12px}
+  .value-flow span{font-size:13px;align-self:center;text-align:center}
+  .proof-card{gap:14px}
+  .onboard-flow{gap:10px}.on-step{padding:14px}
+  .trust-banner{padding:20px}
+  .flow .step{min-width:110px;padding:11px}
+}
+@media(max-width:360px){
+  .hero-actions .btn{font-size:12px;white-space:normal}
+  .value-flow>div,.value-flow>div b{font-size:11px}
+}
+</style>
 </head>
 <body>
 <header class="top">
@@ -209,6 +289,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <button class="btn" onclick="go('tasks')">我的任務</button><button class="btn" onclick="go('opps')">商業機會</button>
     <button class="btn" onclick="go('cases')">案件合作</button><button class="btn" onclick="go('execute')">人工智慧執行</button>
     <button class="btn" onclick="go('radar')">商業雷達</button><button class="btn" onclick="go('profile')">商業檔案</button>
+    <button class="btn" onclick="go('memberintro')">會員介紹</button><button class="btn" onclick="go('plans')">會員方案</button>
   </div>
 </div>
 
@@ -288,7 +369,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <section class="section">
 <div class="grid g2">
 <div class="card assistant"><h2>人工智慧商業助理</h2><p>AI 不只回答問題，而是協助你完成下一步。</p><div class="bubble"><b>我已經找到 12 個可能的合作對象。</b><br><small>其中 4 個符合你的市場、產品與合作條件。</small></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" onclick="go('explore')">查看 4 個對象</button><button class="btn" onclick="openModal('proposal')">產生合作提案</button><button class="btn" onclick="openModal('message')">準備聯繫</button></div></div>
-<div class="card"><h2>我的商業成果</h2><div class="grid g2" style="margin-top:14px"><div><div class="money">128</div><small>累積商業機會</small></div><div><div class="money">24</div><small>進入洽談</small></div><div><div class="money">08</div><small>完成合作</small></div><div><div class="money">03</div><small>新增市場</small></div></div><button class="btn ghost" style="margin-top:18px" onclick="go('results')">查看完整成果</button></div>
+<div class="card"><h2>我的商業成果</h2><div class="grid g2 stat-grid" style="margin-top:14px"><div><div class="money">128</div><small>累積商業機會</small></div><div><div class="money">24</div><small>進入洽談</small></div><div><div class="money">08</div><small>完成合作</small></div><div><div class="money">03</div><small>新增市場</small></div></div><button class="btn ghost" style="margin-top:18px" onclick="go('results')">查看完整成果</button></div>
 </div>
 </section>
 
@@ -337,10 +418,6 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="card"><span class="badge yellow">需要注意</span><h3>你關注的夥伴新增服務</h3><p>可能適合你目前的跨境市場任務。</p></div>
 </div>
 </section>
-</div>
-
-
-
 
 <section id="why" class="section">
   <div class="section-head">
@@ -732,6 +809,48 @@ html,body{max-width:100%;overflow-x:hidden}
     <div class="card"><span class="join-no">06</span><h3>需要時交給 BridgeX</h3><p>不想自己執行時，可以交由 BridgeX 協助 BD、跨境與市場落地。</p></div>
   </div>
 </section>
+
+<section id="plans" class="bx-section bx-plans" style="padding:10px 0 0;">
+  <div style="text-align:center;max-width:760px;margin:0 auto 34px;">
+    <div class="eyebrow">BRIDGEX 會員方案</div>
+    <h2 style="font-size:32px;line-height:1.3;margin:10px 0 12px;word-break:keep-all;overflow-wrap:anywhere;">從免費開始，逐步把 BridgeX 變成你的商業成長工具</h2>
+    <p style="color:#667085;line-height:1.8;margin:0;overflow-wrap:anywhere;">依照你的商業需求選擇會員層級。C 會員先探索與建立身份，B 會員強化商機與商務執行，A 會員則面向企業級團隊與跨境合作。</p>
+  </div>
+  <div class="bx-plan-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;">
+    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
+      <div style="font-size:13px;font-weight:700;color:#667085;">C｜免費會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">開始使用 BridgeX</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合想先建立商業身份、探索產品與合作機會的個人、小團隊與新創。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>建立商業身份</li><li>發布需求</li><li>上架產品／服務</li><li>AI 基礎媒合</li><li>探索市場與合作機會</li>
+      </ul>
+      <button class="bx-btn" onclick="go('profile')" style="width:100%;">免費開始</button>
+    </div>
+    <div class="bx-plan-card" style="border:2px solid #111827;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;position:relative;">
+      <div style="position:absolute;right:18px;top:18px;font-size:11px;font-weight:700;padding:5px 9px;border-radius:999px;background:#111827;color:#fff;">商務主力</div>
+      <div style="font-size:13px;font-weight:700;color:#667085;">B｜商務會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">把機會變成案件</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合正在積極拓展客戶、合作夥伴、產品發行與跨境商務的商業使用者。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>包含 C 會員全部功能</li><li>進階 AI 商業媒合</li><li>高品質商機</li><li>商務案件管理</li><li>進階 AI 商業助理</li><li>跨境市場與合作工具</li>
+      </ul>
+      <button class="bx-btn" onclick="alert('B 商務會員：可在正式平台進一步選擇方案與付款。')" style="width:100%;">升級商務會員</button>
+    </div>
+    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
+      <div style="font-size:13px;font-weight:700;color:#667085;">A｜企業會員</div>
+      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">建立企業商業能力</h3>
+      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合企業、組織與需要多人協作、跨市場拓展與專業服務的團隊。</p>
+      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
+        <li>包含 B 會員主要功能</li><li>企業團隊管理</li><li>企業級商業資料與分析</li><li>跨境合作與市場服務</li><li>BridgeX 專業協助</li><li>企業整合與客製方案</li>
+      </ul>
+      <button class="bx-btn" onclick="alert('A 企業會員：可與 BridgeX 洽談企業合作方案。')" style="width:100%;">洽談企業方案</button>
+    </div>
+  </div>
+  <div style="margin-top:28px;padding:20px;border-radius:16px;background:#f8fafc;border:1px solid #e5e7eb;text-align:center;color:#475467;line-height:1.8;overflow-wrap:anywhere;">
+    <strong>BridgeX 的會員升級邏輯</strong>　C 免費探索 → B 商務取得更多商機與執行能力 → A 企業建立團隊級、跨市場的商業能力
+  </div>
+</section>
+</div>
 </main>
 
 <main id="explore" style="display:none"><div class="wrap">
@@ -992,46 +1111,6 @@ function toggleMenu(){const x=document.getElementById('mobileMenu');x.style.disp
 </script>
 
 
-<section id="plans" class="bx-section bx-plans" style="padding:64px 24px;max-width:1200px;margin:0 auto;">
-  <div style="text-align:center;max-width:760px;margin:0 auto 34px;">
-    <div class="eyebrow">BRIDGEX 會員方案</div>
-    <h2 style="font-size:32px;line-height:1.3;margin:10px 0 12px;word-break:keep-all;overflow-wrap:anywhere;">從免費開始，逐步把 BridgeX 變成你的商業成長工具</h2>
-    <p style="color:#667085;line-height:1.8;margin:0;overflow-wrap:anywhere;">依照你的商業需求選擇會員層級。C 會員先探索與建立身份，B 會員強化商機與商務執行，A 會員則面向企業級團隊與跨境合作。</p>
-  </div>
-  <div class="bx-plan-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;">
-    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
-      <div style="font-size:13px;font-weight:700;color:#667085;">C｜免費會員</div>
-      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">開始使用 BridgeX</h3>
-      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合想先建立商業身份、探索產品與合作機會的個人、小團隊與新創。</p>
-      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
-        <li>建立商業身份</li><li>發布需求</li><li>上架產品／服務</li><li>AI 基礎媒合</li><li>探索市場與合作機會</li>
-      </ul>
-      <button class="bx-btn" onclick="location.hash='profile'" style="width:100%;">免費開始</button>
-    </div>
-    <div class="bx-plan-card" style="border:2px solid #111827;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;position:relative;">
-      <div style="position:absolute;right:18px;top:18px;font-size:11px;font-weight:700;padding:5px 9px;border-radius:999px;background:#111827;color:#fff;">商務主力</div>
-      <div style="font-size:13px;font-weight:700;color:#667085;">B｜商務會員</div>
-      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">把機會變成案件</h3>
-      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合正在積極拓展客戶、合作夥伴、產品發行與跨境商務的商業使用者。</p>
-      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
-        <li>包含 C 會員全部功能</li><li>進階 AI 商業媒合</li><li>高品質商機</li><li>商務案件管理</li><li>進階 AI 商業助理</li><li>跨境市場與合作工具</li>
-      </ul>
-      <button class="bx-btn" onclick="alert('B 商務會員：可在正式平台進一步選擇方案與付款。')" style="width:100%;">升級商務會員</button>
-    </div>
-    <div class="bx-plan-card" style="border:1px solid #e5e7eb;border-radius:18px;padding:26px;background:#fff;min-width:0;box-sizing:border-box;">
-      <div style="font-size:13px;font-weight:700;color:#667085;">A｜企業會員</div>
-      <h3 style="font-size:25px;margin:8px 0 8px;word-break:keep-all;">建立企業商業能力</h3>
-      <p style="color:#667085;line-height:1.7;min-height:56px;overflow-wrap:anywhere;">適合企業、組織與需要多人協作、跨市場拓展與專業服務的團隊。</p>
-      <ul style="line-height:2;margin:18px 0;padding-left:20px;">
-        <li>包含 B 會員主要功能</li><li>企業團隊管理</li><li>企業級商業資料與分析</li><li>跨境合作與市場服務</li><li>BridgeX 專業協助</li><li>企業整合與客製方案</li>
-      </ul>
-      <button class="bx-btn" onclick="alert('A 企業會員：可與 BridgeX 洽談企業合作方案。')" style="width:100%;">洽談企業方案</button>
-    </div>
-  </div>
-  <div style="margin-top:28px;padding:20px;border-radius:16px;background:#f8fafc;border:1px solid #e5e7eb;text-align:center;color:#475467;line-height:1.8;overflow-wrap:anywhere;">
-    <strong>BridgeX 的會員升級邏輯</strong>　C 免費探索 → B 商務取得更多商機與執行能力 → A 企業建立團隊級、跨市場的商業能力
-  </div>
-</section>
 
 </body>
 </html>
