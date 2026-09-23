@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BridgeX V12｜AI 驅動商業媒合與交易平台</title>
+<title>BridgeX V12.1｜AI 驅動商業媒合與交易平台</title>
 <meta name="description" content="BridgeX｜讓需求找到供給，讓供給找到市場。AI 驅動的商業媒合、商機驗證、商務案件、交易與跨境落地平台。">
 <style>
 :root{
@@ -110,6 +110,113 @@ label{font-size:13px;color:#a9bad0}
   .card{padding:20px}.coop{padding:23px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* ===== V12.1：七章節整合 + RWD ===== */
+.menu-btn{display:none;border:1px solid var(--line);background:#10233a;color:#fff;border-radius:10px;width:42px;height:40px;font-size:18px;cursor:pointer}
+.nav-right{display:flex;gap:10px;align-items:center}
+.mobile-nav{display:none;border-top:1px solid rgba(255,255,255,.07);padding:12px 0 16px}
+.mobile-nav.open{display:block}
+.mobile-nav .container{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.mobile-nav a{padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#0e2034;font-size:14px;color:#dce8f6}
+.navlinks a{white-space:nowrap}
+.navlinks a small{color:var(--accent);margin-right:4px;font-weight:800}
+section{scroll-margin-top:80px}
+.sub-title{font-size:20px;margin:46px 0 16px;padding-left:12px;border-left:3px solid var(--accent);line-height:1.35}
+.section-head+.sub-title{margin-top:0}
+.chapter-end{margin-top:22px}
+.short{display:none}
+.hero .lead{max-width:1060px}
+
+/* 流程圖 */
+.flowline{list-style:none;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:24px;counter-reset:none}
+.flowline li{position:relative;min-height:66px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 8px;background:var(--panel);border:1px solid var(--line);border-radius:14px;font-weight:700;font-size:14px;line-height:1.4}
+.flowline li:not(:last-child)::after{content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:400;font-size:16px}
+.flowline li[data-p="1"]{border-top:3px solid var(--accent)}
+.flowline li[data-p="2"]{border-top:3px solid var(--accent2)}
+.flowline li[data-p="3"]{border-top:3px solid var(--green)}
+.flowline li[data-p="4"]{border-top:3px solid var(--orange)}
+.hero-chart{margin-top:48px;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(10,24,40,.6)}
+.hero-chart .flowline li{background:rgba(15,29,49,.95);font-size:13.5px}
+.legend{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 18px;margin-top:16px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.legend .loop{color:#cfe9ff}
+.flowline.loop li:last-child{border-style:dashed}
+
+.ai-box .flowline li{background:rgba(5,17,30,.55)}
+.example-card .flowline{margin-top:18px}
+.grid-5{grid-template-columns:repeat(5,1fr)}
+.table-2 table{min-width:0}
+.phase .tag{display:inline-block;margin:6px 0 2px;font-size:13px;color:var(--accent)}
+.cta-box{margin-top:46px;text-align:center}
+.revenue .price{margin-top:12px}
+
+@media(max-width:1024px){
+  .navlinks{gap:14px;font-size:13px}.navlinks a:nth-child(n+5){display:inline}
+  .grid-5{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:920px){
+  .navlinks{display:none}.menu-btn{display:block}
+  .flowline.c4{grid-auto-flow:row;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .flowline.c4 li:nth-child(4n)::after{display:none}
+}
+@media(max-width:768px){
+  .nav-right .btn.primary{padding:9px 12px;font-size:13px}
+  .grid-2,.grid-3,.grid-4,.grid-5{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}
+  .grid-3>:last-child:nth-child(odd),.grid-5>:last-child:nth-child(odd){grid-column:1/-1}
+  .grid.stack{grid-template-columns:1fr!important}
+  .card{padding:17px;border-radius:18px}
+  .card h3{font-size:16px;line-height:1.4;margin-bottom:6px}
+  .card p{font-size:13.5px;line-height:1.65}
+  .sub-title{font-size:18px;margin-top:38px}
+  .ai-box{padding:22px}
+  .ai-process{grid-template-columns:repeat(2,1fr)!important}
+  .ai-process div:last-child{grid-column:1/-1}
+  .ai-process div{padding:12px;font-size:13px}
+  .lead-demo{grid-template-columns:1fr}
+  .flowline{grid-auto-flow:row;gap:14px 18px}
+  .flowline.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .flowline.c3 li:nth-child(3n)::after{display:none}
+  .flowline li{min-height:56px;font-size:12.5px;padding:10px 5px;border-radius:12px}
+  .flowline li:not(:last-child)::after{right:-15px;font-size:13px}
+  .hero-chart{padding:14px;margin-top:36px}
+  .hero-chart .flowline li{font-size:12.5px}
+  .legend{justify-content:flex-start;font-size:12px}
+  .hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hero-actions .btn{width:auto!important;padding:11px 4px;font-size:13px;text-align:center;white-space:nowrap}
+  .full{display:none}.short{display:inline}
+  .quote{font-size:18px;padding:22px}
+  .pill{padding:8px 12px;font-size:13px}
+  .timeline{grid-template-columns:1fr;gap:22px}
+  th,td{padding:12px;font-size:13px}
+  .coop{padding:22px}
+}
+@media(max-width:380px){
+  .hero-actions .btn{font-size:12px}
+  .flowline li,.hero-chart .flowline li{font-size:11.5px}
+}
+
+/* 階段標示與流程格對齊 */
+.phase-legend{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:24px;margin-top:14px}
+.phase-legend span{justify-content:center;padding-top:9px;border-top:2px solid}
+.phase-legend .p1{grid-column:1/4;border-color:var(--accent)}
+.phase-legend .p2{grid-column:4/6;border-color:var(--accent2)}
+.phase-legend .p3{grid-column:6/8;border-color:var(--green)}
+.phase-legend .p4{grid-column:8/9;border-color:var(--orange)}
+.phase-legend i{display:none}
+.loop-note{margin-top:12px;text-align:right;font-size:13px;color:#cfe9ff}
+@media(max-width:920px){
+  .phase-legend{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:flex-start}
+  .phase-legend span{border-top:0;padding-top:0}
+  .phase-legend i{display:inline-block}
+  .loop-note{text-align:left;font-size:12px}
+}
+
+/* 章節標題：大字上排、小字下排 */
+.section-head{display:block;margin-bottom:28px}
+.section-head h2{max-width:none}
+.section-head .section-desc{max-width:880px;margin-top:12px;font-size:16px}
+@media(max-width:768px){.section-head .section-desc{font-size:14.5px;margin-top:10px}}
 </style>
 </head>
 <body>
@@ -117,12 +224,19 @@ label{font-size:13px;color:#a9bad0}
   <div class="container nav">
     <a class="logo" href="#top">Bridge<span>X</span></a>
     <nav class="navlinks">
-      <a href="#market">市場</a><a href="#core">BridgeX</a><a href="#ai">AI 商機引擎</a>
-      <a href="#supply">供給市場</a><a href="#demand">需求市場</a><a href="#business">商業模式</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#market"><small>01</small>市場</a><a href="#core"><small>02</small>BridgeX</a><a href="#ai"><small>03</small>AI 商機引擎</a>
+      <a href="#supply"><small>04</small>供給市場</a><a href="#demand"><small>05</small>需求市場</a><a href="#business"><small>06</small>商業模式</a>
+      <a href="#roadmap"><small>07</small>Roadmap</a>
     </nav>
-    <button class="btn primary" onclick="openModal('demandModal')">提出商業需求</button>
+    <div class="nav-right">
+      <button class="btn primary" onclick="openModal('demandModal')">提出商業需求</button>
+      <button class="menu-btn" aria-label="選單" onclick="toggleNav()">☰</button>
+    </div>
   </div>
+  <div class="mobile-nav" id="mobileNav"><div class="container">
+    <a href="#market">01 市場</a><a href="#core">02 BridgeX</a><a href="#ai">03 AI 商機引擎</a><a href="#supply">04 供給市場</a>
+    <a href="#demand">05 需求市場</a><a href="#business">06 商業模式</a><a href="#roadmap">07 Roadmap</a>
+  </div></div>
 </header>
 
 <main id="top">
@@ -132,85 +246,77 @@ label{font-size:13px;color:#a9bad0}
     <h1>讓需求找到供給，<br><span>讓供給找到市場。</span></h1>
     <p class="lead">BridgeX 把 AI、遊戲、數位產品、社群與媒體、服務與商業需求，連成一條可交易的商業鏈。從需求發現、AI 分析、驗證與媒合，到成交、落地與跨境交易，讓供給與需求真正轉化為商業機會。</p>
     <div class="hero-actions">
-      <button class="btn primary" onclick="openModal('demandModal')">我有一個需求</button>
-      <button class="btn" onclick="openModal('supplyModal')">我要提供產品／服務</button>
-      <a class="btn" href="#ai">30 秒看懂 BridgeX</a>
+      <button class="btn primary" onclick="openModal('demandModal')"><span class="full">我有一個需求</span><span class="short">我有需求</span></button>
+      <button class="btn" onclick="openModal('supplyModal')"><span class="full">我要提供產品／服務</span><span class="short">我要提供</span></button>
+      <a class="btn" href="#core"><span class="full">30 秒看懂 BridgeX</span><span class="short">30 秒看懂</span></a>
     </div>
-    <div class="hero-flow">
-      <div class="flow-item"><strong>01</strong>需求</div><div class="flow-item"><strong>02</strong>AI 分析</div>
-      <div class="flow-item"><strong>03</strong>驗證</div><div class="flow-item"><strong>04</strong>媒合</div>
-      <div class="flow-item"><strong>05</strong>高品質商機</div><div class="flow-item"><strong>06</strong>商務案件</div>
-      <div class="flow-item"><strong>07</strong>成交落地</div><div class="flow-item"><strong>08</strong>數據優化</div>
+    <div class="hero-chart">
+      <ol class="flowline c4 loop"><li data-p=1>需求</li><li data-p=1>AI 分析</li><li data-p=1>驗證</li><li data-p=2>媒合</li><li data-p=2>高品質商機</li><li data-p=3>商務案件</li><li data-p=3>成交落地</li><li data-p=4>數據優化</li></ol>
+      <div class="legend phase-legend">
+        <span class="p1"><i style="background:var(--accent)"></i>理解與驗證</span>
+        <span class="p2"><i style="background:var(--accent2)"></i>媒合與商機</span>
+        <span class="p3"><i style="background:var(--green)"></i>交易與落地</span>
+        <span class="p4"><i style="background:var(--orange)"></i>數據回饋</span>
+      </div>
+      <div class="loop-note">↻ 每一次成交的數據，讓下一次媒合更準</div>
     </div>
   </div>
 </section>
 
-<section id="market">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">01 / MARKET SHIFT</div><h2>市場正在發生什麼變化？</h2></div><p class="section-desc">網際網路改變的是資訊流動；AI 正在進一步改變需求被理解、被匹配、被執行與被交易的方式。</p></div>
+<section id="market"><div class="container">
+  <div class="section-head"><div><div class="kicker">01 / 市場</div><h2>市場正在改變，但商業媒合仍然很慢</h2></div><p class="section-desc">網際網路改變的是資訊流動；AI 正在改變需求被理解、被匹配、被執行與被交易的方式。</p></div>
   <div class="grid grid-2">
     <div class="card"><div class="num">2000｜網際網路浪口</div><h3>資訊開始線上流動</h3><p>搜尋、網站、電商、社群讓人第一次可以低成本取得大量資訊與商品。</p></div>
-    <div class="card"><div class="num">2026｜AI 浪口</div><h3>需求開始被 AI 理解</h3><p>使用者不只搜尋關鍵字，而是可以直接描述問題，由 AI 協助分析需求、找到產品、找到人、找到市場與合作方式。</p></div>
+    <div class="card"><div class="num">2026｜AI 浪口</div><h3>需求開始被 AI 理解</h3><p>使用者不只搜尋關鍵字，而是直接描述問題，由 AI 協助分析需求、找到產品、人、市場與合作方式。</p></div>
   </div>
-  <div class="quote" style="margin-top:22px">真正的新機會，不只是「更多 AI 工具」，而是讓 AI 介入商業需求從產生到成交的整個過程。</div>
-</div>
-</section>
+  <h3 class="sub-title">現在的商業媒合卡在哪裡？</h3>
+  <div class="grid grid-4 "><div class="card"><h3>找不到對的人</h3><p>Google、社群、朋友介紹、展會、代理商各自分散，搜尋成本高。</p></div><div class="card"><h3>需求沒有被結構化</h3><p>很多人知道自己有問題，卻不知道如何精準描述需求與合作條件。</p></div><div class="card"><h3>找到後還要自己驗證</h3><p>產品是否適合、預算是否合理、對方是否有能力，都需要人工確認。</p></div><div class="card"><h3>媒合後仍停在聊天</h3><p>多數平台完成「介紹」就結束，報價、合約、跨境與落地由雙方自理。</p></div></div>
+  <div class="quote chapter-end">真正的新機會，不只是「更多 AI 工具」，而是讓 AI 介入商業需求從產生到成交的整個過程。</div>
+  <h3 class="sub-title">市場範圍：從台灣出發，依商機逐步擴張</h3>
+  <div class="grid grid-4 "><div class="card"><h3>台灣</h3><p>本地供需、AI、遊戲、服務與企業需求。</p></div><div class="card"><h3>大中華</h3><p>產品、技術、服務與市場合作。</p></div><div class="card"><h3>東協</h3><p>重要場景：在地夥伴、代理、發行、行銷與市場進入。</p></div><div class="card"><h3>全球</h3><p>隨平台供需與交易網絡逐步延伸。</p></div></div>
+</div></section>
 
-<section class="pain">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">02 / PROBLEM</div><h2>為什麼現在的商業媒合效率仍然不高？</h2></div><p class="section-desc">資訊很多，但真正能形成商業連結、完成驗證、推進交易的資訊仍然分散。</p></div>
+<section id="core"><div class="container">
+  <div class="section-head"><div><div class="kicker">02 / BridgeX</div><h2>30 秒看懂：BridgeX 到底在做什麼？</h2></div><p class="section-desc">不是 AI 工具站、產品資料庫或接案平台，而是一個 AI 驅動的商業轉換平台。</p></div>
+  <div class="ai-box summary-box">
+    <h2 style="font-size:clamp(24px,3.4vw,38px);margin-top:0">讓需求找到供給，讓供給找到市場。</h2>
+    <p class="lead" style="margin:14px 0 26px;max-width:none">用 AI 發現需求、分析需求、驗證需求、媒合供給，並把商業機會推進到成交、落地與跨境交易。從台灣開始，連結大中華、東協與全球。</p>
+    <ol class="flowline c3 "><li>需求</li><li>AI 理解</li><li>高品質商機</li><li>商務案件</li><li>交易與落地</li></ol>
+  </div>
+  <h3 class="sub-title">平台上的四種角色</h3>
   <div class="grid grid-4">
-    <div class="card"><div class="num">01</div><h3>找不到對的人</h3><p>Google、社群、朋友介紹、展會、代理商各自分散，搜尋成本高。</p></div>
-    <div class="card"><div class="num">02</div><h3>需求沒有被結構化</h3><p>很多人知道自己有問題，卻不知道如何精準描述需求與合作條件。</p></div>
-    <div class="card"><div class="num">03</div><h3>找到之後還要自己驗證</h3><p>產品是否適合、預算是否合理、對方是否真的有能力，都需要人工確認。</p></div>
-    <div class="card"><div class="num">04</div><h3>媒合後仍停在聊天</h3><p>很多平台完成「介紹」就結束，報價、合約、跨境與落地仍由雙方自行處理。</p></div>
-  </div>
-</div>
-</section>
-
-<section id="core">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">03 / WHAT IS BRIDGEX</div><h2>BridgeX 的本質</h2></div><p class="section-desc">不是單純的 AI 工具站、產品資料庫或接案平台，而是一個 AI 驅動的商業轉換平台。</p></div>
-  <div class="big-flow">
-    <div class="node">需求</div><div class="arrow">→</div><div class="node">AI 理解</div><div class="arrow">→</div><div class="node">高品質商機</div><div class="arrow">→</div><div class="node">商務案件</div><div class="arrow">→</div><div class="node">交易與落地</div>
-  </div>
-  <div class="grid grid-4" style="margin-top:25px">
-    <div class="card role-card"><div class="icon">🙋</div><h3>需求方</h3><p>個人、小團隊、新創、企業、組織，只要有需要解決的商業問題都可以進入。</p></div>
-    <div class="card role-card"><div class="icon">🧩</div><h3>供給方</h3><p>擁有產品、服務、技術、內容、流量、通路或市場能力的人與團隊。</p></div>
-    <div class="card role-card"><div class="icon">🤖</div><h3>BridgeX</h3><p>用 AI 分析需求、整理條件、尋找適合供給，並把機會轉化為可推進的商務案件。</p></div>
+    <div class="card role-card"><div class="icon">🙋</div><h3>需求方</h3><p>個人、小團隊、新創、企業、組織，只要有商業問題都能進入。</p></div>
+    <div class="card role-card"><div class="icon">🧩</div><h3>供給方</h3><p>產品方、服務方、通路方（媒體／社群／KOL）與市場方（代理／出版／在地夥伴）。</p></div>
+    <div class="card role-card"><div class="icon">🤖</div><h3>BridgeX</h3><p>用 AI 分析需求、整理條件、尋找供給，把機會轉成可推進的商務案件。</p></div>
     <div class="card role-card"><div class="icon">🌏</div><h3>執行夥伴</h3><p>協助 BD、行銷、代理、出版、在地化、支付、跨境與實際落地。</p></div>
   </div>
-</div>
-</section>
+  <h3 class="sub-title">信任層：降低雙方的不確定性</h3>
+  <div class="grid grid-4 "><div class="card"><h3>身分驗證</h3><p>確認合作對象與基本商業資訊。</p></div><div class="card"><h3>產品驗證</h3><p>產品資料、能力、案例與合作條件。</p></div><div class="card"><h3>商業條件</h3><p>需求、預算、時程、合作模式與權責。</p></div><div class="card"><h3>案件紀錄</h3><p>媒合、案件、交易與合作資料沉澱。</p></div></div>
+  <h3 class="sub-title">與一般平台有什麼不同？</h3>
+  <div class="table-wrap table-2"><table><thead><tr><th>一般平台</th><th>BridgeX</th></tr></thead><tbody>
+    <tr><td>產品搜尋、關鍵字匹配</td><td>以「問題／需求」為入口，AI 理解商業條件</td></tr>
+    <tr><td>展示產品</td><td>產品＋能力＋市場＋合作條件</td></tr>
+    <tr><td>自行聯絡，媒合即結束</td><td>高品質商機 → BD、報價、合約、交易、落地</td></tr>
+    <tr><td>單一市場</td><td>台灣／大中華／東協／全球</td></tr>
+    <tr><td>資料只是內容</td><td>需求、媒合與交易資料是商業資產</td></tr>
+  </tbody></table></div>
+</div></section>
 
-<section id="ai">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">04 / AI ENGINE</div><h2>AI 不只是聊天，而是商業引擎</h2></div><p class="section-desc">BridgeX 將自然語言需求轉成可以被搜尋、比較、驗證與交易的商業條件。</p></div>
+<section id="ai"><div class="container">
+  <div class="section-head"><div><div class="kicker">03 / AI 商機引擎</div><h2>AI 把一句話，推進成可成交的案件</h2></div><p class="section-desc">不要先找工具，先說你想解決什麼問題。BridgeX 把自然語言需求轉成可搜尋、比較、驗證與交易的商業條件。</p></div>
   <div class="ai-box">
     <span class="badge">AI 智能分析</span>
-    <h3 style="font-size:27px">「我想找一個能幫我打進馬來西亞市場的遊戲發行商」</h3>
+    <h3 style="font-size:clamp(19px,2.4vw,27px)">「我想找一個能幫我打進馬來西亞市場的遊戲發行商」</h3>
     <div class="ai-process">
-      <div>需求類型<br><strong>市場拓展</strong></div>
-      <div>產品類型<br><strong>遊戲</strong></div>
-      <div>市場<br><strong>馬來西亞</strong></div>
-      <div>合作模式<br><strong>發行／代理</strong></div>
-      <div>時程／預算<br><strong>待確認</strong></div>
+      <div>需求類型<br><strong>市場拓展</strong></div><div>產品類型<br><strong>遊戲</strong></div><div>市場<br><strong>馬來西亞</strong></div><div>合作模式<br><strong>發行／代理</strong></div><div>時程／預算<br><strong>待確認</strong></div>
     </div>
-    <p class="muted" style="margin-top:18px">AI 再進一步判斷：需要什麼能力？哪些供給方符合？哪些條件需要人工驗證？哪些機會值得進入商務流程？</p>
+    <p class="muted" style="margin-top:18px">AI 接著判斷：需要什麼能力？哪些供給方符合？哪些條件需要人工驗證？哪些機會值得進入商務流程？</p>
   </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">05 / QUALIFIED LEAD</div><h2>AI 高品質商機引擎</h2></div><p class="section-desc">不是每一個需求都值得付費。BridgeX 的價值在於把「需求」轉化成具備商業條件的高品質商機。</p></div>
-  <div class="big-flow">
-    <div class="node">提出需求</div><div class="arrow">→</div><div class="node">AI 需求分析</div><div class="arrow">→</div><div class="node">人工／AI 驗證</div><div class="arrow">→</div><div class="node">高品質商機</div><div class="arrow">→</div><div class="node">供給媒合</div>
-  </div>
-  <div class="lead-demo" style="margin-top:24px">
+  <h3 class="sub-title">從需求到高品質商機</h3>
+  <ol class="flowline c3 "><li>提出需求</li><li>AI 需求分析</li><li>人工／AI 驗證</li><li>高品質商機</li><li>供給媒合</li></ol>
+  <div class="lead-demo" style="margin-top:20px">
     <div class="card">
-      <span class="badge">Qualified Lead 範例</span>
-      <h3>台灣 AI 企業尋找東南亞行銷合作夥伴</h3>
+      <span class="badge">高品質商機範例</span><h3>台灣 AI 企業尋找東南亞行銷合作夥伴</h3>
       <div class="metric"><span>需求是否真實</span><strong>✓ 已驗證</strong></div>
       <div class="metric"><span>需求是否清楚</span><strong>✓ 已結構化</strong></div>
       <div class="metric"><span>預算／商業條件</span><strong>待確認</strong></div>
@@ -223,318 +329,104 @@ label{font-size:13px;color:#a9bad0}
       <button class="btn primary" style="margin-top:20px" onclick="openModal('leadModal')">查看商機流程</button>
     </div>
   </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">06 / MONETIZATION</div><h2>高品質商機如何變現？</h2></div><p class="section-desc">BridgeX 不必等到最終成交才產生收入；商機本身就是可以被定價的商業資產。</p></div>
-  <div class="funnel">
-    <div>免費使用／流量</div><div>會員與 AI 服務</div><div>提出商業需求</div><div>高品質商機</div><div>商務案件</div><div>成交與落地</div><div>數據與 AI 智能分析</div>
+  <h3 class="sub-title">媒合看的是條件，不是關鍵字</h3>
+  <div class="grid grid-3 "><div class="card"><h3>需求：我要什麼？</h3><p>產品、服務、客戶、夥伴、市場、通路、能力。</p></div><div class="card"><h3>供給：誰能解決？</h3><p>產品能力、服務能力、案例、地域、通路與條件。</p></div><div class="card"><h3>條件：為什麼適合？</h3><p>預算、時間、市場、合作模式、歷史合作與商業價值。</p></div></div>
+  <h3 class="sub-title">從媒合一路走到成交與落地</h3>
+  <ol class="flowline c3 "><li>需求</li><li>媒合</li><li>聯絡／BD</li><li>報價／合約</li><li>成交</li><li>執行落地</li></ol>
+  <div class="grid grid-4" style="margin-top:20px">
+    <div class="card"><h3>找人</h3><p>找到適合的產品、服務商、通路與夥伴。</p></div>
+    <div class="card"><h3>談合作</h3><p>需求確認、BD、報價與商業條件。</p></div>
+    <div class="card"><h3>促成交易</h3><p>合約、付款、分潤與案件管理。</p></div>
+    <div class="card"><h3>幫你落地</h3><p>行銷、在地化、代理、出版、支付與跨境執行。</p></div>
   </div>
-  <div class="notice center">核心邏輯：<strong>Free → 商機 → 商務案件 → 交易 → 落地 → 數據</strong></div>
-</div>
-</section>
+  <div class="card example-card chapter-end">
+    <span class="badge">落地範例</span><h3>遊戲與數位產品出海（以東協為例）</h3>
+    <p>把產品供給、在地市場與執行能力串成完整商業鏈，市場分析直接接上交易流程。</p>
+    <ol class="flowline c4 "><li>產品評估</li><li>市場分析</li><li>在地夥伴</li><li>代理／出版</li><li>行銷／KOL</li><li>支付／營運</li><li>市場落地</li></ol>
+  </div>
+</div></section>
 
-<section id="supply">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">07 / SUPPLY MARKET</div><h2>BridgeX 連接什麼供給？</h2></div><p class="section-desc">供給不只是一個產品，也可以是一種能力、一個通路、一群使用者或一個市場。</p></div>
+<section id="supply"><div class="container">
+  <div class="section-head"><div><div class="kicker">04 / 供給市場</div><h2>BridgeX 連接什麼供給？</h2></div><p class="section-desc">供給不只是一個產品，也可以是一種能力、一個通路、一群使用者或一個市場。從「找產品」升級成「找解決方案」。</p></div>
   <div class="supply">
     <span class="pill">AI 產品</span><span class="pill">遊戲</span><span class="pill">數位產品</span><span class="pill">SaaS</span>
     <span class="pill">行銷服務</span><span class="pill">技術服務</span><span class="pill">設計與內容</span><span class="pill">顧問服務</span>
     <span class="pill">KOL／創作者</span><span class="pill">社群</span><span class="pill">媒體</span><span class="pill">廣告通路</span>
     <span class="pill">代理商</span><span class="pill">發行商</span><span class="pill">在地合作夥伴</span><span class="pill">跨境服務</span>
   </div>
-</div>
-</section>
+  <h3 class="sub-title">四大供給類別</h3>
+  <div class="grid grid-4">
+    <div class="card"><span class="badge">AI</span><h3>AI 產品</h3><p>AI 工具、企業 AI、智能代理、內容生成、行銷自動化。</p></div>
+    <div class="card"><span class="badge">遊戲</span><h3>遊戲與數位娛樂</h3><p>遊戲產品、發行、代理、在地化、行銷、支付與營運。</p></div>
+    <div class="card"><span class="badge">服務</span><h3>商業服務</h3><p>行銷、技術、設計、顧問、跨境 BD 與內容服務。</p></div>
+    <div class="card"><span class="badge">流量</span><h3>社群與媒體</h3><p>KOL 內容合作、精準社群、媒體曝光、廣告投放與導流。</p></div>
+  </div>
+  <div class="coop" style="margin-top:46px">
+    <div class="kicker">合作夥伴</div><h2 style="font-size:clamp(22px,3vw,34px)">不是上架產品，而是進入商業生態</h2>
+    <p class="muted" style="margin:12px 0 22px">供給進入平台後，BridgeX 協助尋找需求、產生高品質商機、推進 BD、促成交易與共同執行。</p>
+    <ol class="flowline c4 "><li>供給</li><li>需求</li><li>AI 媒合</li><li>高品質商機</li><li>BD</li><li>交易</li><li>收入分潤</li></ol>
+    <button class="btn primary" style="margin-top:24px" onclick="openModal('partnerModal')">了解合作方式</button>
+  </div>
+</div></section>
 
-<section id="demand">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">08 / DEMAND MARKET</div><h2>誰都可以提出商業需求</h2></div><p class="section-desc">BridgeX 的核心不是「企業需求」，而是更大的「商業需求」。</p></div>
-  <div class="grid grid-2">
+<section id="demand"><div class="container">
+  <div class="section-head"><div><div class="kicker">05 / 需求市場</div><h2>誰都可以提出商業需求</h2></div><p class="section-desc">BridgeX 的核心不是「企業需求」，而是更大的「商業需求」。</p></div>
+  <div class="grid grid-2 stack">
     <div class="card"><h3>需求方</h3><p>個人／小團隊／新創／企業／組織，都可以提出需求。</p><div class="supply" style="margin-top:15px"><span class="pill">找產品</span><span class="pill">找服務</span><span class="pill">找客戶</span><span class="pill">找合作夥伴</span><span class="pill">找代理</span><span class="pill">找市場</span><span class="pill">找技術</span><span class="pill">找行銷</span></div></div>
     <div class="card"><h3>需求範例</h3><p>「我要找台灣短影音團隊」／「我要找馬來西亞遊戲發行商」／「我要把 SaaS 推進東南亞」／「我要找能處理跨境支付的人」</p><button class="btn primary" style="margin-top:18px" onclick="openModal('demandModal')">提出我的需求</button></div>
   </div>
-  <div class="table-wrap" style="margin-top:24px">
-    <table><thead><tr><th>需求類型</th><th>需求內容</th><th>BridgeX 下一步</th><th>可能收入</th></tr></thead>
-    <tbody>
+  <div class="table-wrap" style="margin-top:22px">
+    <table><thead><tr><th>需求類型</th><th>需求內容</th><th>BridgeX 下一步</th><th>可能收入</th></tr></thead><tbody>
       <tr><td>找產品</td><td>尋找 AI／遊戲／數位產品</td><td>AI 分析＋產品媒合</td><td>會員／商機費</td></tr>
       <tr><td>找服務</td><td>行銷、技術、設計、顧問</td><td>能力匹配＋報價</td><td>商機／案件服務</td></tr>
       <tr><td>找市場</td><td>台灣、大中華、東協、全球</td><td>市場與夥伴媒合</td><td>交易／落地服務</td></tr>
       <tr><td>找合作</td><td>代理、出版、通路、策略夥伴</td><td>驗證＋BD</td><td>案件／交易分潤</td></tr>
     </tbody></table>
   </div>
-</div>
-</section>
+</div></section>
 
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">09 / MARKETPLACE</div><h2>產品與服務市場</h2></div><p class="section-desc">從「找產品」升級成「找解決方案」。</p></div>
-  <div class="grid grid-3">
-    <div class="card"><span class="badge">AI</span><h3>AI 產品</h3><p>AI 工具、企業 AI、智能代理、內容生成、行銷自動化等。</p></div>
-    <div class="card"><span class="badge">遊戲</span><h3>遊戲與數位娛樂</h3><p>遊戲產品、發行、代理、在地化、行銷、支付與營運。</p></div>
-    <div class="card"><span class="badge">服務</span><h3>商業服務</h3><p>行銷、技術、設計、顧問、跨境 BD、媒體與內容服務。</p></div>
+<section id="business"><div class="container">
+  <div class="section-head"><div><div class="kicker">06 / 商業模式</div><h2>商機本身，就是可定價的商業資產</h2></div><p class="section-desc">BridgeX 不必等到最終成交才有收入，收入沿著使用者從「需求」走向「交易」逐層增加。</p></div>
+  <div class="grid grid-5">
+    <div class="card revenue"><h3>會員／AI 服務</h3><p>進階搜尋、AI 分析、團隊功能與工具。</p><div class="price">訂閱收入</div></div>
+    <div class="card revenue"><h3>高品質商機</h3><p>供給方依品質、類型或權限取得商機。</p><div class="price">商機收入</div></div>
+    <div class="card revenue"><h3>商務案件服務</h3><p>BD、顧問、方案設計、報價與推進。</p><div class="price">服務收入</div></div>
+    <div class="card revenue"><h3>交易與落地</h3><p>成交、代理、出版、行銷與跨境執行。</p><div class="price">交易／分潤收入</div></div>
+    <div class="card revenue"><h3>數據與 AI 分析</h3><p>市場洞察、供需分析與決策服務。</p><div class="price">數據服務收入</div></div>
   </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">10 / SOLUTION CENTER</div><h2>不要先找工具，先說你想解決什麼問題</h2></div><p class="section-desc">BridgeX 用問題導向取代單純關鍵字搜尋。</p></div>
-  <div class="card">
-    <div class="quote">「我想降低客服成本，但又不想增加人力。」</div>
-    <div class="big-flow" style="margin-top:25px"><div class="node">問題描述</div><div class="arrow">→</div><div class="node">AI 分析</div><div class="arrow">→</div><div class="node">推薦產品</div><div class="arrow">→</div><div class="node">比較方案</div><div class="arrow">→</div><div class="node">媒合服務商</div></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">11 / COMMUNITY & MEDIA</div><h2>社群與媒體也是供給</h2></div><p class="section-desc">當產品需要流量、品牌需要曝光、服務需要客戶，媒體、社群與創作者就是商業供給的一部分。</p></div>
-  <div class="grid grid-4">
-    <div class="card"><h3>KOL／創作者</h3><p>內容合作、產品推薦、品牌曝光。</p></div>
-    <div class="card"><h3>社群</h3><p>精準使用者、興趣社群、會員導流。</p></div>
-    <div class="card"><h3>媒體</h3><p>新聞、專題、產業曝光與品牌內容。</p></div>
-    <div class="card"><h3>廣告通路</h3><p>投放、聯盟、導流與轉換。</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">12 / SMART MATCHING</div><h2>AI 智能媒合</h2></div><p class="section-desc">媒合不是「關鍵字一樣」，而是條件與商業情境真正適合。</p></div>
-  <div class="ai-box">
-    <div class="grid grid-3">
-      <div><div class="num">需求</div><h3>我要什麼？</h3><p class="muted">產品、服務、客戶、夥伴、市場、通路、能力。</p></div>
-      <div><div class="num">供給</div><h3>誰能解決？</h3><p class="muted">產品能力、服務能力、案例、地域、通路與條件。</p></div>
-      <div><div class="num">條件</div><h3>為什麼適合？</h3><p class="muted">預算、時間、市場、合作模式、歷史合作與商業價值。</p></div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">13 / DEAL FLOW</div><h2>從媒合走到商務案件</h2></div><p class="section-desc">BridgeX 不把價值停在「介紹」，而是讓商業機會繼續往成交前進。</p></div>
-  <div class="big-flow">
-    <div class="node">需求</div><div class="arrow">→</div><div class="node">媒合</div><div class="arrow">→</div><div class="node">聯絡</div><div class="arrow">→</div><div class="node">BD</div><div class="arrow">→</div><div class="node">報價／合約</div><div class="arrow">→</div><div class="node">成交</div>
-  </div>
-  <div class="notice" style="margin-top:22px">商務案件可進一步進入報價、合約、付款、執行、分潤與案件管理流程。</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">14 / EXECUTION</div><h2>真正的價值在成交與落地</h2></div><p class="section-desc">「找到人」只是開始；BridgeX 可以把高價值案件往執行端延伸。</p></div>
-  <div class="grid grid-4">
-    <div class="card"><h3>找人</h3><p>找到適合的產品、服務商、通路與夥伴。</p></div>
-    <div class="card"><h3>談合作</h3><p>需求確認、BD、報價與商業條件。</p></div>
-    <div class="card"><h3>促成交易</h3><p>合約、付款、分潤與案件管理。</p></div>
-    <div class="card"><h3>幫你落地</h3><p>行銷、在地化、代理、出版、支付與跨境執行。</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">15 / DIGITAL & GAME EXPORT</div><h2>遊戲與數位產品出海</h2></div><p class="section-desc">BridgeX 可以把產品供給、在地市場與執行能力串成完整商業鏈。</p></div>
-  <div class="big-flow">
-    <div class="node">產品評估</div><div class="arrow">→</div><div class="node">市場分析</div><div class="arrow">→</div><div class="node">代理／出版</div><div class="arrow">→</div><div class="node">行銷／KOL</div><div class="arrow">→</div><div class="node">支付／營運</div><div class="arrow">→</div><div class="node">收入</div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">16 / MARKET EXPANSION</div><h2>市場不是只有東協</h2></div><p class="section-desc">BridgeX 的底層邏輯先解決「需求 × 供給 × 交易」，市場再依商業機會逐步擴張。</p></div>
-  <div class="grid grid-4">
-    <div class="card center"><h3>台灣</h3><p>本地供需、AI、遊戲、服務與企業需求。</p></div>
-    <div class="card center"><h3>大中華</h3><p>產品、技術、服務與市場合作。</p></div>
-    <div class="card center"><h3>東協</h3><p>在地夥伴、代理、發行、行銷與市場進入。</p></div>
-    <div class="card center"><h3>全球</h3><p>隨平台供需與交易網絡逐步延伸。</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">17 / ASEAN GATEWAY</div><h2>東協是重要場景，但不是唯一終點</h2></div><p class="section-desc">當需求涉及海外市場，BridgeX 可把市場分析與在地執行能力接上交易流程。</p></div>
-  <div class="big-flow">
-    <div class="node">產品</div><div class="arrow">→</div><div class="node">市場評估</div><div class="arrow">→</div><div class="node">在地夥伴</div><div class="arrow">→</div><div class="node">代理／出版</div><div class="arrow">→</div><div class="node">行銷／KOL</div><div class="arrow">→</div><div class="node">市場落地</div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">18 / TRUST LAYER</div><h2>BridgeX 信任層</h2></div><p class="section-desc">商業媒合真正困難的地方，是降低雙方的不確定性。</p></div>
-  <div class="grid grid-4">
-    <div class="card"><h3>身分驗證</h3><p>確認合作對象與基本商業資訊。</p></div>
-    <div class="card"><h3>產品驗證</h3><p>產品資料、能力、案例與合作條件。</p></div>
-    <div class="card"><h3>商業條件</h3><p>需求、預算、時程、合作模式與權責。</p></div>
-    <div class="card"><h3>案件紀錄</h3><p>媒合、案件、交易與合作資料沉澱。</p></div>
-  </div>
-</div>
-</section>
-
-<section id="business">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">19 / BUSINESS MODEL</div><h2>五層商業模式</h2></div><p class="section-desc">收入不是單點，而是沿著使用者從「需求」走向「交易」逐層增加。</p></div>
-  <div class="grid grid-3">
-    <div class="card revenue"><div class="num">01</div><h3>會員／AI 服務</h3><p>進階搜尋、AI 分析、企業／團隊功能、資料與工具。</p><div class="price">訂閱收入</div></div>
-    <div class="card revenue"><div class="num">02</div><h3>高品質商機付費</h3><p>供給方依商機品質、類型或權限取得符合條件的商機。</p><div class="price">商機收入</div></div>
-    <div class="card revenue"><div class="num">03</div><h3>商務案件服務</h3><p>BD、顧問、需求拆解、方案設計、報價與案件推進。</p><div class="price">服務收入</div></div>
-    <div class="card revenue"><div class="num">04</div><h3>交易與落地</h3><p>成交、代理、出版、行銷、跨境執行與收入分潤。</p><div class="price">交易／分潤收入</div></div>
-    <div class="card revenue"><div class="num">05</div><h3>數據與 AI 智能分析</h3><p>市場洞察、供需分析、商業趨勢與決策服務。</p><div class="price">數據服務收入</div></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">20 / DATA FLYWHEEL</div><h2>BridgeX 商業飛輪</h2></div><p class="section-desc">真正的護城河不是資料庫數量，而是需求、供給、媒合、案件與交易資料持續累積。</p></div>
-  <div class="big-flow">
-    <div class="node">更多需求</div><div class="arrow">→</div><div class="node">更多商業資料</div><div class="arrow">→</div><div class="node">更多供給</div><div class="arrow">→</div><div class="node">AI 媒合更準</div><div class="arrow">→</div><div class="node">更多商機</div>
-  </div>
-  <div class="big-flow" style="margin-top:12px">
-    <div class="node">更多商務案件</div><div class="arrow">→</div><div class="node">更多交易</div><div class="arrow">→</div><div class="node">更多落地案例</div><div class="arrow">→</div><div class="node">更多數據</div><div class="arrow">→</div><div class="node">AI 更強</div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">21 / DIFFERENTIATION</div><h2>BridgeX 與一般平台有什麼不同？</h2></div><p class="section-desc">從「展示與聯絡」往前走到「理解、驗證、推進與交易」。</p></div>
-  <div class="table-wrap">
-    <table><thead><tr><th>一般平台</th><th>BridgeX</th></tr></thead><tbody>
-      <tr><td>產品搜尋</td><td>以「問題／需求」為入口</td></tr>
-      <tr><td>關鍵字匹配</td><td>AI 理解需求與商業條件</td></tr>
-      <tr><td>展示產品</td><td>產品＋能力＋市場＋合作條件</td></tr>
-      <tr><td>自行聯絡</td><td>高品質商機與商務案件</td></tr>
-      <tr><td>媒合結束</td><td>BD、報價、合約、交易、落地</td></tr>
-      <tr><td>單一市場</td><td>台灣／大中華／東協／全球</td></tr>
-      <tr><td>資料是內容</td><td>需求、媒合與交易資料是商業資產</td></tr>
-    </tbody></table>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">22 / GO-TO-MARKET</div><h2>市場切入：先垂直，再擴張</h2></div><p class="section-desc">不從「什麼都可以媒合」開始，而是先在有明確交易場景的領域驗證模式。</p></div>
-  <div class="grid grid-4">
-    <div class="card"><div class="num">01</div><h3>AI × 數位產品</h3><p>產品需求、導入、服務與商業應用。</p></div>
-    <div class="card"><div class="num">02</div><h3>遊戲 × 出海</h3><p>產品、發行、代理、行銷與市場進入。</p></div>
-    <div class="card"><div class="num">03</div><h3>行銷 × 社群 × 媒體</h3><p>產品、品牌、流量與內容供需。</p></div>
-    <div class="card"><div class="num">04</div><h3>跨境商業服務</h3><p>在地合作、BD、顧問與執行。</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">23 / SUPPLY & DEMAND STRATEGY</div><h2>第一階段先累積真正的供需</h2></div><p class="section-desc">平台早期的核心不是註冊數，而是「有效供給、真實需求、有效媒合與成交案例」。</p></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>供給端</h3><ul style="padding-left:20px;color:var(--muted)"><li>產品資料庫</li><li>服務提供者</li><li>社群／媒體／KOL</li><li>代理／出版／通路</li><li>跨境市場夥伴</li></ul></div>
-    <div class="card"><h3>需求端</h3><ul style="padding-left:20px;color:var(--muted)"><li>真實商業需求</li><li>找產品／服務</li><li>找客戶／通路</li><li>找市場／代理</li><li>找跨境合作夥伴</li></ul></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">24 / HUMAN + AI</div><h2>從媒合開始，而不是從流量開始</h2></div><p class="section-desc">早期用人工 BD 驗證商業模式，中期逐步把有效流程交給 AI。</p></div>
-  <div class="timeline">
-    <div class="phase"><h3>第一階段</h3><p class="muted">人工 BD ＋ AI</p><ul><li>累積供給</li><li>取得真實需求</li><li>人工驗證商機</li><li>促成第一批案件</li></ul></div>
-    <div class="phase"><h3>第二階段</h3><p class="muted">AI ＋ 人工驗證</p><ul><li>需求自動結構化</li><li>AI 預匹配</li><li>商機品質評分</li><li>人工處理高價值案件</li></ul></div>
-    <div class="phase"><h3>第三階段</h3><p class="muted">AI 智能媒合基礎設施</p><ul><li>自動媒合</li><li>自動推薦</li><li>商業資料分析</li><li>跨市場擴張</li></ul></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">25 / PLATFORM EVOLUTION</div><h2>BridgeX 三階段發展</h2></div><p class="section-desc">從媒合市場走向交易市場，最後成為商業基礎設施。</p></div>
-  <div class="grid grid-3">
-    <div class="card"><div class="num">STAGE 1</div><h3>媒合市場</h3><p>需求、供給、AI 分析、驗證、高品質商機。</p></div>
-    <div class="card"><div class="num">STAGE 2</div><h3>交易市場</h3><p>商務案件、報價、合約、交易、落地與分潤。</p></div>
-    <div class="card"><div class="num">STAGE 3</div><h3>商業基礎設施</h3><p>讓企業、團隊與個人都能用 AI 快速找到商業資源。</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">26 / ECOSYSTEM</div><h2>誰可以加入 BridgeX？</h2></div><p class="section-desc">不是單一產業平台，而是一個以商業需求為核心的供需網絡。</p></div>
-  <div class="grid grid-5" style="grid-template-columns:repeat(5,1fr)">
-    <div class="card center"><h3>產品方</h3><p>AI／遊戲／數位產品</p></div>
-    <div class="card center"><h3>服務方</h3><p>行銷／技術／顧問</p></div>
-    <div class="card center"><h3>通路方</h3><p>媒體／社群／KOL</p></div>
-    <div class="card center"><h3>市場方</h3><p>代理／出版／在地夥伴</p></div>
-    <div class="card center"><h3>需求方</h3><p>個人／團隊／企業／組織</p></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="coop">
-    <div class="kicker">27 / PARTNERSHIP</div><h2>合作夥伴不是上架產品，而是進入商業生態</h2>
-    <p class="muted" style="margin-top:12px">供給進入平台後，BridgeX 可以協助尋找需求、產生高品質商機、推進 BD、促成交易與共同執行。</p>
-    <div class="coop-flow">
-      <div>供給</div><div>需求</div><div>AI 媒合</div><div>高品質商機</div><div>BD</div><div>交易</div><div>收入分潤</div>
-    </div>
-    <button class="btn primary" style="margin-top:24px" onclick="openModal('partnerModal')">了解合作方式</button>
-  </div>
-</div>
-</section>
-
-<section id="roadmap">
-<div class="container">
-  <div class="section-head"><div><div class="kicker">28 / ROADMAP</div><h2>0–12 個月：先證明商業模式</h2></div><p class="section-desc">第一個目標不是做大，而是證明「需求 → 商機 → 案件 → 交易」可以成立。</p></div>
-  <div class="timeline">
-    <div class="phase"><h3>0–6 個月</h3><ul><li>建立有效供給池</li><li>取得真實商業需求</li><li>建立需求結構化流程</li><li>完成高品質商機驗證</li><li>促成第一批商務案件</li><li>取得第一批成交案例</li></ul></div>
-    <div class="phase"><h3>6–12 個月</h3><ul><li>會員與 AI 服務</li><li>高品質商機付費</li><li>商務案件服務</li><li>交易與落地收入</li><li>建立市場與交易資料</li><li>形成初步商業飛輪</li></ul></div>
-    <div class="phase"><h3>12 個月後</h3><ul><li>擴充垂直市場</li><li>擴大台灣／大中華／東協</li><li>AI 自動媒合</li><li>數據與市場情報服務</li><li>跨境交易基礎能力</li><li>全球市場延伸</li></ul></div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">29 / THE MOAT</div><h2>BridgeX 真正累積的是什麼？</h2></div><p class="section-desc">當平台越來越多交易發生，資料會從「內容」變成「商業智能」。</p></div>
-  <div class="grid grid-3">
+  <div class="notice center chapter-end">核心邏輯：<strong>免費使用 → 商機 → 商務案件 → 交易 → 落地 → 數據</strong></div>
+  <h3 class="sub-title">商業飛輪：越用越準的護城河</h3>
+  <ol class="flowline c3 loop"><li>更多需求與供給</li><li>AI 媒合更準</li><li>更多商機與案件</li><li>更多交易與落地</li><li>更多商業資料</li><li>AI 更強 ↻</li></ol>
+  <div class="grid grid-3" style="margin-top:20px">
     <div class="card"><h3>需求資料</h3><p>什麼人在找什麼、何時找、預算多少、需求如何變化。</p></div>
     <div class="card"><h3>供給資料</h3><p>誰有什麼產品、能力、案例、市場與合作條件。</p></div>
     <div class="card"><h3>交易資料</h3><p>哪些媒合成功、哪些案件成交、哪些市場與條件更有效。</p></div>
   </div>
-  <div class="quote" style="margin-top:22px">資料越多 → AI 越懂商業需求 → 媒合越準 → 商機價值越高 → 越多人願意使用 → 形成新的資料。</div>
-</div>
-</section>
+</div></section>
 
-<section>
-<div class="container">
-  <div class="section-head"><div><div class="kicker">30 / FINAL POSITIONING</div><h2>BridgeX 到底在做什麼？</h2></div></div>
-  <div class="ai-box center">
-    <div class="eyebrow">BridgeX</div>
-    <h2>讓需求找到供給，讓供給找到市場。</h2>
-    <p class="lead" style="margin:22px auto">用 AI 發現需求、分析需求、驗證需求、媒合供給，並把商業機會推進到成交、落地與跨境交易。</p>
-    <p style="font-size:18px;color:#d7e5f5">從台灣開始，連結大中華、東協與全球。</p>
-    <div class="big-flow" style="margin-top:30px">
-      <div class="node">需求</div><div class="arrow">→</div><div class="node">AI</div><div class="arrow">→</div><div class="node">高品質商機</div><div class="arrow">→</div><div class="node">媒合</div><div class="arrow">→</div><div class="node">商務案件</div><div class="arrow">→</div><div class="node">交易</div><div class="arrow">→</div><div class="node">落地</div><div class="arrow">→</div><div class="node">數據</div>
-    </div>
-    <button class="btn primary" style="margin-top:28px" onclick="openModal('demandModal')">開始一個商業需求</button>
+<section id="roadmap"><div class="container">
+  <div class="section-head"><div><div class="kicker">07 / Roadmap</div><h2>先垂直驗證，再成為商業基礎設施</h2></div><p class="section-desc">第一個目標不是做大，而是證明「需求 → 商機 → 案件 → 交易」可以成立。</p></div>
+  <h3 class="sub-title">先從有明確交易場景的垂直市場切入</h3>
+  <div class="grid grid-4 "><div class="card"><h3>AI × 數位產品</h3><p>產品需求、導入、服務與商業應用。</p></div><div class="card"><h3>遊戲 × 出海</h3><p>產品、發行、代理、行銷與市場進入。</p></div><div class="card"><h3>行銷 × 社群 × 媒體</h3><p>產品、品牌、流量與內容供需。</p></div><div class="card"><h3>跨境商業服務</h3><p>在地合作、BD、顧問與執行。</p></div></div>
+  <h3 class="sub-title">三階段發展</h3>
+  <div class="timeline">
+    <div class="phase"><h3>0–6 個月｜媒合市場</h3><span class="tag">人工 BD ＋ AI</span><ul><li>建立有效供給池</li><li>取得真實商業需求</li><li>人工驗證高品質商機</li><li>促成第一批案件與成交</li></ul></div>
+    <div class="phase"><h3>6–12 個月｜交易市場</h3><span class="tag">AI ＋ 人工驗證</span><ul><li>需求自動結構化、AI 預匹配</li><li>商機品質評分與付費</li><li>商務案件與交易落地收入</li><li>形成初步商業飛輪</li></ul></div>
+    <div class="phase"><h3>12 個月後｜商業基礎設施</h3><span class="tag">AI 智能媒合</span><ul><li>自動媒合與推薦</li><li>數據與市場情報服務</li><li>擴大台灣／大中華／東協</li><li>跨境交易與全球延伸</li></ul></div>
   </div>
-</div>
-</section>
+  <div class="notice chapter-end">早期關鍵指標不是註冊數，而是<strong>有效供給、真實需求、有效媒合與成交案例</strong>。</div>
+  <div class="ai-box cta-box">
+    <h2 style="font-size:clamp(22px,3vw,34px)">從一個真實的商業需求開始</h2>
+    <p class="muted" style="margin:10px 0 20px">用一句話描述你想解決的問題，其他交給 BridgeX。</p>
+    <button class="btn primary" onclick="openModal('demandModal')">開始一個商業需求</button>
+  </div>
+</div></section>
 </main>
 
-<footer class="footer">
-<div class="container">
+<footer class="footer"><div class="container">
   <strong>BridgeX</strong>｜AI 驅動的商業媒合與交易平台
   <p style="margin-top:8px">讓需求找到供給，讓供給找到市場。從需求、媒合、商機、案件，到交易與落地。</p>
-</div>
-</footer>
+</div></footer>
 
 <div class="modal" id="demandModal"><div class="modal-box">
   <button class="close" onclick="closeModal('demandModal')">×</button><div class="kicker">提出商業需求</div><h2>你想解決什麼問題？</h2>
@@ -572,9 +464,12 @@ label{font-size:13px;color:#a9bad0}
   </div>
 </div></div>
 
+
 <script>
 function openModal(id){document.getElementById(id).classList.add('active')}
 function closeModal(id){document.getElementById(id).classList.remove('active')}
+function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
+document.querySelectorAll('#mobileNav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open')))
 document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')}))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.active').forEach(m=>m.classList.remove('active'))})
 </script>
